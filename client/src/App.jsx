@@ -25,7 +25,7 @@ import Tensile_Fabrics from "./pages/services/Tensile_Fabrics";
 //Project subpage
 // import Detail_project from "./pages/project/Detail_project";
 import Project_list from "./pages/projects/Project_list";
-import Detail_project from "./pages/projects/detail_project";
+import Detail_project from "./pages/projects/Detail_project";
 
 // Component Pages
 import About from "./components/About";
@@ -68,7 +68,7 @@ function App() {
           />
 
           {/* project-subpage */}
-          <Route path="/projects/detail_project" element={<Detail_project />} />
+          <Route path="/projects/Detail_project" element={<Detail_project />} />
           <Route path="/projects/Project_list" element={<Project_list />} />
 
           {/* components page route*/}
