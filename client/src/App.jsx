@@ -68,7 +68,7 @@ function App() {
           />
 
           {/* project-subpage */}
-          <Route path="/projects/Detail_project" element={<Detail_project />} />
+          <Route path="/projects/detail_project" element={<Detail_project />} />
           <Route path="/projects/Project_list" element={<Project_list />} />
 
           {/* components page route*/}
