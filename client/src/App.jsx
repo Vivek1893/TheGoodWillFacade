@@ -1,35 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// Pages
+import Home from "./pages/Home";
+import Aboutus from "./pages/Aboutus";
+import ContactUs from "./pages/ContactUs";
+import Projects from "./pages/Projects";
+import Services from "./pages/Services";
+
+// Service Subpages
+import ACP from "./pages/services/ACP";
+import Aluminum_Windows from "./pages/services/Aluminum_Windows";
+import MS_Structure from "./pages/services/MS_Structure";
+import Railings from "./pages/services/Railings";
+import Skylight from "./pages/services/Skylight";
+import Stone_Cladding from "./pages/services/Stone_Cladding";
+import Structural_Glazing from "./pages/services/Structural_Glazing";
+import Tensile_Fabrics from "./pages/services/Tensile_Fabrics";
+
+//Project subpage
+// import Detail_project from "./pages/project/Detail_project";
+import Project_list from "./pages/projects/Project_list";
+import Detail_project from "./pages/projects/detail_project";
+
+// Component Pages
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Servicespage from "./components/Servicespage";
+import Projectpage from "./components/Projectpage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="app">
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Page Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/services" element={<Services />} />
+
+          {/* Sub-services */}
+          <Route path="/services/ACP" element={<ACP />} />
+          <Route
+            path="/services/Aluminum_Windows"
+            element={<Aluminum_Windows />}
+          />
+          <Route path="/services/MS_Structure" element={<MS_Structure />} />
+          <Route path="/services/Railings" element={<Railings />} />
+          <Route path="/services/Skylight" element={<Skylight />} />
+          <Route path="/services/Stone_Cladding" element={<Stone_Cladding />} />
+          <Route
+            path="/services/Structural_Glazing"
+            element={<Structural_Glazing />}
+          />
+          <Route
+            path="/services/Tensile_Fabrics"
+            element={<Tensile_Fabrics />}
+          />
+
+          {/* project-subpage */}
+          <Route path="/projects/Detail_project" element={<Detail_project />} />
+          <Route path="/projects/Project_list" element={<Project_list />} />
+
+          {/* components page route*/}
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Servicespage />} />
+          <Route path="/projectpage" element={<Projectpage />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+
+        {/* Footer */}
+        <Footer />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
