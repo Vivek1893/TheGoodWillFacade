@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [projectOpen, setProjectOpen] = useState(false); // ✅ added for Projects dropdown
+  const [projectOpen, setProjectOpen] = useState(false);
 
   // Detect scroll
   useEffect(() => {
@@ -17,27 +18,30 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-20 transition-all duration-300 ${
-        scrolled ? "bg-blue-700 shadow-md" : "bg-blue-700"
-      }`}
-    >
-      <div className="flex items-center">
+    <header className="fixed top-0  left-0 w-full z-20 transition-all duration-300">
+      <div className="flex items-stretch">
         {/* ===== Left Brand Panel (logo) ===== */}
-        <div className="w-56 flex flex-col items-center transition-all duration-300">
+        <div className="w-60 flex flex-col items-center justify-center py-4">
           <Link to="/" className="mb-2">
             <img
               src="/logo.png"
               alt="VNV Facades"
-              className="w-36 transition-all duration-300 brightness-250"
+              className="w-44 h-30 object-contain"
             />
           </Link>
         </div>
 
-        {/* ===== Center Navigation ===== */}
-        <div className="flex-1 flex items-center justify-center h-16">
+        {/* ===== Center Navigation with Animation ===== */}
+        <motion.div
+          initial={{ x: 100, opacity: 0, width: "40%" }} // start hidden near logo
+          animate={{ x: 50, opacity: 1, width: "100%" }} // expand to full width
+          transition={{ duration: 2, ease: "easeOut" }}
+          className={`flex items-center justify-center mt-2 mr-30 rounded-full transition-all duration-300 ${
+            scrolled ? "bg-blue-700 shadow-md" : "bg-[#FFFFFF]"
+          } h-17`}
+        >
           {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-10 font-medium tracking-wide text-sm text-white">
+          <ul className="hidden md:flex space-x-10 font-medium tracking-wide text-lg text-[#E27E55]">
             <li>
               <Link to="/" className="hover:text-gray-200">
                 Home
@@ -55,10 +59,12 @@ const Navbar = () => {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button type="button" className="hover:text-gray-200 flex items-center gap-1">
+              <button
+                type="button"
+                className="hover:text-gray-200 flex items-center gap-1"
+              >
                 Services ▾
               </button>
-
               {servicesOpen && (
                 <ul className="absolute left-0 top-full w-56 bg-blue-800 shadow-lg text-sm text-white z-50">
                   <li>
@@ -111,11 +117,13 @@ const Navbar = () => {
               onMouseEnter={() => setProjectOpen(true)}
               onMouseLeave={() => setProjectOpen(false)}
             >
-              <button type="button" className="hover:text-gray-200 flex items-center gap-1">
+              <button
+                type="button"
+                className="hover:text-gray-200 flex items-center gap-1"
+              >
                 Projects ▾
               </button>
-
-              {projectOpen && ( // ✅ fixed condition
+              {projectOpen && (
                 <ul className="absolute left-0 top-full w-56 bg-blue-800 shadow-lg text-sm text-white z-50">
                   <li>
                     <Link to="/projects/Detail_project" className="block px-4 py-2 hover:text-gray-200">
@@ -141,11 +149,11 @@ const Navbar = () => {
           {/* ===== Mobile Toggle ===== */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-2xl ml-4 text-white"
+            className="md:hidden text-2xl ml-4 text-blue-800"
           >
             ☰
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* ===== Mobile Menu ===== */}

@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+
+
+
+/* Outer Blue Shape */
+.clip-shape {
+  clip-path: polygon(0 100%, 17% 0, 100% 0, 100% 20%, 17% 20%, 0 100%);
+}
+
+/* Inner Orange Shape */
+.clip-inner {
+  clip-path: polygon(0 100%, 16% 0, 100% 0, 100% 10%, 16% 10%, 0 100%);
+}
