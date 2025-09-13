@@ -116,19 +116,7 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-5 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/40 hover:bg-black/70 text-white"
-      >
-        <FaChevronLeft size={20} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-5 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-black/40 hover:bg-black/70 text-white"
-      >
-        <FaChevronRight size={20} />
-      </button>
+      
 
       {/* Dots Navigation */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-20">

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import App from "../App";
 import "../App.css";
 
 const Projects = () => {
@@ -34,43 +33,30 @@ const Projects = () => {
   ];
 
   return (
-    <section className="px-24 py-16 bg-white">
-      {/* Text Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
-        <div>
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-5 font-bold tracking-tight leading-tight"
-            style={{
-              background:
-                "linear-gradient(90deg, #E86C0C 0%, #001F5F 70%, #C4C4C4 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            Our Projects
-          </h2>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2 leading-snug">
-            Built to Last. <br /> Designed to Inspire.
-          </h2>
-        </div>
-        <div className="flex flex-col md:items-end">
-          <p className="text-gray-600 max-w-sm mb-4">
-            From high-end homes to modern office spaces, each Brikly project is
-            a reflection of quality, detail, and dedication.
-          </p>
-
-          <Link to="/projects/Project_list">
-            <button className="px-6 py-3 bg-orange-500 hover:bg-[#001F5F] hover:text-white cursor-pointer text-white font-medium rounded-full transition">
-              View All Projects
-            </button>
-          </Link>
-        </div>
+    <section className="px-7 md:px-24 py-16 bg-white text-center">
+      {/* Text Section - Centered */}
+      <div className="mb-12">
+        <h2
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4"
+          style={{
+            background:
+              "linear-gradient(90deg, #E86C0C 0%, #001F5F 70%, #C4C4C4 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          Our Projects
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+          From high-end homes to modern office spaces, each Brikly project is a
+          reflection of quality, detail, and dedication.
+        </p>
       </div>
 
       {/* Image Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {projectData.map((project, index) => (
           <div
             key={project.id}
@@ -94,6 +80,13 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      {/* View All Projects Button */}
+      <Link to="/projects/Project_list">
+        <button className="px-6 py-3 bg-orange-500 hover:bg-[#001F5F] hover:text-white cursor-pointer text-white font-medium rounded-full transition">
+          View All Projects
+        </button>
+      </Link>
     </section>
   );
 };
