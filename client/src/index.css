@@ -1,14 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 @import "tailwindcss";
 
 
 
 
-/* Outer Blue Shape */
-.clip-shape {
-  clip-path: polygon(0 100%, 17% 0, 100% 0, 100% 20%, 17% 20%, 0 100%);
+
+body {
+  /* font-family: 'Marcellus'; */
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+   font-style: normal;
+   overflow-x: hidden;
+}
+html, body, * {
+  /* font-family: 'Marcellus'; */
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
 }
 
-/* Inner Orange Shape */
-.clip-inner {
-  clip-path: polygon(0 100%, 16% 0, 100% 0, 100% 10%, 16% 10%, 0 100%);
+
+.gradient-text {
+  background: linear-gradient(90deg, #E86C0C 30%, #001F5F 60%, #C4C4C4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
+
+.gradient-bg {
+  background: linear-gradient(90deg, #E86C0C 30%, #001F5F 60%, #C4C4C4 100%);
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Outer Blue Shape */
+/* .clip-shape {
+  clip-path: polygon(0 100%, 17% 0, 100% 0, 100% 20%, 17% 20%, 0 100%);
+} */
+
+/* Inner Orange Shape */
+/* .clip-inner {
+  clip-path: polygon(0 100%, 16% 0, 100% 0, 100% 10%, 16% 10%, 0 100%);
+} */

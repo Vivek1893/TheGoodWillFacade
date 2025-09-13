@@ -22,10 +22,13 @@ import Stone_Cladding from "./pages/services/Stone_Cladding";
 import Structural_Glazing from "./pages/services/Structural_Glazing";
 import Tensile_Fabrics from "./pages/services/Tensile_Fabrics";
 
-//Project subpage
-// import Detail_project from "./pages/project/Detail_project";
 import Project_list from "./pages/projects/Project_list";
-import Detail_project from "./pages/projects/Detail_project";
+// import Detail_project from "./pages/projects/Detail_project";
+
+// Detail pages import
+import GodrejPlatinum from "./pages/projects/Detail_project/GodrejPlatinum.jsx";
+// import Avana from "./pages/projects/Detail_project/Avana.jsx";
+// import IndiabullsSky from "./pages/projects/Detail_project/IndiabullsSky.jsx";
 
 // Component Pages
 import About from "./components/About";
@@ -68,7 +71,7 @@ function App() {
           />
 
           {/* project-subpage */}
-          <Route path="/projects/Detail_project" element={<Detail_project />} />
+          {/* <Route path="/projects/Detail_project" element={<Detail_project />} /> */}
           <Route path="/projects/Project_list" element={<Project_list />} />
 
           {/* components page route*/}
@@ -76,7 +79,19 @@ function App() {
           <Route path="/services" element={<Servicespage />} />
           <Route path="/projectpage" element={<Projectpage />} />
           <Route path="/contact" element={<Contact />} />
+
+
+
+
+          {/* Detail project pages */}
+          <Route path="/projects/godrej-platinum"element={<GodrejPlatinum />}
+          />
+          {/* <Route path="/projects/avana" element={<Avana />} /> */}
+          {/* baki ke bhi isi tarah add kar dena */}
         </Routes>
+
+
+
 
         {/* Footer */}
         <Footer />

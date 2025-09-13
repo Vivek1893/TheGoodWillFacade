@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0  left-0 w-full z-20 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-20 transition-all duration-300">
       <div className="flex items-stretch">
         {/* ===== Left Brand Panel (logo) ===== */}
         <div className="w-60 flex flex-col items-center justify-center py-4">
@@ -37,18 +37,32 @@ const Navbar = () => {
           animate={{ x: 50, opacity: 1, width: "100%" }} // expand to full width
           transition={{ duration: 2, ease: "easeOut" }}
           className={`flex items-center justify-center mt-2 mr-30 rounded-full transition-all duration-300 ${
-            scrolled ? "bg-blue-700 shadow-md" : "bg-[#FFFFFF]"
-          } h-17`}
+            scrolled ? "bg-white text-black shadow-md" : "text-white"
+          } h-14`}
         >
           {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-10 font-medium tracking-wide text-lg text-[#E27E55]">
+          <ul
+            className={`hidden md:flex space-x-10 font-normal tracking-wide text-lg transition-colors duration-300 ${
+              scrolled ? "text-black" : "text-white"
+            }`}
+          >
             <li>
-              <Link to="/" className="hover:text-gray-200">
+              <Link
+                to="/"
+                className={`hover:${
+                  scrolled ? "text-gray-600" : "text-gray-200"
+                }`}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/Aboutus" className="hover:text-gray-200">
+              <Link
+                to="/Aboutus"
+                className={`hover:${
+                  scrolled ? "text-gray-600" : "text-gray-200"
+                }`}
+              >
                 About Us
               </Link>
             </li>
@@ -61,49 +75,75 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="hover:text-gray-200 flex items-center gap-1"
+                className={`flex items-center gap-1 hover:${
+                  scrolled ? "text-gray-600" : "text-gray-200"
+                }`}
               >
                 Services ▾
               </button>
               {servicesOpen && (
-                <ul className="absolute left-0 top-full w-56 bg-blue-800 shadow-lg text-sm text-white z-50">
+                <ul className="absolute left-0 top-full w-56 bg-white shadow-lg text-sm text-black z-50">
                   <li>
-                    <Link to="/services/ACP" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/ACP"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       ACP
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/Aluminum_Windows" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/Aluminum_Windows"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Aluminum Windows
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/MS_Structure" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/MS_Structure"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       MS Structure
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/Railings" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/Railings"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Railings
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/Skylight" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/Skylight"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Skylight
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/Stone_Cladding" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/Stone_Cladding"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Stone Cladding
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/Structural_Glazing" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/Structural_Glazing"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Structural Glazing
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/Tensile_Fabrics" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/services/Tensile_Fabrics"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Tensile Fabric
                     </Link>
                   </li>
@@ -119,19 +159,27 @@ const Navbar = () => {
             >
               <button
                 type="button"
-                className="hover:text-gray-200 flex items-center gap-1"
+                className={`flex items-center gap-1 hover:${
+                  scrolled ? "text-gray-600" : "text-gray-200"
+                }`}
               >
                 Projects ▾
               </button>
               {projectOpen && (
-                <ul className="absolute left-0 top-full w-56 bg-blue-800 shadow-lg text-sm text-white z-50">
-                  <li>
-                    <Link to="/projects/Detail_project" className="block px-4 py-2 hover:text-gray-200">
+                <ul className="absolute left-0 top-full w-56 bg-white shadow-lg text-sm text-black z-50">
+                  {/* <li>
+                    <Link
+                      to="/projects/Detail_project"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Project Detail
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link to="/projects/Project_list" className="block px-4 py-2 hover:text-gray-200">
+                    <Link
+                      to="/projects/Project_list"
+                      className="block px-4 py-2 hover:text-orange-500"
+                    >
                       Project List
                     </Link>
                   </li>
@@ -140,7 +188,12 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="/Contact" className="hover:text-gray-200">
+              <Link
+                to="/Contact"
+                className={`hover:${
+                  scrolled ? "text-gray-600" : "text-gray-200"
+                }`}
+              >
                 Contacts
               </Link>
             </li>
@@ -169,22 +222,44 @@ const Navbar = () => {
           <details>
             <summary className="cursor-pointer">Services</summary>
             <ul className="ml-4 space-y-2 text-sm">
-              <li><Link to="/services/ACP">ACP</Link></li>
-              <li><Link to="/services/Aluminum_Windows">Aluminum Windows</Link></li>
-              <li><Link to="/services/MS_Structure">MS Structure</Link></li>
-              <li><Link to="/services/Railings">Railings</Link></li>
-              <li><Link to="/services/Skylight">Skylight</Link></li>
-              <li><Link to="/services/Stone_Cladding">Stone Cladding</Link></li>
-              <li><Link to="/services/Structural_Glazing">Structural Glazing</Link></li>
-              <li><Link to="/services/Tensile_Fabrics">Tensile Fabric</Link></li>
+              <li>
+                <Link to="/services/ACP">ACP</Link>
+              </li>
+              <li>
+                <Link to="/services/Aluminum_Windows">Aluminum Windows</Link>
+              </li>
+              <li>
+                <Link to="/services/MS_Structure">MS Structure</Link>
+              </li>
+              <li>
+                <Link to="/services/Railings">Railings</Link>
+              </li>
+              <li>
+                <Link to="/services/Skylight">Skylight</Link>
+              </li>
+              <li>
+                <Link to="/services/Stone_Cladding">Stone Cladding</Link>
+              </li>
+              <li>
+                <Link to="/services/Structural_Glazing">
+                  Structural Glazing
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/Tensile_Fabrics">Tensile Fabric</Link>
+              </li>
             </ul>
           </details>
 
           <details>
             <summary className="cursor-pointer">Projects</summary>
             <ul className="ml-4 space-y-2 text-sm">
-              <li><Link to="/projects/Detail_project">Project Detail</Link></li>
-              <li><Link to="/projects/Project_list">Project List</Link></li>
+              <li>
+                <Link to="/projects/Detail_project">Project Detail</Link>
+              </li>
+              <li>
+                <Link to="/projects/Project_list">Project List</Link>
+              </li>
             </ul>
           </details>
 
