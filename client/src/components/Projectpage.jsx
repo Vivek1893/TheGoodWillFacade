@@ -7,28 +7,28 @@ const Projects = () => {
     {
       id: 1,
       title: "GodrejPlatinum",
-      img: "https://picsum.photos/800/500?random=1",
+      img: "./images/project1.webp",
       path: "/projects/Detail_project/GodrejPlatinum",
     },
     {
       id: 2,
       title: "Luxury Apartments",
-      img: "https://picsum.photos/400/500?random=2",
+       img: "./images/project2.webp",
     },
     {
       id: 3,
       title: "Cultural Center",
-      img: "https://picsum.photos/400/400?random=3",
+       img: "./images/project3.webp",
     },
     {
       id: 4,
       title: "Residential Villas",
-      img: "https://picsum.photos/400/400?random=4",
+       img: "./images/project4.webp",
     },
     {
       id: 5,
       title: "Corporate Towers",
-      img: "https://picsum.photos/800/400?random=5",
+       img: "./images/project5.webp",
     },
   ];
 
