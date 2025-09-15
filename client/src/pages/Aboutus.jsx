@@ -37,7 +37,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About MNA</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Thegoodwill</h1>
           <p className="text-lg md:text-xl">
             Discover our story, mission, and commitment to excellence in
             professional services.
@@ -81,7 +81,7 @@ const About = () => {
             </h2>
             <p className="text-lg md:text-xl leading-relaxed">
               Welcome to{" "}
-              <span className="font-semibold text-[#EC7310]">MNA</span>, a
+              <span className="font-semibold text-[#EC7310]">Thegoodwill</span>, a
               boutique capital advisory firm delivering strategic financial
               solutions at every stage of business growth.
             </p>
