@@ -13,7 +13,6 @@ const ContactSection = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" /> {/* Dark Overlay */}
-
         {/* Centered Heading */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
@@ -30,7 +29,8 @@ const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your architectural vision? Contact us today for a consultation.
+            Ready to transform your architectural vision? Contact us today for a
+            consultation.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const ContactSection = () => {
                   <Mail className="h-6 w-6 text-yellow-600 mt-1" />
                   <div>
                     <h4 className="font-semibold text-gray-800">Email</h4>
-                    <p className="text-gray-600">sales@vnvfacades.com</p>
+                    <p className="text-gray-600">Thegoodwill@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -98,16 +98,20 @@ const ContactSection = () => {
 
             {/* Offices */}
             <div className="space-y-6">
-              <h4 className="text-xl font-semibold text-gray-800">Our Offices</h4>
+              <h4 className="text-xl font-semibold text-gray-800">
+                Our Offices
+              </h4>
 
               <div className="p-6 bg-yellow-50 border border-yellow-600/20 rounded-xl shadow-sm hover:shadow-md transition">
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-yellow-600 mt-1" />
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-2">Mumbai Office</h5>
+                    <h5 className="font-semibold text-gray-800 mb-2">
+                      Mumbai Office
+                    </h5>
                     <p className="text-gray-600 leading-relaxed">
-                      NO. 31, Shanti Industrial Estate, Near Tambe Nagar,
-                      SN Road, Mulund West, Mumbai - 400080, Maharashtra, India
+                      Disha C.H.S., Opp. Joggers Park, Chikoowadi, Borivali
+                      West, Mumbai - 400 092.
                     </p>
                   </div>
                 </div>
@@ -117,11 +121,12 @@ const ContactSection = () => {
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-yellow-600 mt-1" />
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-2">Thane Region</h5>
+                    <h5 className="font-semibold text-gray-800 mb-2">
+                      Surat Office
+                    </h5>
                     <p className="text-gray-600 leading-relaxed">
-                      807, Opal Square, S.G. Barve Road, opp Railadevi TMC Office,
-                      Next to Satkar Grande Hotel, Wagle Estate, Near Mulund Checknaka,
-                      Thane West- 400604
+                      342, The Galleria Shopping Hub, Near Sanjivkumar
+                      Auditorium, Opp. kitchen 37, Rto, Pal, Surat - 395009
                     </p>
                   </div>
                 </div>

@@ -5,7 +5,6 @@
 // //   return (
 //     <section className="w-full bg-white">
 //       {/* 🔹 Quick Service Request */}
-     
 
 //       {/* 🔹 About Company Section */}
 //       <div className="max-w-8xl h-[800px] mx-auto px-6 py-20 grid md:grid-cols-2 gap-60 items-center">
@@ -46,8 +45,6 @@
 // //             performance.
 // //           </p>
 
-          
-
 // //           <button className="gradient-bg text-white px-6 py-2 rounded-md font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:gradient-bg cursor-pointer">
 // //             READ MORE
 // //           </button>
@@ -59,8 +56,6 @@
 
 // // export default About;
 
-
-
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 
@@ -68,7 +63,6 @@ const AboutUs = () => {
   return (
     <section className="w-full bg-white">
       {/* 🔹 Quick Service Request */}
-     
 
       {/* 🔹 About Company Section */}
       <div className="max-w-7xl h-[800px] mx-auto px-6 py-20 grid md:grid-cols-2 gap-60 items-center">
@@ -96,10 +90,10 @@ const AboutUs = () => {
             <span className="text-orange-500">India.</span>
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            At Brikly, we’re proud to serve Austin with reliable, high-quality
-            construction services. From custom homes to commercial builds, our
-            local expertise ensures every project is done right. We build with
-            integrity, craftsmanship, and a commitment to your vision.
+            THE GOODWILL FACADE is A Specialist Facade Design & Engineering
+            Group Providing Extensive Services To Developers, Architects, Facade
+            Contactors And Main Contactor In The Field Of Architectural Facades
+            & Building Maintenance Solutions.
           </p>
 
           {/* Bullet Points */}
