@@ -189,7 +189,7 @@ const Navbar = () => {
 
             <li>
               <Link
-                to="/Contact"
+                to="/ContactUs"
                 className={`hover:${
                   scrolled ? "text-gray-600" : "text-gray-200"
                 }`}

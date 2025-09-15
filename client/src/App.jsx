@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+// index.js or App.js
+import "leaflet/dist/leaflet.css";
+
 
 // Pages
 import Home from "./pages/Home";

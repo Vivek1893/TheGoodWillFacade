@@ -13,27 +13,28 @@ const Projects = () => {
     {
       id: 2,
       title: "Luxury Apartments",
-       img: "./images/project2.webp",
+      img: "./images/project2.webp",
     },
     {
       id: 3,
       title: "Cultural Center",
-       img: "./images/project3.webp",
+      img: "./images/project3.webp",
     },
     {
       id: 4,
       title: "Residential Villas",
-       img: "./images/project4.webp",
+      img: "./images/project4.webp",
     },
     {
       id: 5,
       title: "Corporate Towers",
-       img: "./images/project5.webp",
+      img: "./images/project5.webp",
     },
   ];
 
   return (
     <section className="px-7 md:px-24 py-16 bg-white text-center">
+    
       {/* Text Section - Centered */}
       <div className="mb-12">
         <h2
@@ -60,7 +61,7 @@ const Projects = () => {
         {projectData.map((project, index) => (
           <div
             key={project.id}
-            className={`relative overflow-hidden rounded-2xl group ${
+            className={`relative overflow-hidden rounded-tl-4xl rounded-br-4xl group ${
               index === 0 ? "md:col-span-2" : ""
             }`}
           >

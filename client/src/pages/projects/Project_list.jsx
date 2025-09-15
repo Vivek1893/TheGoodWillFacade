@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
 import "../../App.css";
+
+// Custom marker
+const markerIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+});
 
 const projects = [
   {
@@ -9,18 +19,25 @@ const projects = [
     name: "Godrej Platinum",
     img: "/images/project1.webp",
     path: "/projects/Detail_project/GodrejPlatinum",
+    lat: 19.075983,
+    lng: 72.877655,
   },
   {
     id: "avana",
     name: "Avana",
     img: "/images/project2.webp",
     path: "/projects/avana",
+    lat: 19.2183,
+    lng: 72.9781,
   },
   {
     id: "indiabulls-sky",
     name: "Indiabulls Sky",
     img: "/images/project3.webp",
+    lat: 18.933,
+    lng: 72.822,
   },
+  // 👉 baki projects me bhi lat/lng dal do
   { id: "avighna", name: "One Avighna Park", img: "/images/project4.webp" },
   { id: "oberoi", name: "Oberoi 360 West", img: "/images/project5.webp" },
   { id: "the-park", name: "The Park", img: "/images/project6.webp" },
@@ -41,7 +58,7 @@ const projects = [
 ];
 
 const Residential = () => {
-  // 🔹 Container animation
+  // Animation container
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -53,13 +70,13 @@ const Residential = () => {
     },
   };
 
-  // 🔹 Function to get animation direction per card
+  // Card animation
   const getCardVariants = (index) => {
     const directions = [
-      { x: -60, y: 0 }, // left
-      { x: 60, y: 0 }, // right
-      { x: 0, y: 60 }, // bottom
-      { x: 0, y: -60 }, // top
+      { x: -60, y: 0 },
+      { x: 60, y: 0 },
+      { x: 0, y: 60 },
+      { x: 0, y: -60 },
     ];
     const dir = directions[index % directions.length];
 
@@ -98,19 +115,14 @@ const Residential = () => {
             <Link key={project.id} to={`/projects/${project.id}`}>
               <motion.div
                 variants={getCardVariants(index)}
-                // whileHover={{
-                //   scale: 1.05,
-                //   y: -8,
-                //   boxShadow: "0px 10px 25px rgba(0,0,0,0.15)",
-                // }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="bg-white rounded-md p-4 flex flex-col items-center cursor-pointer  shadow-xl hover:shadow"
+                className="bg-white rounded-md p-4 flex flex-col items-center cursor-pointer shadow-xl hover:shadow"
               >
                 <motion.img
                   src={project.img}
                   alt={project.name}
                   className="w-full h-72 object-cover zoom-hover rounded-md"
-                  whileHover={{ scale: .90 }}
+                  whileHover={{ scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                 />
                 <h3 className="mt-4 text-lg font-semibold text-center">
@@ -121,6 +133,40 @@ const Residential = () => {
             </Link>
           ))}
         </motion.div>
+      </div>
+
+      {/* 🔹 Map Section */}
+      <div className="w-full h-[500px] mt-10">
+        <MapContainer
+          center={[19.076, 72.8777]} // Mumbai center
+          zoom={11}
+          scrollWheelZoom={false}
+          className="h-full w-full rounded-lg shadow-lg"
+        >
+          {/* Satellite Layer */}
+          <TileLayer
+            url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+            subdomains={["mt0", "mt1", "mt2", "mt3"]}
+            attribution="&copy; Google Maps"
+          />
+
+          {projects.map(
+            (p) =>
+              p.lat &&
+              p.lng && (
+                <Marker key={p.id} position={[p.lat, p.lng]} icon={markerIcon}>
+                  <Popup>
+                    <div className="text-sm font-semibold">{p.name}</div>
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      className="w-32 h-20 object-cover mt-2 rounded"
+                    />
+                  </Popup>
+                </Marker>
+              )
+          )}
+        </MapContainer>
       </div>
     </div>
   );
