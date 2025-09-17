@@ -167,14 +167,14 @@ const Navbar = () => {
               </button>
               {projectOpen && (
                 <ul className="absolute left-0 top-full w-56 bg-white shadow-lg text-sm text-black z-50">
-                  {/* <li>
+                  <li>
                     <Link
                       to="/projects/Detail_project"
                       className="block px-4 py-2 hover:text-orange-500"
                     >
                       Project Detail
                     </Link>
-                  </li> */}
+                  </li>
                   <li>
                     <Link
                       to="/projects/Project_list"
@@ -257,6 +257,9 @@ const Navbar = () => {
               <li>
                 <Link to="/projects/Detail_project">Project Detail</Link>
               </li>
+              {/* <li>
+                <Link to="/projects/project">Project List</Link>
+              </li> */}
               <li>
                 <Link to="/projects/Project_list">Project List</Link>
               </li>

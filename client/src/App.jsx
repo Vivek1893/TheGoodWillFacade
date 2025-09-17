@@ -26,7 +26,7 @@ import Structural_Glazing from "./pages/services/Structural_Glazing";
 import Tensile_Fabrics from "./pages/services/Tensile_Fabrics";
 
 import Project_list from "./pages/projects/Project_list";
-// import Detail_project from "./pages/projects/Detail_project";
+import Detail_project from "./pages/projects/Detail_project.jsx";
 
 // Detail pages import
 import GodrejPlatinum from "./pages/projects/Detail_project/GodrejPlatinum.jsx";
@@ -74,7 +74,7 @@ function App() {
           />
 
           {/* project-subpage */}
-          {/* <Route path="/projects/Detail_project" element={<Detail_project />} /> */}
+          <Route path="/projects/Detail_project" element={<Detail_project />} />
           <Route path="/projects/Project_list" element={<Project_list />} />
 
           {/* components page route*/}
