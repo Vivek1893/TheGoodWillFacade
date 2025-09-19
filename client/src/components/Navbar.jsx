@@ -26,7 +26,7 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="VNV Facades"
-              className="w-44 h-30 object-contain"
+              className="w-44 h-30 bg-white object-contain"
             />
           </Link>
         </div>
