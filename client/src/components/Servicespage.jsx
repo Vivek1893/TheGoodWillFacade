@@ -4,75 +4,76 @@ import { Building, Shield, Layers, Wind, Cpu, Zap } from "lucide-react";
 const ServicesAllInOne = () => {
   // First set of services (icon-based)
   const servicesIcons = [
-    {
-      icon: <Building className="h-10 w-10 text-vnv-gold" />,
-      title: "ACP Cladding",
-      description:
-        "ACP cladding sheets are durable, weather and stain resistant. They serve as a solid barrier allowing the users to enjoy sound reduction from the outside environment.",
-    },
-    {
-      icon: <Shield className="h-10 w-10 text-vnv-gold" />,
-      title: "Glass Glazing",
-      description:
-        "Glazing can be mounted on the surface of a window sash or door stile, usually made of wood, aluminium or PVC.",
-    },
-    {
-      icon: <Layers className="h-10 w-10 text-vnv-gold" />,
-      title: "Spider Glazing",
-      description:
-        "Spider glazing is a major concept for facade glazing and elevation glazing using spider glass hardware.",
-    },
-    {
-      icon: <Wind className="h-10 w-10 text-vnv-gold" />,
-      title: "UPVC Fins",
-      description:
-        "UPVC Fins and Elliptical Louvers provide efficient and aesthetic screening while lending a sleek modern look.",
-    },
-    {
-      icon: <Cpu className="h-10 w-10 text-vnv-gold" />,
-      title: "Metal Ceiling",
-      description:
-        "Metal ceiling systems are designed for commercial, institutional and retail projects in both interior and exterior.",
-    },
-    {
-      icon: <Zap className="h-10 w-10 text-vnv-gold" />,
-      title: "Aluminium Fins",
-      description:
-        "Aluminium fins provide strength, corrosion resistance, and thermal conductivity for all temperature applications.",
-    },
+   {
+  icon: <Building className="h-10 w-10 text-vnv-gold" />,
+  title: "ACP Cladding",
+  description:
+    "ACP Cladding (Aluminium Composite Panel Cladding) is widely used in modern architecture for its durability, lightweight nature, and elegant appearance. It offers resistance to harsh weather conditions, provides insulation against noise and heat, and adds a premium finish to both exterior and interior spaces.",
+},
+{
+  icon: <Shield className="h-10 w-10 text-vnv-gold" />,
+  title: "Aluminum Windows",
+  description:
+    "Aluminum windows are known for their strength, low maintenance, and sleek design. They provide excellent thermal and sound insulation while allowing maximum natural light. Ideal for both residential and commercial projects, they enhance security and durability while maintaining a modern look.",
+},
+{
+  icon: <Layers className="h-10 w-10 text-vnv-gold" />,
+  title: "MS Structure",
+  description:
+    "MS (Mild Steel) Structures are the backbone of industrial and commercial construction. They provide high tensile strength, flexibility, and cost-effectiveness. MS structures are widely used in frameworks, warehouses, bridges, and facades, ensuring long-lasting stability and support.",
+},
+{
+  icon: <Wind className="h-10 w-10 text-vnv-gold" />,
+  title: "Railings",
+  description:
+    "Railings are essential for safety and aesthetics, crafted in stainless steel, glass, or aluminum for durability. They provide support and safety on staircases, balconies, and terraces while enhancing the overall architectural appeal with modern and stylish designs.",
+},
+{
+  icon: <Cpu className="h-10 w-10 text-vnv-gold" />,
+  title: "Stone Cladding",
+  description:
+    "Stone Cladding brings a natural and elegant finish to buildings by using thin layers of natural or artificial stone. It enhances durability, adds thermal insulation, and provides resistance against weathering, making it a timeless choice for both interiors and exteriors.",
+},
+{
+  icon: <Zap className="h-10 w-10 text-vnv-gold" />,
+  title: "Structural Glazing",
+  description:
+    "Structural Glazing is an advanced facade solution that uses high-strength glass bonded with aluminum frames. It provides a seamless, sleek, and modern exterior while ensuring natural light, energy efficiency, and weather resistance for commercial and residential buildings.",
+},
+
   ];
 
   // Second set of services (image-based)
-  const servicesImages = [
-    {
-      title: "Expertise and Experience",
-      description:
-        "Benefit from our team's extensive experience and deep industry knowledge across various sectors.",
-      image: "/images/ser8.png",
-      link: "https://example.com/expertise",
-    },
-    {
-      title: "Client-Centric Approach",
-      description:
-        "We prioritize your unique needs and goals, providing tailored solutions and dedicated support.",
-      image: "https://picsum.photos/400/500?random=2",
-      link: "https://example.com/client",
-    },
-    {
-      title: "Strategy & Planning",
-      description:
-        "Making decisions on allocating resources to pursue any given strategy.",
-      image: "https://picsum.photos/400/500?random=3",
-      link: "https://example.com/strategy",
-    },
-    {
-      title: "Innovation and Insight",
-      description:
-        "Stay ahead with our forward-thinking strategies and valuable market insights.",
-      image: "https://picsum.photos/400/500?random=4",
-      link: "https://example.com/innovation",
-    },
-  ];
+  // const servicesImages = [
+  //   {
+  //     title: "Expertise and Experience",
+  //     description:
+  //       "Benefit from our team's extensive experience and deep industry knowledge across various sectors.",
+  //     image: "/images/ser8.png",
+  //     link: "https://example.com/expertise",
+  //   },
+  //   {
+  //     title: "Client-Centric Approach",
+  //     description:
+  //       "We prioritize your unique needs and goals, providing tailored solutions and dedicated support.",
+  //     image: "https://picsum.photos/400/500?random=2",
+  //     link: "https://example.com/client",
+  //   },
+  //   {
+  //     title: "Strategy & Planning",
+  //     description:
+  //       "Making decisions on allocating resources to pursue any given strategy.",
+  //     image: "https://picsum.photos/400/500?random=3",
+  //     link: "https://example.com/strategy",
+  //   },
+  //   {
+  //     title: "Innovation and Insight",
+  //     description:
+  //       "Stay ahead with our forward-thinking strategies and valuable market insights.",
+  //     image: "https://picsum.photos/400/500?random=4",
+  //     link: "https://example.com/innovation",
+  //   },
+  // ];
 
   // Animation for image services
   const sectionRef = useRef(null);
@@ -132,7 +133,7 @@ const ServicesAllInOne = () => {
       </section>
 
       {/* Image-based Services */}
-      <section
+      {/* <section
         ref={sectionRef}
         className="bg-white py-16 px-4 sm:px-8 md:px-16 lg:px-20"
       >
@@ -180,7 +181,7 @@ const ServicesAllInOne = () => {
             </a>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

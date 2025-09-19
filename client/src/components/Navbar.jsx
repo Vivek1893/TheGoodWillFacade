@@ -211,7 +211,7 @@ const Navbar = () => {
 
       {/* ===== Mobile Menu ===== */}
       {isOpen && (
-        <div className="md:hidden bg-blue-700 px-6 py-4 space-y-3 font-semibold uppercase text-white">
+        <div className="md:hidden bg-orange-500 px-6 py-4 space-y-3 font-semibold uppercase text-white">
           <Link to="/" className="block">
             Home
           </Link>
