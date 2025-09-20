@@ -282,9 +282,9 @@ const Projects = () => {
         <div className="absolute inset-0 bg-black/50" /> {/* Dark Overlay */}
         {/* Centered Heading */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
             Our Projects List
-          </h1>
+          </h3>
         </div>
       </div>
       <section className="px-7 md:px-24 py-16 bg-white text-center">

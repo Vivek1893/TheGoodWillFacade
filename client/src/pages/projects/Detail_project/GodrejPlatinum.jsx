@@ -22,7 +22,7 @@ const ProductDetail = () => {
         {/* Centered Heading */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-xl tracking-wide">
-            Project by ALASKAA
+            Project of ALASKAA
           </h1>
         </div>
 

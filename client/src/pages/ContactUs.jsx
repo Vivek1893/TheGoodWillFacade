@@ -8,16 +8,16 @@ const ContactSection = () => {
       {/* Hero Banner */}
       <div className="relative w-full h-[60vh]">
         <img
-          src="/contact.jpg"
+          src="/contact us.webp"
           alt="Glass Railing System"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" /> {/* Dark Overlay */}
         {/* Centered Heading */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
             Contact Us
-          </h1>
+          </h3>
         </div>
       </div>
 

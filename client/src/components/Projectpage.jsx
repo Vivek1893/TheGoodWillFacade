@@ -93,13 +93,13 @@ const Projects = () => {
             }`}
             variants={cardVariants}
           >
-         <img
-  src={project.img}
-  alt={project.title}
-  className="w-full h-full object-cover brightness-75 
+            <img
+              src={project.img}
+              alt={project.title}
+              className="w-full h-full object-cover brightness-75 
              transform transition duration-500 
              group-hover:scale-110 active:scale-110"
-/>
+            />
             {/* Overlay Text */}
             <div className="text-white absolute inset-0 flex items-center justify-center">
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">

@@ -8,7 +8,7 @@ const About = () => {
       <section
         className="relative w-full h-[50vh] md:h-[60vh] flex items-center justify-center text-white"
         style={{
-          backgroundImage: "url('/images/slide3.jpg')",
+          backgroundImage: "url('/aboutimg.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -19,13 +19,13 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+          <h3 className="text-3xl md:text-5xl font-bold mb-4">
             About Thegoodwill
-          </h1>
-          <p className="text-base md:text-xl">
+          </h3>
+          {/* <p className="text-base md:text-xl">
             Discover our story, mission, and commitment to excellence in
             professional services.
-          </p>
+          </p> */}
         </motion.div>
       </section>
 

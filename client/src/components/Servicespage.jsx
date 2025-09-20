@@ -40,6 +40,18 @@ const ServicesAllInOne = () => {
       description:
         "Structural Glazing is an advanced facade solution that uses high-strength glass bonded with aluminum frames. It provides a seamless, sleek, and modern exterior while ensuring natural light, energy efficiency, and weather resistance for commercial and residential buildings.",
     },
+     {
+      icon: <Zap className="h-10 w-10 text-vnv-gold" />,
+      title: "Skylight",
+      description:
+        "A skylight is a window set into a roof or ceiling that brings natural sunlight into a space, making rooms brighter and more open. It reduces the need for artificial lighting and can improve ventilation if designed to open. Skylights come in various styles and materials, offering both aesthetic and energy-saving benefits.",
+    },
+     {
+      icon: <Zap className="h-10 w-10 text-vnv-gold" />,
+      title: "TensileFabrics",
+      description:
+        "Tensile fabrics are materials designed to be stretched and tensioned across a framework, forming durable and often dramatic structures",
+    },
   ];
 
   // 🔹 Variants for parent (grid)
