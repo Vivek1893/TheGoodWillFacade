@@ -288,25 +288,24 @@ const Projects = () => {
         </div>
       </div>
       <section className="px-7 md:px-24 py-16 bg-white text-center">
-       
-
-        {/* Image Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           {projectData.map((project) => (
             <div
               key={project.id}
-              className="relative overflow-hidden rounded-tl-4xl rounded-br-4xl group"
+              className="relative overflow-hidden rounded-tl-4xl rounded-br-4xl group shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              {/* Image with dark overlay + zoom effect */}
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-120 object-cover brightness-75 group-hover:brightness-100 transition-transform duration-500 transform group-hover:scale-105"
-              />
+              {/* Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-100 object-cover transition-transform duration-500 transform group-hover:scale-105"
+                />
+              </div>
 
-              {/* Overlay Text */}
-             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <h3 className="text-white text-xl md:text-2xl font-semibold">
+              {/* Title Box - Hidden initially */}
+              <div className="absolute bottom-0 left-0 w-full bg-white p-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <h3 className="text-gray-800 text-lg md:text-xl font-semibold">
                   {project.title}
                 </h3>
               </div>

@@ -8,7 +8,7 @@ const ContactSection = () => {
       {/* Hero Banner */}
       <div className="relative w-full h-[60vh]">
         <img
-          src="/images/slide3.jpg"
+          src="/contact.jpg"
           alt="Glass Railing System"
           className="w-full h-full object-cover"
         />

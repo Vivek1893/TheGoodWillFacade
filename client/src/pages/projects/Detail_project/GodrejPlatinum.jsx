@@ -22,29 +22,29 @@ const ProductDetail = () => {
         {/* Centered Heading */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-xl tracking-wide">
-            Glass Railing System
+            Project by ALASKAA
           </h1>
         </div>
 
         {/* Label (bottom-right) */}
-        <div className="absolute bottom-6 right-6 bg-red-600 px-6 py-2 rounded-lg shadow-lg">
+        {/* <div className="absolute bottom-6 right-6 bg-red-600 px-6 py-2 rounded-lg shadow-lg">
           <span className="text-white font-bold tracking-wide text-lg">TGF 02</span>
-        </div>
+        </div> */}
       </div>
 
       {/* Product Info Section */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 py-16 px-6">
         {/* Left Side Illustration */}
         <div className="flex flex-col items-center space-y-6">
-          <img
+          {/* <img
             src="/images/ser8.png"
             alt="Product Illustration"
-            className="w-44 h-auto drop-shadow-lg"
-          />
+            className="w-100 h-auto drop-shadow-lg"
+          /> */}
           <img
             src="/images/ser5.png"
             alt="Cross Section"
-            className="w-44 h-auto drop-shadow-lg"
+            className="w-100 h-100 drop-shadow-lg"
           />
         </div>
 
@@ -60,6 +60,38 @@ const ProductDetail = () => {
           <p><span className="font-bold text-gray-800">LENGTH :</span> 12ft | 16ft</p>
         </div>
       </div>
+
+      {/* 🔹 Sample Designs */}
+      <section className="px-6 md:px-20 py-20 bg-gray-50">
+        {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+          Sample Designs for <span className="text-blue-800">ACP Cladding</span>
+        </h2> */}
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+          {[
+            "/project_detail_img/ALASKAA 1.jpg",
+             "/project_detail_img/ALASKAA 2.jpg",
+              "/project_detail_img/ALASKAA 3.jpg",
+           
+          ].map((img, i) => (
+            <div
+              key={i}
+              className="relative overflow-hidden group"
+            >
+              <img
+                src={img}
+                alt={`Design ${i + 1}`}
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold">
+                  Design {i + 1}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Bottom Features Icons */}
       <div className="bg-gray-100 py-16">

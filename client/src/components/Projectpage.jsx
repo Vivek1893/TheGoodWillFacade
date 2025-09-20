@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../App.css";
 
 const Projects = () => {
@@ -32,9 +33,29 @@ const Projects = () => {
     },
   ];
 
+  // 🔹 Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // ek-ek karke delay
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 40 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-16 bg-white text-center">
-    
       {/* Text Section - Centered */}
       <div className="mb-12">
         <h2
@@ -56,31 +77,41 @@ const Projects = () => {
         </p>
       </div>
 
-      {/* Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 md:mb-12">
+      {/* 🔹 Animated Grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 md:mb-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {projectData.map((project, index) => (
-          <div
+          <motion.div
             key={project.id}
             className={`relative overflow-hidden rounded-tl-4xl rounded-br-4xl group h-[200px] sm:h-[250px] md:h-[300px] ${
               index === 0 ? "sm:col-span-2 md:col-span-2" : ""
             }`}
+            variants={cardVariants}
           >
-            {/* Image with dark overlay + zoom effect */}
-            <img
-              src={project.img}
-              alt={project.title}
-              className="w-full h-full object-cover brightness-75 group-hover:brightness-100 zoom-hover"
-            />
+         <img
+  src={project.img}
+  alt={project.title}
+  className="w-full h-full object-cover brightness-75 
+             transform transition duration-500 
+             group-hover:scale-110 active:scale-110"
+/>
+
+
 
             {/* Overlay Text */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-semibold opacity-90 group-hover:opacity-100 transition">
+              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-semibold">
                 {project.title}
               </h3>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* View All Projects Button */}
       <Link to="/projects/Project_list">
