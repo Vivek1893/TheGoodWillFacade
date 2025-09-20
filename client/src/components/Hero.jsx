@@ -58,15 +58,33 @@ const Hero = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden max-w-full">
-      {/* Top Color Theme Border */}
-      <div className="absolute top-0 left-0 w-full h-1 z-40">
-        <div className="absolute top-0 left-0 w-1/3 h-full transform -skew-x-12 origin-left" style={{ backgroundColor: "var(--accent-color)" }} />
-        <div className="absolute top-0 left-1/3 w-full h-full" style={{ backgroundColor: "var(--primary-color)" }} />
+      {/* Top Angled Border Strip */}
+      <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 20"
+        >
+          <polygon points="0,0 100,0 95,20 0,20" fill="#0B3558" />
+          <polygon points="0,0 20,0 15,20 0,20" fill="#F37021" />
+        </svg>
       </div>
 
       {/* Logo box (big) - width 60 */}
       <div className="hidden lg:block absolute left-0 top-20 z-30">
         <div className="w-60 bg-white p-6 rounded-br-2xl">
+        <div className="absolute top-0 left-0 w-full h-3 z-50 overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 20"
+        >
+          <polygon points="0,0 100,0 95,20 0,20" fill="#0B3558" />
+          <polygon points="0,0 20,0 15,20 0,20" fill="#F37021" />
+        </svg>
+        </div>
           <img src="/logo.png" alt="Goodwill Facade" className="w-48 h-auto object-contain mx-auto" />
         </div>
       </div>
@@ -110,6 +128,17 @@ const Hero = () => {
       {/* Mobile Logo - Top Left (Desktop-like positioning) */}
       <div className="lg:hidden absolute top-20 left-0 z-30">
         <div className="bg-white p-4 rounded-br-2xl shadow-lg">
+          <div className="absolute top-0 left-0 w-full h-5 z-50 overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 20"
+        >
+          <polygon points="0,0 100,0 95,20 0,20" fill="#0B3558" />
+          <polygon points="0,0 20,0 15,20 0,20" fill="#F37021" />
+        </svg>
+      </div>
           <img src="/logo.png" alt="Goodwill Facade" className="w-32 h-auto object-contain" />
         </div>
       </div>
@@ -138,43 +167,41 @@ const Hero = () => {
       </div>
 
       {/* Main Hero Area - responsive margins */}
-      <div className="relative w-full h-full lg:ml-30 md:ml-0 sm:ml-32 ml-32">
-        
+<div className="relative w-full h-full lg:ml-32">
+  {/* Background Mosaic Animation */}
+  <div
+    className="absolute inset-0 grid"
+    style={{
+      gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+      gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
+    }}
+  >
+    {Array.from({ length: grid.rows * grid.cols }).map((_, i) => {
+      const row = Math.floor(i / grid.cols);
+      const col = i % grid.cols;
 
-        {/* Background Mosaic Animation */}
-        <div
-          className="absolute inset-0 grid"
+      return (
+        <motion.div
+          key={`${currentSlide}-${i}`}
+          className="w-full h-full bg-cover bg-center"
           style={{
-            gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
-            gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
+            backgroundImage: `url(${slides[currentSlide].image})`,
+            backgroundPosition: `${(col / (grid.cols - 1)) * 100}% ${(row / (grid.rows - 1)) * 100}%`,
+            backgroundSize: `${grid.cols * 100}% ${grid.rows * 100}%`,
           }}
-        >
-          {Array.from({ length: grid.rows * grid.cols }).map((_, i) => {
-            const row = Math.floor(i / grid.cols);
-            const col = i % grid.cols;
+          initial={{ opacity: 0, scale: 1.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1.2,
+            delay: (row * grid.cols + col) * 0.015,
+          }}
+        />
+      );
+    })}
+  </div>
 
-            return (
-              <motion.div
-                key={`${currentSlide}-${i}`}
-                className="w-full h-full bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${slides[currentSlide].image})`,
-                  backgroundPosition: `${(col / (grid.cols - 1)) * 100}% ${(row / (grid.rows - 1)) * 100}%`,
-                  backgroundSize: `${grid.cols * 100}% ${grid.rows * 100}%`,
-                }}
-                initial={{ opacity: 0, scale: 1.3 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 1.2,
-                  delay: (row * grid.cols + col) * 0.015,
-                }}
-              />
-            );
-          })}
-        </div>
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Navigation Arrows - Mobile responsive positioning */}
         <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-4 md:space-x-8">

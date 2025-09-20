@@ -71,7 +71,7 @@ const Projects = () => {
         >
           Our Projects
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mt-4 px-4">
+        <p className="text-sm  sm:text-base text-gray-600 max-w-2xl mx-auto mt-4 px-4">
           From high-end homes to modern office spaces, each Brikly project is a
           reflection of quality, detail, and dedication.
         </p>
@@ -100,12 +100,9 @@ const Projects = () => {
              transform transition duration-500 
              group-hover:scale-110 active:scale-110"
 />
-
-
-
             {/* Overlay Text */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-semibold">
+            <div className="text-white absolute inset-0 flex items-center justify-center">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
                 {project.title}
               </h3>
             </div>
