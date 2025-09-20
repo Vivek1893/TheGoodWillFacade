@@ -4,23 +4,23 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-12 md:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-800 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 mb-4 md:mb-6">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Ready to transform your architectural vision? Contact us today for a
             consultation
           </p>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Form */}
-          <div className="p-8 bg-white border border-yellow-600/20 shadow-md rounded-lg">
+          <div className="p-6 sm:p-8 bg-white border border-yellow-600/20 shadow-md rounded-lg">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
               Send us a Message
             </h3>

@@ -1,28 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 @import "tailwindcss";
 
-
-
-
-
-body {
-  /* font-family: 'Marcellus'; */
-  font-family: "Overpass", sans-serif;
-  font-optical-sizing: auto;
-   font-style: normal;
-   overflow-x: hidden;
+/* CSS Variables for Professional Color Palette */
+:root {
+  --primary-color: #005A9C; /* Deep professional blue */
+  --accent-color: #FF7F00; /* Vibrant orange */
+  --text-dark: #333333; /* Dark grey for body text */
+  --background-light: #F8F9FA; /* Very light off-white */
+  --white: #FFFFFF;
 }
+
+
+
+
+
+/* Typography System */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
 html, body, * {
-  /* font-family: 'Marcellus'; */
-  font-family: "Overpass", sans-serif;
-  font-optical-sizing: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Paragraphs */
+p {
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+/* Call-to-Action Buttons */
+.btn-primary, .cta-button, button[class*="bg-orange"], button[class*="bg-blue"] {
+  background-color: var(--accent-color) !important;
+  color: var(--white) !important;
+}
+
+.btn-primary:hover, .cta-button:hover, button[class*="bg-orange"]:hover, button[class*="bg-blue"]:hover {
+  background-color: #E66F00 !important; /* Slightly darker orange on hover */
 }
 
 
 .gradient-text {
-  background: linear-gradient(90deg, #E86C0C 30%, #001F5F 60%, #C4C4C4 100%);
+  background: linear-gradient(90deg, var(--accent-color) 30%, var(--primary-color) 60%, #C4C4C4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -30,8 +59,7 @@ html, body, * {
 }
 
 .gradient-bg {
-  background: linear-gradient(90deg, #E86C0C 30%, #001F5F 60%, #C4C4C4 100%);
- 
+  background: linear-gradient(90deg, var(--accent-color) 30%, var(--primary-color) 60%, #C4C4C4 100%);
 }
 
 

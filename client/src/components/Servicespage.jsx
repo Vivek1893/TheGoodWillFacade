@@ -96,23 +96,23 @@ const ServicesAllInOne = () => {
   return (
     <div>
       {/* Icon-based Services */}
-      <section id="services" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-vnv-gray mb-6">
+      <section id="services" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-vnv-gray mb-4 md:mb-6">
               Our Services
             </h2>
-            <p className="text-xl text-vnv-gray-light max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-vnv-gray-light max-w-3xl mx-auto px-4">
               Comprehensive facade solutions designed to meet the diverse needs
               of modern architecture
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-x-20 lg:gap-y-20">
             {servicesIcons.map((service, index) => (
               <div
                 key={index}
-                className="p-8 min-h-[380px] hover:shadow-elegant transition-all duration-300 group cursor-pointer bg-white rounded-xl border border-orange-200 hover:border-blue-300"
+                className="p-6 sm:p-8 min-h-[300px] sm:min-h-[380px] hover:shadow-elegant transition-all duration-300 group cursor-pointer bg-white rounded-xl border border-orange-200 hover:border-blue-300"
               >
                 <div className="mb-6 transition-transform duration-300 group-hover:scale-110">
                   {/* Default orange, changes to blue on hover */}
@@ -120,10 +120,10 @@ const ServicesAllInOne = () => {
                     {service.icon}
                   </div>
                 </div>
-                <h3 className="text-2xl font-semibold text-vnv-gray mb-4  transition-colors group-hover:text-blue-900">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-vnv-gray mb-3 md:mb-4 transition-colors group-hover:text-blue-900">
                   {service.title}
                 </h3>
-                <p className="text-vnv-gray-light mt-10 leading-relaxed">
+                <p className="text-sm sm:text-base text-vnv-gray-light mt-6 md:mt-10 leading-relaxed">
                   {service.description}
                 </p>
               </div>

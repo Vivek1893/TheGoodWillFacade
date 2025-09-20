@@ -33,7 +33,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="px-7 md:px-24 py-16 bg-white text-center">
+    <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-16 bg-white text-center">
     
       {/* Text Section - Centered */}
       <div className="mb-12">
@@ -50,19 +50,19 @@ const Projects = () => {
         >
           Our Projects
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+        <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto mt-4 px-4">
           From high-end homes to modern office spaces, each Brikly project is a
           reflection of quality, detail, and dedication.
         </p>
       </div>
 
       {/* Image Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 md:mb-12">
         {projectData.map((project, index) => (
           <div
             key={project.id}
-            className={`relative overflow-hidden rounded-tl-4xl rounded-br-4xl group ${
-              index === 0 ? "md:col-span-2" : ""
+            className={`relative overflow-hidden rounded-tl-4xl rounded-br-4xl group h-[200px] sm:h-[250px] md:h-[300px] ${
+              index === 0 ? "sm:col-span-2 md:col-span-2" : ""
             }`}
           >
             {/* Image with dark overlay + zoom effect */}
@@ -74,7 +74,7 @@ const Projects = () => {
 
             {/* Overlay Text */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="text-white text-xl md:text-2xl font-semibold opacity-90 group-hover:opacity-100 transition">
+              <h3 className="text-white text-lg sm:text-xl md:text-2xl font-semibold opacity-90 group-hover:opacity-100 transition">
                 {project.title}
               </h3>
             </div>
