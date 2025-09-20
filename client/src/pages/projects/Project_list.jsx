@@ -71,8 +71,8 @@ const Projects = () => {
     },
      {
       id: 13,
-      title: "EVOQ",
-      img: "/Project_List_img/EVOQ.jpg",
+      title: "PREMALDEEP SQR ",
+      img: "/Project_List_img/PREMALDEEP SQR 1.jpg",
     },
      {
       id: 14,
@@ -117,98 +117,154 @@ const Projects = () => {
      {
       id: 22,
       title: "GOYAL ASPIRE - WINDOW & PODIUM FACADE",
-      img: "/Project_List_img/GOYAL ASPIRE - WINDOW & PODIUM FACADE.jpg",
+      img: "/Project_List_img/GOYAL ASPIRE - WINDOW & PODIUM FACADE.png",
     },
      {
       id: 23,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "GREEN FUSION HOTEL",
+      img: "/Project_List_img/GREEN FUSION HOTEL.jpg",
     },
      {
       id: 24,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "PARVATI BUSS HUB ",
+      img: "/Project_List_img/PARVATI BUSS HUB.jpg",
     },
      {
       id: 25,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "HARDIK PANCAHLA RCHITECT OFFICE",
+      img: "/Project_List_img/HARDIK PANCAHLA RCHITECT OFFICE 2.jpg",
     },
      {
       id: 26,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "HENY ARCADE - DABHOLI ",
+      img: "/Project_List_img/HENY ARCADE - DABHOLI 6.jpg",
     },
      {
       id: 27,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "HOSPITAL - AJANTA PAHRMA",
+      img: "/Project_List_img/HOSPITAL - AJANTA PAHRMA.jpg",
     },
      {
       id: 28,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "HOTEL SKYLIGHT",
+      img: "/Project_List_img/HOTEL SKYLIGHT 1.jpg",
     },
      {
       id: 29,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "INFINIA ",
+      img: "/Project_List_img/INFINIA 1.jpg",
     },
     {
       id: 30,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "KENORITA",
+      img: "/Project_List_img/KENORITA 2.jpg",
     },
      {
       id: 31,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "KISMAT",
+      img: "/Project_List_img/KISMAT 1.jpg",
     },
  {
       id: 32,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "KUSUM SCHOOL - LIFT SOIDER FACADE",
+      img: "/Project_List_img/KUSUM SCHOOL - LIFT SOIDER FACADE.jpg",
     },
  {
       id: 33,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "MAMTA CHARITABLE TRUST HOSPTL",
+      img: "/Project_List_img/MAMTA CHARITABLE TRUST HOSPTL.jpg",
     },
  {
       id: 34,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "MAPLE SKY DECK",
+      img: "/Project_List_img/MAPLE SKY DECK.jpg",
     },
  {
       id: 35,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "MAPLE SKYDECK 4 (2)",
+      img: "/Project_List_img/MAPLE SKYDECK 4 (2).jpg",
     },
  {
       id: 36,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "MAPLE SQR 2",
+      img: "/Project_List_img/MAPLE SQR 2.jpg",
     },
  {
       id: 37,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "MILESTONE INDIGO",
+      img: "/Project_List_img/MILESTONE INDIGO.jpg",
     },
  {
       id: 38,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "MONARCH - WEST VIEW 2",
+      img: "/Project_List_img/MONARCH - WEST VIEW 2.jpg",
     },
  {
       id: 39,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "Orbit11",
+      img: "/Project_List_img/Orbit11.jpg",
     },
  {
       id: 40,
-      title: "",
-      img: "/Project_List_img/.jpg",
+      title: "PARLE POINT A  - BHARUCH ",
+      img: "/Project_List_img/PARLE POINT A  - BHARUCH 1.jpg",
     },
+     {
+      id: 41,
+      title: " RESTURANT 1",
+      img: "/Project_List_img/RESTURANT 1.jpg",
+    },
+     {
+      id: 42,
+      title: "SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2 ",
+      img: "/Project_List_img/SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2.jpg",
+    },
+     {
+      id: 43,
+      title: "SHRADDHA HOSPITAL 1 ",
+      img: "/Project_List_img/SHRADDHA HOSPITAL 1.jpg",
+    },
+     {
+      id: 44,
+      title: "SONOROUS - GLASS CEILING SKYLIGHT",
+      img: "/Project_List_img/SONOROUS - GLASS CEILING SKYLIGHT.jpg",
+    },
+     {
+      id: 45,
+      title: " SUN TRADE CENTER",
+      img: "/Project_List_img/SUN TRADE CENTER.jpg",
+    },
+     {
+      id: 46,
+      title: " TERRACE GLASS SKYLIGHT",
+      img: "/Project_List_img/TERRACE GLASS SKYLIGHT.jpg",
+    },
+     {
+      id: 47,
+      title: "TERRACE GLASS SKYLIGHT ",
+      img: "/Project_List_img/TERRACE GLASS SKYLIGHT.jpg",
+    },
+     {
+      id: 48,
+      title: "VELOCITY - GLASS FACADE",
+      img: "/Project_List_img/VELOCITY - GLASS FACADE.jpg",
+    },
+     {
+      id: 49,
+      title: "VIVIANA - VESU 9 ",
+      img: "/Project_List_img/VIVIANA - VESU 9.jpg",
+    },
+     {
+      id: 50,
+      title: " WC - COMMON  LOUVER",
+      img: "/Project_List_img/WC - COMMON  LOUVER.jpg",
+    },
+     {
+      id: 51,
+      title: "ZIRCON ARAENA 1 ",
+      img: "/Project_List_img/ZIRCON ARAENA 1.jpg",
+    },
+
 
 
 
@@ -219,7 +275,7 @@ const Projects = () => {
       {/* 🔹 Hero Section */}
       <div className="relative w-full h-[60vh]">
         <img
-          src="/images/slide3.jpg"
+          src="/Project_List_img/PARLE POINT A  - BHARUCH 1.jpg"
           alt="Glass Railing System"
           className="w-full h-full object-cover"
         />
@@ -245,12 +301,12 @@ const Projects = () => {
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-94 object-cover brightness-75 group-hover:brightness-100 transition-transform duration-500 transform group-hover:scale-105"
+                className="w-full h-120 object-cover brightness-75 group-hover:brightness-100 transition-transform duration-500 transform group-hover:scale-105"
               />
 
               {/* Overlay Text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-white text-xl md:text-2xl font-semibold opacity-90 group-hover:opacity-100 transition">
+             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <h3 className="text-white text-xl md:text-2xl font-semibold">
                   {project.title}
                 </h3>
               </div>
