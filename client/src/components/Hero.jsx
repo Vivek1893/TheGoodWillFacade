@@ -6,22 +6,28 @@ const Hero = () => {
 
   const slides = [
     {
-      image: "/images/slide1.jpg",
+      image: "/hero1.jpg",
       title: "ACP CLADDING",
-      description:
-        "ACP Clading is the architecture of a new generation, a building that exists not only in the dimension of space, but also in the dimension of time and communication.",
     },
     {
-      image: "/images/slide2.jpg",
+      image: "/hero2.jpg",
       title: "STRUCTURAL GLAZING",
-      description:
-        "Modern structural glazing solutions that combine aesthetics with functionality, creating stunning transparent facades.",
+     
     },
     {
-      image: "/images/slide3.jpg",
+      image: "/hero3.jpg",
       title: "ALUMINUM SYSTEMS",
-      description:
-        "High-performance aluminum facade systems designed for durability, energy efficiency, and architectural excellence.",
+     
+    },
+     {
+      image: "/hero4.jpg",
+      title: "ALUMINUM SYSTEMS",
+     
+    },
+     {
+      image: "/hero5.jpg",
+      title: "ALUMINUM SYSTEMS",
+     
     },
   ];
 
@@ -239,7 +245,7 @@ const Hero = () => {
         </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Navigation Arrows - Mobile responsive positioning */}
         <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-4 md:space-x-8">
@@ -247,7 +253,7 @@ const Hero = () => {
             onClick={prevSlide}
             className="text-white hover:text-orange-400 transition-colors group"
           >
-            <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-2 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
+            <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-1 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
               <svg
                 className="w-4 h-4 md:w-5 md:h-5"
                 fill="none"
@@ -271,7 +277,7 @@ const Hero = () => {
             onClick={nextSlide}
             className="text-white hover:text-orange-400 transition-colors group"
           >
-            <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-2 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
+            <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-1 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
               <span className="text-xs md:text-sm font-medium tracking-wider hidden sm:block">
                 NEXT
               </span>
@@ -304,17 +310,12 @@ const Hero = () => {
                 transition={{ duration: 1 }}
               >
                 <h1
-                  className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 tracking-wider leading-tight"
+                  className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6 tracking-wider leading-tight"
                   style={{ color: "white" }}
                 >
                   {slides[currentSlide].title}
                 </h1>
-                {/* <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-2" style={{ color: 'var(--accent-color)' }}>
-                  {slides[currentSlide].description}
-                </p> */}
-                {/* <button className="cta-button px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                  Look More →
-                </button> */}
+               
               </motion.div>
             </AnimatePresence>
           </div>
