@@ -136,14 +136,14 @@ const Residential = () => {
       </div>
 
       {/* 🔹 Map Section */}
-      <div className="w-full h-[500px] mt-10">
+      {/* <div className="w-full h-[500px] mt-10">
         <MapContainer
-          center={[19.076, 72.8777]} // Mumbai center
+          center={[19.076, 72.8777]}
           zoom={11}
           scrollWheelZoom={false}
           className="h-full w-full rounded-lg shadow-lg"
         >
-          {/* Satellite Layer */}
+         
           <TileLayer
             url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
             subdomains={["mt0", "mt1", "mt2", "mt3"]}
@@ -167,7 +167,7 @@ const Residential = () => {
               )
           )}
         </MapContainer>
-      </div>
+      </div> */}
     </div>
   );
 };
