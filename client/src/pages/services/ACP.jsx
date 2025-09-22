@@ -12,7 +12,7 @@ const ACPCladding = () => {
           className="w-full h-full object-cover brightness-75"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          <h3 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-300 to-blue-900 tracking-wide drop-shadow-lg animate-fadeIn">
+          <h3 className="text-4xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-300 to-blue-900 tracking-wide drop-shadow-lg animate-fadeIn">
             ACP CLADDING
           </h3>
         </div>

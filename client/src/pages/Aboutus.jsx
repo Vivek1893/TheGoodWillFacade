@@ -19,7 +19,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-3xl md:text-5xl font-bold mb-4">
+          <h3 className="text-xl md:text-5xl font-bold mb-4">
             About Thegoodwill
           </h3>
           {/* <p className="text-base md:text-xl">
