@@ -15,3 +15,5 @@
 .group:hover .zoom-hover {
   animation: zoomIn 8s linear infinite alternate; /* smooth infinite zoom */
 }
+
+

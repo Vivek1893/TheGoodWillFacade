@@ -73,7 +73,7 @@ const Hero = () => {
 
       {/* Logo box (big) - width 60 */}
       <div className="hidden lg:block absolute left-0 top-20 z-30">
-        <div className="relative w-60 bg-white p-6  border-r-10 border-[#0B3558]">
+        <div className="relative w-60 bg-white p-6   border-r-10 border-[#0B3558]">
           {/* 🔹 Bottom half blue border */}
           <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558] "></div>
 
@@ -98,7 +98,7 @@ const Hero = () => {
       </div>
 
       {/* Vertical text between logo and social (transparent background so hero shows through around it) */}
-      <div className="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 z-30 pointer-events-none">
+      <div className="hidden lg:block absolute left-0 top-[60%] transform -translate-y-1/2 z-50 pointer-events-none">
         <div
           className="text-gray-400 text-sm font-medium tracking-wider"
           style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
@@ -108,13 +108,13 @@ const Hero = () => {
       </div>
 
       {/* Social box (narrow) - width 40 */}
-    <div className="hidden lg:block absolute left-0 bottom-0 z-30">
-  <div className="relative w-30 bg-white p-8 shadow-2xl h-98 flex flex-col justify-end items-center">
-    {/* 🔹 Right-side border */}
-    <div className="absolute top-0 bottom-0 -right-2 w-[10px] bg-[#F37021]"></div>
+      <div className="hidden lg:block absolute left-0 bottom-0 z-30">
+        <div className="relative w-30 bg-white p-8 shadow-2xl h-98 flex flex-col justify-end items-center">
+          {/* 🔹 Right-side border */}
+          <div className="absolute top-0 bottom-0 -right-2 w-[10px] bg-[#F37021]"></div>
 
-    {/* 🔹 Bottom border (left to right) */}
-    <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#F37021]"></div>
+          {/* 🔹 Bottom border (left to right) */}
+          <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#F37021]"></div>
 
           <div className="flex flex-col items-center space-y-4">
             <a

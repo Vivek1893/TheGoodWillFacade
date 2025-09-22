@@ -29,7 +29,7 @@ const Navbar = () => {
       <div
         className={`transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg rounded-b-3xl mx-2 md:mx-4 mt-1 md:mt-2"
+            ? "bg-white/95 backdrop-blur-md shadow-lg rounded-b-3xl mx-2 md:mx-4 mt-1 md:mt-2 border-b-4 border-b-[#F37021] "
             : "bg-white/95 backdrop-blur-md shadow-lg"
         }`}
       >

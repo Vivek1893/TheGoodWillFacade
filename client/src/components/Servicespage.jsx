@@ -40,13 +40,13 @@ const ServicesAllInOne = () => {
       description:
         "Structural Glazing is an advanced facade solution that uses high-strength glass bonded with aluminum frames. It provides a seamless, sleek, and modern exterior while ensuring natural light, energy efficiency, and weather resistance for commercial and residential buildings.",
     },
-     {
+    {
       icon: <Zap className="h-10 w-10 text-vnv-gold" />,
       title: "Skylight",
       description:
         "A skylight is a window set into a roof or ceiling that brings natural sunlight into a space, making rooms brighter and more open. It reduces the need for artificial lighting and can improve ventilation if designed to open. Skylights come in various styles and materials, offering both aesthetic and energy-saving benefits.",
     },
-     {
+    {
       icon: <Zap className="h-10 w-10 text-vnv-gold" />,
       title: "TensileFabrics",
       description:
@@ -109,20 +109,41 @@ const ServicesAllInOne = () => {
             {servicesIcons.map((service, index) => (
               <motion.div
                 key={index}
-                className="p-6 sm:p-8 min-h-[300px] sm:min-h-[380px] hover:shadow-elegant transition-all duration-300 group cursor-pointer bg-white rounded-xl border border-orange-200 hover:border-blue-300"
+                className="relative group cursor-pointer bg-white p-6 sm:p-8 min-h-[300px] sm:min-h-[380px] transition-all duration-300 shadow-lg hover:shadow-xl"
                 variants={cardVariants}
+                style={{
+                  // Apply border radius only to top-left and bottom-right corners
+                  borderTopLeftRadius: "3rem",
+                  borderBottomRightRadius: "3rem",
+                  // Create gradient border using pseudo-elements
+                  position: "relative",
+                  overflow: "hidden",
+                }}
               >
-                <div className="mb-6 transition-transform duration-300 group-hover:scale-110">
-                  <div className="text-orange-500 group-hover:text-blue-900">
-                    {service.icon}
+                {/* Gradient Border Effect using pseudo-element */}
+                <div 
+                  className="absolute inset-0 rounded-tl-[3rem] rounded-br-[3rem] p-[5px]"
+                  style={{
+                    background: "linear-gradient(135deg, #0B3558, #F37021)",
+                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                  }}
+                ></div>
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <div className="text-orange-500 group-hover:text-blue-900">
+                      {service.icon}
+                    </div>
                   </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-vnv-gray mb-3 md:mb-4 transition-colors group-hover:text-blue-900">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-vnv-gray-light mt-6 md:mt-10 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-vnv-gray mb-3 md:mb-4 transition-colors group-hover:text-blue-900">
-                  {service.title}
-                </h3>
-                <p className="text-sm sm:text-base text-vnv-gray-light mt-6 md:mt-10 leading-relaxed">
-                  {service.description}
-                </p>
               </motion.div>
             ))}
           </motion.div>

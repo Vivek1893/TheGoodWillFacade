@@ -138,16 +138,16 @@ const About = () => {
             </div>
 
             {/* Right Images */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 ">
               <img
                 src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=500&q=80"
                 alt="Team discussion"
-                className="rounded-2xl object-cover w-full h-48 md:h-80 lg:h-[400px]"
+                className=" object-cover w-full h-48 md:h-80 lg:h-[400px] rounded-tl-4xl rounded-br-4xl"
               />
               <img
                 src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=80"
                 alt="Financial planning meeting"
-                className="rounded-2xl object-cover w-full h-48 md:h-80 lg:h-[400px] mt-6 md:mt-12 lg:mt-20"
+                className=" object-cover w-full h-48 md:h-80 lg:h-[400px] mt-6 md:mt-12 lg:mt-20 rounded-tl-4xl rounded-br-4xl"
               />
             </div>
           </div>
@@ -163,7 +163,7 @@ const About = () => {
               <img
                 src="/Our-Vision.webp"
                 alt="Vision"
-                className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-lg"
+                className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-tl-4xl rounded-br-4xl"
               />
               <h3 className="text-xl md:text-2xl font-bold text-blue-800 uppercase tracking-wide">
                 Our Vision
@@ -181,7 +181,7 @@ const About = () => {
               <img
                 src="/ourmission.webp"
                 alt="Mission"
-                className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-lg"
+                className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-tl-4xl rounded-br-4xl"
               />
               <h3 className="text-xl md:text-2xl font-bold text-blue-800 uppercase tracking-wide">
                 Our Mission
@@ -199,7 +199,7 @@ const About = () => {
               <img
                 src="/ourvalue.webp"
                 alt="Core Values"
-                className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-lg"
+                className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-tl-4xl rounded-br-4xl"
               />
               <h3 className="text-xl md:text-2xl font-bold text-blue-800 uppercase tracking-wide">
                 Core Values
