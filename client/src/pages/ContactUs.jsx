@@ -1,23 +1,38 @@
 // src/components/ContactSection.jsx
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+
 
 const ContactSection = () => {
   return (
     <section id="contact" className="bg-gray-50">
       {/* Hero Banner */}
-      <div className="relative w-full h-[60vh]">
+      <div className="relative w-full h-[75vh]">
         <img
           src="/contact us.webp"
           alt="Glass Railing System"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" /> {/* Dark Overlay */}
+       
         {/* Centered Heading */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
-            Contact Us
-          </h3>
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
+          >
+            <span className="text-white"> Contact </span>{" "}
+            <span className="text-orange-400">Us</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"
+          ></motion.div>
         </div>
       </div>
 

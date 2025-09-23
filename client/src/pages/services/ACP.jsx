@@ -23,7 +23,7 @@ const ACPCladding = () => {
 
   const reasons = [
     {
-      title: "9 REASONS TO CHOOSE US",
+      title: " REASONS TO CHOOSE US",
       icon: <FaCheck className="text-orange-400" />,
       items: ["Impressive Aesthetics", "Persistent Durability", "Innovative Technology"]
     },
@@ -66,10 +66,10 @@ const ACPCladding = () => {
   return (
     <div className="w-full font-sans bg-white">
       {/* 🔹 Hero Section */}
-      <section className="relative w-full h-screen max-h-[85vh] overflow-hidden">
+      <section className="relative w-full h-screen max-h-[75vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-          src="/images/slide3.jpg"
+          src="/servicesimg/ser1.png"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />
@@ -80,7 +80,8 @@ const ACPCladding = () => {
             transition={{ duration: 0.7 }}
             className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
           >
-            ACP <span className="text-orange-400">CLADDING</span>
+            <span className="text-white"> ACP </span>{" "}
+             <span className="text-orange-400">CLADDING</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -150,7 +151,7 @@ const ACPCladding = () => {
               <div className="absolute -inset-2  opacity-70 rounded-2xl blur-md group-hover:opacity-100 transition duration-300"></div>
               <div className="relative rounded-tl-4xl rounded-br-4xl  overflow-hidden">
                 <img
-                  src="/images/ser1.png"
+                           src="/hero5.jpg"
                   alt="ACP Example"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />

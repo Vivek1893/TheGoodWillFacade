@@ -29,6 +29,11 @@ const Hero = () => {
       title: "ALUMINUM SYSTEMS",
      
     },
+     {
+      image: "/hero6.webp",
+      title: "ALUMINUM SYSTEMS",
+     
+    },
   ];
 
   // Auto-advance slides
@@ -245,7 +250,7 @@ const Hero = () => {
         </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        {/* <div className="absolute inset-0 bg-black/50"></div> */}
 
         {/* Navigation Arrows - Mobile responsive positioning */}
         <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-4 md:space-x-8">
@@ -309,12 +314,12 @@ const Hero = () => {
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 1 }}
               >
-                <h1
+                {/* <h1
                   className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6 tracking-wider leading-tight"
                   style={{ color: "white" }}
                 >
                   {slides[currentSlide].title}
-                </h1>
+                </h1> */}
                
               </motion.div>
             </AnimatePresence>

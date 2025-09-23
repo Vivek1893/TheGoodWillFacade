@@ -5,28 +5,31 @@ const About = () => {
   return (
     <>
       {/* 🔹 About Banner */}
-      <section
-        className="relative w-full h-[50vh] md:h-[60vh] flex items-center justify-center text-white"
-        style={{
-          backgroundImage: "url('/aboutimg.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <motion.div
-          className="relative z-10 text-center px-4 max-w-3xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3 className="text-xl md:text-5xl font-bold mb-4">
-            About Thegoodwill
-          </h3>
-          {/* <p className="text-base md:text-xl">
-            Discover our story, mission, and commitment to excellence in
-            professional services.
-          </p> */}
-        </motion.div>
+      <section className="relative w-full h-screen max-h-[75vh] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
+        <img
+          src="/hero2.jpg"
+          alt="ACP Cladding"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
+          >
+            <span className="text-white"> About </span>{" "}
+            <span className="text-orange-400">Us</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"
+          ></motion.div>
+        </div>
       </section>
 
       {/* 🔹 WHO WE ARE */}

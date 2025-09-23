@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 
 const Projects = () => {
   const projectData = [
@@ -273,20 +275,32 @@ const Projects = () => {
   return (
     <div className="w-full">
       {/* 🔹 Hero Section */}
-      <div className="relative w-full h-[60vh]">
+      <section className="relative w-full h-screen max-h-[75vh] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-          src="/Project_List_img/PARLE POINT A  - BHARUCH 1.jpg"
-          alt="Glass Railing System"
+         src="/Project_List_img/PARLE POINT A  - BHARUCH 1.jpg"
+          alt="ACP Cladding"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" /> {/* Dark Overlay */}
-        {/* Centered Heading */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide">
-            Our Projects List
-          </h3>
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
+          >
+            <span className="text-white"> Project </span>{" "}
+            <span className="text-orange-400">Lists</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"
+          ></motion.div>
         </div>
-      </div>
+      </section>
       <section className="px-7 md:px-24 py-16 bg-white text-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           {projectData.map((project) => (
