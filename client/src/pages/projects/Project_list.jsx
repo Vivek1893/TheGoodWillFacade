@@ -7,265 +7,221 @@ const Projects = () => {
   const projectData = [
     {
       id: 1,
-      title: "ACP CLADDING",
-      img: "/Project_List_img/ACP CLADDING.jpg",
+      title: "AMBIT",
+      img: "/Project_List_img/AMBIT 2.webp",
      
     },
     {
       id: 2,
-      title: "ALASKAA",
-      img: "/Project_List_img/ALASKAA 2.jpg",
+      title: "GOYAL ASPIRE - WINDOW & PODIUM FACADE",
+      img: "/Project_List_img/GOYAL ASPIRE - WINDOW & PODIUM FACADE.webp",
     },
     {
       id: 3,
-      title: "ALUMIN GLASS RAILING",
-      img: "/Project_List_img/ALUMIN GLASS RAILING.jpg",
+      title: "PARLE POINT A  - BHARUCH ",
+      img: "/Project_List_img/PARLE POINT A  - BHARUCH 1.webp",
     },
     {
       id: 4,
-      title: "ALUMIN. LOUVERS - HOSPITAL",
-     img: "/Project_List_img/ALUMIN. LOUVERS - HOSPITAL.jpg",
+      title: "POLO ELEVATE",
+     img: "/Project_List_img/POLO ELEVATE.webp",
     },
     {
       id: 5,
-      title: "AMBIT 2",
-      img: "/Project_List_img/AMBIT 2.jpg",
+      title: "SAI AASHISH TRADE CENTRE ",
+      img: "/Project_List_img/SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2.webp",
     },
     {
       id: 6,
-      title: "ANAYA BUSSINESS HUB",
-    img: "/Project_List_img/ANAYA BUSSINESS HUB.jpg",
+      title: "SAI SIGNATURE ",
+    img: "/Project_List_img/SAI SIGNATURE 1.webp",
     },
     {
       id: 7,
-      title: "ANTM TEXTILE MARKET 1",
-      img: "/Project_List_img/ANTM TEXTILE MARKET 1.jpg",
+      title: "SHIVEN ARISE ",
+      img: "/Project_List_img/SHIVEN ARISE.webp",
     },
     {
       id: 8,
-      title: "ATAHARV LIFESTYLE 1",
-     img: "/Project_List_img/ATAHARV LIFESTYLE 1.jpg",
+      title: "SHREE NILKANTH BUSS HUB",
+     img: "/Project_List_img/SHREE NILKANTH BUSS HUB 11 (1).webp",
     },
     {
       id: 9,
-      title: "CANAL POINT 2",
-      img: "/Project_List_img/CANAL POINT 2.jpg",
+      title: "SKY RISE",
+      img: "/Project_List_img/SKY RISE 2.webp",
     },
     {
       id: 10,
-      title: "CITY CENTRE - ALUMN RAILING",
-      img: "/Project_List_img/CITY CENTRE - ALUMN RAILING.jpg",
+      title: "SPERANZA",
+      img: "/Project_List_img/SPERANZA -  PAL 2.webp",
     },
      {
       id: 11,
-      title: "CROSSROADS 2",
-      img: "/Project_List_img/CROSSROADS 2.jpg",
-    },
-     {
-      id: 11,
-      title: "DGU GLAZING - HOSPITAL",
-      img: "/Project_List_img/DGU GLAZING - HOSPITAL.jpg",
+      title: "STONE CLADDING",
+      img: "/Project_List_img/STONE CLADDING.webp",
     },
      {
       id: 12,
-      title: "DRA BHARUCH BUSPORT",
-      img: "/Project_List_img/DRA BHARUCH BUSPORT.jpg",
+      title: "SUN TRADE ",
+      img: "/Project_List_img/SUN TRADE - FRONT.webp",
     },
      {
       id: 13,
-      title: "PREMALDEEP SQR ",
-      img: "/Project_List_img/PREMALDEEP SQR 1.jpg",
+      title: "SUN TRADE CORBER",
+      img: "/Project_List_img/SUN TRADE CORBER.webp",
     },
      {
       id: 14,
-      title: "FB_IMG_1754914748137",
-      img: "/Project_List_img/FB_IMG_1754914748137.jpg",
+      title: "SUN TRADE SKY VIEW ",
+      img: "/Project_List_img/SUN TRADE SKY VIEW.webp",
     },
      {
       id: 15,
-      title: "FLOORING GLASS PANEL 1",
-      img: "/Project_List_img/FLOORING GLASS PANEL 1.jpg",
+      title: "SUN TRADE",
+      img: "/Project_List_img/SUN TRADE.webp",
     },
+    
      {
       id: 16,
-      title: "FORTUNE CORNER VIEW",
-      img: "/Project_List_img/FORTUNE CORNER VIEW.jpg",
+      title: "VELOCITY ",
+      img: "/Project_List_img/VELOCITY 1.webp",
     },
-     {
+    {
       id: 17,
-      title: "FORTUNE LANDMARK 2",
-      img: "/Project_List_img/FORTUNE LANDMARK 2.jpg",
+      title: "VIVIANA - VESU ",
+      img: "/Project_List_img/VIVIANA - VESU 9.webp",
     },
-     {
+    {
       id: 18,
-      title: "GARDEN ENTRANCE",
-      img: "/Project_List_img/GARDEN ENTRANCE.jpg",
+      title: "WESTERN ARENA ",
+      img: "/Project_List_img/WESTERN ARENA 1.webp",
     },
-     {
+    {
       id: 19,
-      title: "GAZEBO IN ALUMIN. LOUVERS",
-      img: "/Project_List_img/GAZEBO IN ALUMIN. LOUVERS.jpg",
+      title: "ZIRCON ARENEA ",
+      img: "/Project_List_img/ZIRCON ARENEA 1.webp",
     },
-     {
+    {
       id: 20,
-      title: "GLASS PYRAMID",
-      img: "/Project_List_img/GLASS PYRAMID.jpg",
+      title: "ZIRCON PLUS -  KATARAGAM ",
+      img: "/Project_List_img/ZIRCON PLUS -  KATARAGAM 1 (1).webp",
     },
-     {
+    {
       id: 21,
-      title: "GOVARDHAN SQAURE - MPTA VARCHA (SUDAMA CHOWK) 1",
-      img: "/Project_List_img/GOVARDHAN SQAURE - MPTA VARCHA (SUDAMA CHOWK) 1.jpg",
+      title: "ANAYA BUSSINESS HUB",
+      img: "/Project_List_img/ANAYA BUSSINESS HUB.webp",
     },
-     {
+    {
       id: 22,
-      title: "GOYAL ASPIRE - WINDOW & PODIUM FACADE",
-      img: "/Project_List_img/GOYAL ASPIRE - WINDOW & PODIUM FACADE.png",
+      title: "ANTM TEXTILE MARKET",
+      img: "/Project_List_img/ANTM TEXTILE MARKET.webp",
     },
-     {
+
+    {
       id: 23,
-      title: "GREEN FUSION HOTEL",
-      img: "/Project_List_img/GREEN FUSION HOTEL.jpg",
+      title: "CANAL POINT ",
+      img: "/Project_List_img/CANAL POINT 2.webp",
     },
-     {
+    {
       id: 24,
-      title: "PARVATI BUSS HUB ",
-      img: "/Project_List_img/PARVATI BUSS HUB.jpg",
+      title: "CITY CENTRE - ALUMN RAILING",
+      img: "/Project_List_img/CITY CENTRE - ALUMN RAILING.webp",
     },
-     {
+    {
       id: 25,
-      title: "HARDIK PANCAHLA RCHITECT OFFICE",
-      img: "/Project_List_img/HARDIK PANCAHLA RCHITECT OFFICE 2.jpg",
+      title: "CROSSROADS ",
+      img: "/Project_List_img/CROSSROADS 2.webp",
     },
-     {
+    {
       id: 26,
-      title: "HENY ARCADE - DABHOLI ",
-      img: "/Project_List_img/HENY ARCADE - DABHOLI 6.jpg",
+      title: "SUN TRADE CENTER",
+      img: "/Project_List_img/SUN TRADE CENTER.webp",
     },
-     {
+    {
       id: 27,
-      title: "HOSPITAL - AJANTA PAHRMA",
-      img: "/Project_List_img/HOSPITAL - AJANTA PAHRMA.jpg",
+      title: "DGU GLAZING - HOSPITAL.",
+      img: "/Project_List_img/DGU GLAZING - HOSPITAL.webp",
     },
-     {
+    {
       id: 28,
-      title: "HOTEL SKYLIGHT",
-      img: "/Project_List_img/HOTEL SKYLIGHT 1.jpg",
+      title: "EVOQ",
+      img: "/Project_List_img/EVOQ.webp",
     },
-     {
+    {
       id: 29,
-      title: "INFINIA ",
-      img: "/Project_List_img/INFINIA 1.jpg",
+      title: "FORTUNE CORNER VIEW",
+      img: "/Project_List_img/FORTUNE CORNER VIEW.webp",
     },
     {
       id: 30,
-      title: "KENORITA",
-      img: "/Project_List_img/KENORITA 2.jpg",
+      title: "GREEN FUSION HOTEL",
+      img: "/Project_List_img/GREEN FUSION HOTEL.webp",
+    },
+    {
+      id: 31,
+      title: "HENY ARCADE - DABHOLI ",
+      img: "/Project_List_img/HENY ARCADE - DABHOLI 6.webp",
+    },
+
+    {
+      id: 32,
+      title: "INFINIA .",
+      img: "/Project_List_img/INFINIA 1.webp",
+    },
+    {
+      id: 33,
+      title: "MAPLE SKY DECK",
+      img: "/Project_List_img/MAPLE SKY DECK.webp",
+    },
+    {
+      id: 35,
+      title: "MAPLE SQR ",
+      img: "/Project_List_img/MAPLE SQR 2.webp",
+    },
+    {
+      id: 36,
+      title: "MILESTONE INDIGO",
+      img: "/Project_List_img/MILESTONE INDIGO.webp",
+    },
+    {
+      id: 37,
+      title: "MILESTONE",
+      img: "/Project_List_img/MILESTONE.webp",
+    },
+    {
+      id: 38,
+      title: "PARLE POINT A - BHARUCH ",
+      img: "/Project_List_img/PARLE POINT A  - BHARUCH 1.webp",
+    },
+    {
+      id: 39,
+      title: "PARLE POINT A",
+      img: "/Project_List_img/PARLE POINT A.webp",
     },
      {
-      id: 31,
-      title: "KISMAT",
-      img: "/Project_List_img/KISMAT 1.jpg",
-    },
- {
-      id: 32,
-      title: "KUSUM SCHOOL - LIFT SOIDER FACADE",
-      img: "/Project_List_img/KUSUM SCHOOL - LIFT SOIDER FACADE.jpg",
-    },
- {
-      id: 33,
-      title: "MAMTA CHARITABLE TRUST HOSPTL",
-      img: "/Project_List_img/MAMTA CHARITABLE TRUST HOSPTL.jpg",
-    },
- {
-      id: 34,
-      title: "MAPLE SKY DECK",
-      img: "/Project_List_img/MAPLE SKY DECK.jpg",
-    },
- {
-      id: 35,
-      title: "MAPLE SKYDECK 4 (2)",
-      img: "/Project_List_img/MAPLE SKYDECK 4 (2).jpg",
-    },
- {
-      id: 36,
-      title: "MAPLE SQR 2",
-      img: "/Project_List_img/MAPLE SQR 2.jpg",
-    },
- {
-      id: 37,
-      title: "MILESTONE INDIGO",
-      img: "/Project_List_img/MILESTONE INDIGO.jpg",
-    },
- {
-      id: 38,
-      title: "MONARCH - WEST VIEW 2",
-      img: "/Project_List_img/MONARCH - WEST VIEW 2.jpg",
-    },
- {
-      id: 39,
-      title: "Orbit11",
-      img: "/Project_List_img/Orbit11.jpg",
-    },
- {
       id: 40,
-      title: "PARLE POINT A  - BHARUCH ",
-      img: "/Project_List_img/PARLE POINT A  - BHARUCH 1.jpg",
+      title: "POLO ELEVATE",
+      img: "/Project_List_img/POLO ELEVATE.webp",
     },
      {
       id: 41,
-      title: " RESTURANT 1",
-      img: "/Project_List_img/RESTURANT 1.jpg",
+      title: "SHOWER CUBICALS",
+      img: "/Project_List_img/SHOWER CUBICALS.webp",
     },
      {
       id: 42,
-      title: "SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2 ",
-      img: "/Project_List_img/SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2.jpg",
+      title: "SPIDER FACADE",
+      img: "/Project_List_img/SPIDER FACADE.webp",
     },
      {
       id: 43,
-      title: "SHRADDHA HOSPITAL 1 ",
-      img: "/Project_List_img/SHRADDHA HOSPITAL 1.jpg",
+      title: "ZIRCON ",
+      img: "/Project_List_img/ZIRCON 2.webp",
     },
-     {
-      id: 44,
-      title: "SONOROUS - GLASS CEILING SKYLIGHT",
-      img: "/Project_List_img/SONOROUS - GLASS CEILING SKYLIGHT.jpg",
-    },
-     {
-      id: 45,
-      title: " SUN TRADE CENTER",
-      img: "/Project_List_img/SUN TRADE CENTER.jpg",
-    },
-     {
-      id: 46,
-      title: " TERRACE GLASS SKYLIGHT",
-      img: "/Project_List_img/TERRACE GLASS SKYLIGHT.jpg",
-    },
-     {
-      id: 47,
-      title: "TERRACE GLASS SKYLIGHT ",
-      img: "/Project_List_img/TERRACE GLASS SKYLIGHT.jpg",
-    },
-     {
-      id: 48,
-      title: "VELOCITY - GLASS FACADE",
-      img: "/Project_List_img/VELOCITY - GLASS FACADE.jpg",
-    },
-     {
-      id: 49,
-      title: "VIVIANA - VESU 9 ",
-      img: "/Project_List_img/VIVIANA - VESU 9.jpg",
-    },
-     {
-      id: 50,
-      title: " WC - COMMON  LOUVER",
-      img: "/Project_List_img/WC - COMMON  LOUVER.jpg",
-    },
-     {
-      id: 51,
-      title: "ZIRCON ARAENA 1 ",
-      img: "/Project_List_img/ZIRCON ARAENA 1.jpg",
-    },
+
+
+    
 
 
 
@@ -278,7 +234,7 @@ const Projects = () => {
       <section className="relative w-full h-screen max-h-[75vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-         src="/Project_List_img/PARLE POINT A  - BHARUCH 1.jpg"
+         src="/hero2.jpg"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />

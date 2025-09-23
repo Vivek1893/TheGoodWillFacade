@@ -151,7 +151,7 @@ const Tensile_Fabrics = () => {
               <div className="absolute -inset-2  opacity-70 rounded-2xl blur-md group-hover:opacity-100 transition duration-300"></div>
               <div className="relative rounded-tl-4xl rounded-br-4xl  overflow-hidden">
                 <img
-                           src="/hero5.jpg"
+                           src="/"
                   alt="ACP Example"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />

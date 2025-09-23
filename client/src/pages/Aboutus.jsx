@@ -20,7 +20,7 @@ const About = () => {
             className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
           >
             <span className="text-white"> About </span>{" "}
-            <span className="text-orange-400">Us</span>
+            <span className="text-orange-400">The Goodwill Facades</span>
           </motion.h1>
 
           <motion.div
