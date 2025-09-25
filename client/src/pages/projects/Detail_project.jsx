@@ -15,46 +15,128 @@ const markerIcon = new L.Icon({
 
 const projects = [
   {
-    id: "godrej-platinum",
-    name: "Godrej Platinum",
-    img: "/images/project1.webp",
-    path: "/projects/Detail_project/GodrejPlatinum",
+    id: "AMBIT",
+    name: "AMBIT",
+    img: "/project_detail_img/AMBIT 2.webp",
+    path: "/projects/Ambit",
     lat: 19.075983,
     lng: 72.877655,
   },
   {
-    id: "avana",
-    name: "Avana",
-    img: "/images/project2.webp",
-    path: "/projects/avana",
+    id: "GoyalAspire",
+    name: "GOYAL ASPIRE ",
+    img: "/project_detail_img/GOYAL ASPIRE - WINDOW & PODIUM FACADE.webp",
+    path: "/projects/goyal-aspire",
     lat: 19.2183,
     lng: 72.9781,
   },
   {
-    id: "indiabulls-sky",
-    name: "Indiabulls Sky",
-    img: "/images/project3.webp",
+    id: "PARLE POINT A  - BHARUCH 1",
+    name: "PARLE POINT A ",
+    img: "/project_detail_img/PARLE POINT A  - BHARUCH 1.webp",
+     path: "/projects/parle",
     lat: 18.933,
     lng: 72.822,
   },
-  // 👉 baki projects me bhi lat/lng dal do
-  { id: "avighna", name: "One Avighna Park", img: "/images/project4.webp" },
-  { id: "oberoi", name: "Oberoi 360 West", img: "/images/project5.webp" },
-  { id: "the-park", name: "The Park", img: "/images/project6.webp" },
-  { id: "the42", name: "The 42", img: "/images/project7.webp" },
-  { id: "embassy", name: "Embassy Boulevard", img: "/images/project8.webp" },
-  { id: "kingfisher", name: "Kingfisher Tower", img: "/images/project9.webp" },
-  { id: "atmosphere", name: "Atmosphere", img: "/images/project1.webp" },
-  { id: "blu", name: "Indiabulls Blu", img: "/images/project2.webp" },
-  { id: "lake", name: "Embassy Lake Terrace", img: "/images/project3.webp" },
+  
   {
-    id: "skyforest",
-    name: "Indiabulls Skyforest",
-    img: "/images/project4.webp",
+    id: "POLO ELEVATE",
+    name: "POLO ELEVATE",
+    img: "/project_detail_img/POLO ELEVATE.webp",
+     path: "/projects/poloelevate",
   },
-  { id: "gulita", name: "Gulita", img: "/images/project5.webp" },
-  { id: "worldone", name: "Lodha World One", img: "/images/project6.webp" },
-  { id: "artesia", name: "Artesia", img: "/images/project9.webp" },
+  {
+    id: "SAI AASHISH",
+    name: "SAI AASHISH ",
+    img: "/project_detail_img/SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2.webp",
+     path: "/projects/sai-aashish",
+  },
+  {
+    id: "SAI SIGNATURE",
+    name: "SAI SIGNATURE",
+    img: "/project_detail_img/SAI SIGNATURE 1.webp",
+     path: "/projects/saisignature",
+  },
+  {
+    id: "SHIVEN ARISE",
+    name: "SHIVEN ARISE",
+    img: "/project_detail_img/SHIVEN ARISE.webp",
+    path: "/projects/shivenarise",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "SHREE NILKANTH ",
+    name: "SHREE NILKANTH ",
+    img: "/project_detail_img/SHREE NILKANTH BUSS HUB 11 (1).webp",
+    path: "/projects/shreenilkanth",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "Skyrise ",
+    name: "SKY RISE",
+    img: "/project_detail_img/SKY RISE 2.webp",
+    path: "/projects/skyrise",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "SPERANZA",
+    name: "SPERANZA ",
+    img: "/project_detail_img/SPERANZA -  PAL 2.webp",
+    path: "/projects/speranza",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "STONE CLADDING",
+    name: "STONE CLADDING",
+    img: "/project_detail_img/STONE CLADDING.webp",
+    path: "/projects/stonecladding",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "SUN TRADE",
+    name: "SUN TRADE",
+    img: "/project_detail_img/SUN TRADE - FRONT.webp",
+    path: "/projects/suntrade",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "VELOCITY",
+    name: "VELOCITY",
+    img: "/project_detail_img/VELOCITY 1.webp",
+    path: "/projects/velocity",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "VIVIANA",
+    name: "VIVIANA",
+    img: "/project_detail_img/VIVIANA - VESU 9.webp",
+    path: "/projects/viviana",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "WESTERN ARENA",
+    name: "WESTERN ARENA ",
+    img: "/project_detail_img/WESTERN ARENA 1.webp",
+    path: "/projects/western",
+    lat: 18.933,
+    lng: 72.822,
+  },
+  {
+    id: "ZIRCON ARENEA",
+    name: "ZIRCON ARENEA",
+    img: "/project_detail_img/ZIRCON ARENEA 1.webp",
+    path: "/projects/zircon",
+    lat: 18.933,
+    lng: 72.822,
+  },
 ];
 
 const Residential = () => {
@@ -112,7 +194,7 @@ const Residential = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {projects.map((project, index) => (
-            <Link key={project.id} to={`/projects/${project.id}`}>
+            <Link key={project.id} to={project.path}>
               <motion.div
                 variants={getCardVariants(index)}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
