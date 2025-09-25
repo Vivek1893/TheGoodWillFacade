@@ -218,38 +218,7 @@ const Residential = () => {
       </div>
 
       {/* 🔹 Map Section */}
-      {/* <div className="w-full h-[500px] mt-10">
-        <MapContainer
-          center={[19.076, 72.8777]}
-          zoom={11}
-          scrollWheelZoom={false}
-          className="h-full w-full rounded-lg shadow-lg"
-        >
-         
-          <TileLayer
-            url="https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
-            subdomains={["mt0", "mt1", "mt2", "mt3"]}
-            attribution="&copy; Google Maps"
-          />
-
-          {projects.map(
-            (p) =>
-              p.lat &&
-              p.lng && (
-                <Marker key={p.id} position={[p.lat, p.lng]} icon={markerIcon}>
-                  <Popup>
-                    <div className="text-sm font-semibold">{p.name}</div>
-                    <img
-                      src={p.img}
-                      alt={p.name}
-                      className="w-32 h-20 object-cover mt-2 rounded"
-                    />
-                  </Popup>
-                </Marker>
-              )
-          )}
-        </MapContainer>
-      </div> */}
+     
     </div>
   );
 };

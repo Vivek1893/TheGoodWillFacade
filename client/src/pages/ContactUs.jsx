@@ -10,7 +10,7 @@ const ContactSection = () => {
       {/* Hero Banner */}
       <div className="relative w-full h-[75vh]">
         <img
-          src="/contact us.webp"
+          src="/contact us.jpg"
           alt="Glass Railing System"
           className="w-full h-full object-cover"
         />
