@@ -164,7 +164,7 @@ const About = () => {
             {/* Vision */}
             <div className="space-y-6">
               <img
-                src="/Our-Vision.webp"
+                src="/Our-Vision.jpg"
                 alt="Vision"
                 className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-tl-4xl rounded-br-4xl"
               />
@@ -182,7 +182,7 @@ const About = () => {
             {/* Mission */}
             <div className="space-y-6">
               <img
-                src="/ourmission.webp"
+                src="/ourmission.jpg"
                 alt="Mission"
                 className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-tl-4xl rounded-br-4xl"
               />
@@ -200,7 +200,7 @@ const About = () => {
             {/* Core Values */}
             <div className="space-y-6">
               <img
-                src="/ourvalue.webp"
+                src="/ourvalue.jpg"
                 alt="Core Values"
                 className="w-full h-48 sm:h-64 lg:h-72 object-cover shadow-md rounded-tl-4xl rounded-br-4xl"
               />
