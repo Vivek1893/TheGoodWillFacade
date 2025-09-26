@@ -103,7 +103,7 @@ const Hero = () => {
           <img
             src="/logo.png"
             alt="Goodwill Facade"
-            className="w-48 h-auto object-contain mx-auto"
+            className="w-48 h-auto  object-contain mx-auto"
           />
         </div>
       </div>
