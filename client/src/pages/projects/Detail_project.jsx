@@ -1,19 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
 import "../../App.css";
 
-// Custom marker
-const markerIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-});
-
-const projects = [
+const projects = 
+[
   {
     id: "AMBIT",
     name: "AMBIT",
@@ -140,19 +131,11 @@ const projects = [
 ];
 
 const Residential = () => {
-  // Animation container
   const containerVariants = {
     hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
+    show: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
   };
 
-  // Card animation
   const getCardVariants = (index) => {
     const directions = [
       { x: -60, y: 0 },
@@ -161,22 +144,13 @@ const Residential = () => {
       { x: 0, y: -60 },
     ];
     const dir = directions[index % directions.length];
-
-    return {
-      hidden: { opacity: 0, ...dir },
-      show: {
-        opacity: 1,
-        x: 0,
-        y: 0,
-        transition: { duration: 0.7, ease: "easeOut" },
-      },
-    };
+    return { hidden: { opacity: 0, ...dir }, show: { opacity: 1, x: 0, y: 0, transition: { duration: 0.7, ease: "easeOut" } } };
   };
 
   return (
     <div className="w-full">
       {/* 🔹 Hero Section */}
-      <div className="relative w-full h-[90vh]">
+      <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[90vh]">
         <img
           src="/images/projec.png"
           alt="Mumbai Skyline"
@@ -185,37 +159,45 @@ const Residential = () => {
       </div>
 
       {/* 🔹 Projects Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="show" // use animate instead of whileInView
         >
+
           {projects.map((project, index) => (
             <Link key={project.id} to={project.path}>
               <motion.div
                 variants={getCardVariants(index)}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="bg-white rounded-md p-4 flex flex-col items-center cursor-pointer shadow-xl hover:shadow"
+                className="bg-white rounded-md p-3 sm:p-4 flex flex-col items-center cursor-pointer shadow-lg hover:shadow-xl"
               >
                 <motion.img
                   src={project.img}
                   alt={project.name}
-                  className="w-full h-72 object-cover zoom-hover rounded-md"
-                  whileHover={{ scale: 0.9 }}
+                  loading="lazy"
+                  className="w-full h-48 sm:h-64 md:h-72 object-cover rounded-md"
+                  whileHover={{ scale: 0.95 }}
                   transition={{ duration: 0.3 }}
                 />
-                <h3 className="mt-4 text-lg font-semibold text-center">
+                <h3 className="mt-3 text-base sm:text-lg font-semibold text-center">
                   {project.name}
                 </h3>
-                <div className="w-10 h-[2px] bg-blue-800 mt-2"></div>
+                <div className="w-8 sm:w-10 h-[2px] bg-blue-800 mt-2"></div>
               </motion.div>
             </Link>
           ))}
         </motion.div>
       </div>
+    </div>
+  );
+};
+
+export default Residential;
+
+
 
       {/* 🔹 Map Section */}
       {/* <div className="w-full h-[500px] mt-10">
@@ -250,8 +232,3 @@ const Residential = () => {
           )}
         </MapContainer>
       </div> */}
-    </div>
-  );
-};
-
-export default Residential;
