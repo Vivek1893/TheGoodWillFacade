@@ -66,7 +66,7 @@ const ContactSection = () => {
                   <Phone className="h-6 w-6 text-yellow-600 mt-1" />
                   <div>
                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                    <p className="text-gray-600">+91 22-20817777</p>
+                    <p className="text-gray-600">+91 9892118052</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -106,7 +106,7 @@ const ContactSection = () => {
                   <div>
                     <h5 className="font-semibold text-gray-800 mb-2">Surat</h5>
                     <p className="text-gray-600 leading-relaxed">
-                      342, The Galleria Shopping Hub, Near Sanjivkumar
+                      55, The Galleria Shopping Hub, Near Sanjivkumar
                       Auditorium, Opp. kitchen 37, Rto, Pal, Surat - 395009
                     </p>
                   </div>

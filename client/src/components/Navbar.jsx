@@ -98,55 +98,62 @@ const Navbar = () => {
                 </button>
 
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 z-50">
-                    <Link
-                      to="/services/ACP"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      ACP
-                    </Link>
-                    <Link
-                      to="/services/Aluminum_Windows"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Aluminum Windows
-                    </Link>
-                    <Link
-                      to="/services/MS_Structure"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      MS Structure
-                    </Link>
-                    <Link
-                      to="/services/Railings"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Railings
-                    </Link>
-                    <Link
-                      to="/services/Skylight"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Skylight
-                    </Link>
-                    <Link
-                      to="/services/Stone_Cladding"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Stone Cladding
-                    </Link>
-                    <Link
-                      to="/services/Structural_Glazing"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Structural Glazing
-                    </Link>
-                    <Link
-                      to="/services/Tensile_Fabrics"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Tensile Fabric
-                    </Link>
+                  <div
+                    className="absolute top-full left-0 w-64 rounded-lg p-[3px] z-50"
+                    style={{
+                      background: "linear-gradient(135deg, #0B3558, #F37021)",
+                    }}
+                  >
+                    <div className="bg-white rounded-lg shadow-xl py-2">
+                      <Link
+                        to="/services/ACP"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        ACP/Fundermax
+                      </Link>
+                       <Link
+                        to="/services/Structural_Glazing"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Structural Glazing
+                      </Link>
+                      <Link
+                        to="/services/Stone_Cladding"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Stone Cladding
+                      </Link>
+                      <Link
+                        to="/services/Aluminum_Windows"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Aluminum Windows
+                      </Link>
+                       <Link
+                        to="/services/Railings"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Railings
+                      </Link>
+                      <Link
+                        to="/services/Skylight"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Skylight
+                      </Link>
+                      <Link
+                        to="/services/MS_Structure"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        MS Structure
+                      </Link>
+                      <Link
+                        to="/services/Tensile_Fabrics"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Tensile Fabric
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
@@ -177,26 +184,33 @@ const Navbar = () => {
                 </button>
 
                 {projectOpen && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-xl rounded-lg py-2 z-50">
-                    <Link
-                      to="/projects/Detail_project"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Project Detail
-                    </Link>
-                    <Link
-                      to="/projects/Project_list"
-                      className="block px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                    >
-                      Project List
-                    </Link>
+                  <div
+                    className="absolute top-full left-0 w-48 rounded-lg p-[3px] z-50"
+                    style={{
+                      background: "linear-gradient(135deg, #0B3558, #F37021)",
+                    }}
+                  >
+                    <div className="bg-white rounded-lg shadow-xl py-2">
+                      <Link
+                        to="/projects/Detail_project"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Project Completed
+                      </Link>
+                      <Link
+                        to="/projects/Project_list"
+                        className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      >
+                        Project Ongoing
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
 
               <Link
                 to="/ContactUs"
-                className="font-medium transition-colors duration-300 relative group text-gray-800 hover:text-orange-500"
+                className="font-medium transition-colors duration-300  relative group text-gray-800 hover:text-orange-500"
               >
                 CONTACTS
                 <span
@@ -209,7 +223,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg transition-colors text-gray-800 hover:bg-gray-100"
+              className="md:hidden p-2 rounded-lg transition-colors text-black hover:bg-gray-100"
             >
               <svg
                 className="w-6 h-6"
@@ -236,14 +250,14 @@ const Navbar = () => {
             <Link
               to="/"
               onClick={handleLinkClick}
-              className="block text-gray-800 hover:text-orange-500 font-medium"
+              className="block text-black hover:text-orange-500 font-medium"
             >
               HOME
             </Link>
             <Link
               to="/Aboutus"
               onClick={handleLinkClick}
-              className="block text-gray-800 hover:text-orange-500 font-medium"
+              className="block text-black hover:text-orange-500 font-medium"
             >
               ABOUT US
             </Link>
@@ -252,7 +266,7 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setServicesOpen(!servicesOpen)}
-                className="w-full text-left text-gray-800 font-medium flex justify-between items-center"
+                className="w-full text-left text-black font-medium flex justify-between items-center"
               >
                 SERVICES
                 <span>{servicesOpen ? "−" : "+"}</span>
@@ -262,56 +276,56 @@ const Navbar = () => {
                   <Link
                     to="/services/ACP"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     ACP
                   </Link>
                   <Link
                     to="/services/Aluminum_Windows"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Aluminum Windows
                   </Link>
                   <Link
                     to="/services/MS_Structure"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     MS Structure
                   </Link>
                   <Link
                     to="/services/Railings"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Railings
                   </Link>
                   <Link
                     to="/services/Skylight"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Skylight
                   </Link>
                   <Link
                     to="/services/Stone_Cladding"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Stone Cladding
                   </Link>
                   <Link
                     to="/services/Structural_Glazing"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Structural Glazing
                   </Link>
                   <Link
                     to="/services/Tensile_Fabrics"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Tensile Fabric
                   </Link>
@@ -323,7 +337,7 @@ const Navbar = () => {
             <div>
               <button
                 onClick={() => setProjectOpen(!projectOpen)}
-                className="w-full text-left text-gray-800 font-medium flex justify-between items-center"
+                className="w-full text-left text-black font-medium flex justify-between items-center"
               >
                 PROJECTS
                 <span>{projectOpen ? "−" : "+"}</span>
@@ -333,14 +347,14 @@ const Navbar = () => {
                   <Link
                     to="/projects/Detail_project"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Project Detail
                   </Link>
                   <Link
                     to="/projects/Project_list"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-500"
+                    className="block text-black hover:text-orange-500"
                   >
                     Project List
                   </Link>
@@ -351,7 +365,7 @@ const Navbar = () => {
             <Link
               to="/ContactUs"
               onClick={handleLinkClick}
-              className="block text-gray-800 hover:text-orange-500 font-medium"
+              className="block text-black hover:text-orange-500 font-medium"
             >
               CONTACTS
             </Link>

@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
     import Servicespage from '../components/Servicespage';
     import Projectpage from '../components/Projectpage';
      import Contact from "../components/Contact";
+     import ClientLogoSlider from "../components/ClientLogoSlider";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <About />
        <Projectpage />
+       <ClientLogoSlider/>
       <Servicespage/>
      
       <Contact/>

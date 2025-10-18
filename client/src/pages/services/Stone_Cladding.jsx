@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { 
-  FaCheck, 
-  FaPaintRoller, 
-  FaPalette, 
-  FaShieldAlt, 
+import {
+  FaCheck,
+  FaPaintRoller,
+  FaPalette,
+  FaShieldAlt,
   FaExpand,
-  FaArrowRight
+  FaArrowRight,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,30 +18,37 @@ const Stone_Cladding = () => {
     "Weatherproof, fade-resistant & highly economical.",
     "Available in metallic, wood, and marble finishes.",
     "Excellent heat & sound insulation properties.",
-    "High fire resistance for enhanced safety."
+    "High fire resistance for enhanced safety.",
   ];
 
   const reasons = [
     {
       title: " REASONS TO CHOOSE US",
       icon: <FaCheck className="text-orange-400" />,
-      items: ["Impressive Aesthetics", "Persistent Durability", "Innovative Technology"]
+      items: [
+        "Impressive Aesthetics",
+        "Persistent Durability",
+        "Innovative Technology",
+      ],
     },
     {
       title: "300+ Shade Options",
       icon: <FaPalette className="text-blue-300" />,
-      description: "Wide range of finishes and designs for both interiors and exteriors."
+      description:
+        "Wide range of finishes and designs for both interiors and exteriors.",
     },
     {
       title: "Lead-Free Paints",
       icon: <FaPaintRoller className="text-green-300" />,
-      description: "Eco-friendly paints protect your health and the environment."
+      description:
+        "Eco-friendly paints protect your health and the environment.",
     },
     {
       title: "Highest Gloss Retention",
       icon: <FaShieldAlt className="text-yellow-300" />,
-      description: "PVDF resin ensures brilliant surface finish & long-lasting gloss."
-    }
+      description:
+        "PVDF resin ensures brilliant surface finish & long-lasting gloss.",
+    },
   ];
 
   const designImages = [
@@ -52,7 +59,7 @@ const Stone_Cladding = () => {
     "/images/project5.webp",
     "/images/project6.webp",
     "/images/project7.webp",
-    "/images/project8.webp"
+    "/images/project8.webp",
   ];
 
   const openImageModal = (img) => {
@@ -80,8 +87,8 @@ const Stone_Cladding = () => {
             transition={{ duration: 0.7 }}
             className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
           >
-            <span className="text-white"> Stone  </span>{" "}
-             <span className="text-orange-400">Cladding</span>
+            <span className="text-white"> Stone </span>{" "}
+            <span className="text-orange-400">Cladding</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -89,7 +96,8 @@ const Stone_Cladding = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-base text-white/90 max-w-xl mx-auto mb-8"
           >
-            Premium architectural solutions with innovative aluminum composite panels
+            Premium architectural solutions with innovative aluminum composite
+            panels
           </motion.p>
           <motion.div
             initial={{ scaleX: 0 }}
@@ -103,7 +111,7 @@ const Stone_Cladding = () => {
       {/* 🔹 Intro Section */}
       <section className="px-4 md:px-8 lg:px-16 py-20 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -112,10 +120,10 @@ const Stone_Cladding = () => {
           >
             Why Choose <span className="text-orange-600">Stone Cladding?</span>
           </motion.h2>
-          
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Benefits List */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -123,7 +131,7 @@ const Stone_Cladding = () => {
               className="space-y-6"
             >
               {benefits.map((benefit, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -134,14 +142,15 @@ const Stone_Cladding = () => {
                   <div className="bg-blue-100 p-2 rounded-full mr-4 mt-1">
                     <FaCheck className="text-blue-600 text-sm" />
                   </div>
-                 <p className="text-gray-700 text-base sm:text-xl">{benefit}</p>
-
+                  <p className="text-gray-700 text-base sm:text-xl">
+                    {benefit}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
-            
+
             {/* Side Image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -151,12 +160,14 @@ const Stone_Cladding = () => {
               <div className="absolute -inset-2  opacity-70 rounded-2xl blur-md group-hover:opacity-100 transition duration-300"></div>
               <div className="relative rounded-tl-4xl rounded-br-4xl  overflow-hidden">
                 <img
-                           src="/hero5.jpg"
+                  src="/servicesimg/stone_img/stone.png"
                   alt="ACP Example"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                  <p className="text-white font-medium text-lg">Modern Stone Cladding Installation</p>
+                  <p className="text-white font-medium text-lg">
+                    Modern Stone Cladding Installation
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -167,16 +178,17 @@ const Stone_Cladding = () => {
       {/* 🔹 Sample Designs */}
       <section className="px-4 md:px-8 lg:px-16 py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
           >
-            Simple Design for <span className="text-blue-800">Stone Cladding</span>
+            Simple Design for{" "}
+            <span className="text-blue-800">Stone Cladding</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -218,25 +230,27 @@ const Stone_Cladding = () => {
       {/* 🔹 Reasons Section */}
       <section className="px-4 md:px-8 lg:px-16 py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white">
         <div className="max-w-7xl mx-auto">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl  font-bold text-center mb-4"
           >
-           <span className="text-white">Why Choose</span>  <span className="text-orange-400">The GOODWILL Facades?</span>
+            <span className="text-white">Why Choose</span>{" "}
+            <span className="text-orange-400">The GOODWILL Facades?</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             viewport={{ once: true }}
             className="text-center text-blue-200 max-w-3xl mx-auto mb-12"
           >
-            Delivering excellence in every project with innovative solutions and premium materials
+            Delivering excellence in every project with innovative solutions and
+            premium materials
           </motion.p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {reasons.map((reason, i) => (
               <motion.div
@@ -252,11 +266,14 @@ const Stone_Cladding = () => {
                   <div className="text-2xl mr-3">{reason.icon}</div>
                   <h3 className="font-semibold text-lg">{reason.title}</h3>
                 </div>
-                
+
                 {reason.items ? (
                   <ul className="space-y-2">
                     {reason.items.map((item, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-blue-100">
+                      <li
+                        key={idx}
+                        className="flex items-center text-sm text-blue-100"
+                      >
                         <FaArrowRight className="mr-2 text-orange-400 text-xs" />
                         {item}
                       </li>
@@ -265,8 +282,6 @@ const Stone_Cladding = () => {
                 ) : (
                   <p className="text-sm text-blue-100">{reason.description}</p>
                 )}
-                
-             
               </motion.div>
             ))}
           </div>
@@ -299,8 +314,19 @@ const Stone_Cladding = () => {
                 onClick={closeImageModal}
                 className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-sm transition-colors"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </motion.div>
