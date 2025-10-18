@@ -96,6 +96,7 @@ const Projects = () => {
             <img
               src={project.img}
               alt={project.title}
+              loading="lazy" 
               className="w-full h-full object-cover brightness-75 
              transform transition duration-500 
              group-hover:scale-110 active:scale-110"

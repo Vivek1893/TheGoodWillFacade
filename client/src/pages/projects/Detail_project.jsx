@@ -3,23 +3,38 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../../App.css";
 
-// 🔹 Project Data
+// 🗺️ Leaflet + React Leaflet
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
+// Custom marker icon
+const markerIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+});
+
+// Project list (add lat/lng for markers if available)
 const projects = [
   {
     id: "AMBIT",
     name: "AMBIT",
     img: "/project_detail_img/AMBIT 2.webp",
     path: "/projects/Ambit",
+    lat: 19.076, // example coordinate
+    lng: 72.8777,
   },
   {
     id: "GoyalAspire",
-    name: "GOYAL ASPIRE ",
+    name: "GOYAL ASPIRE",
     img: "/project_detail_img/GOYAL ASPIRE - WINDOW & PODIUM FACADE.webp",
     path: "/projects/goyal-aspire",
   },
   {
     id: "PARLE POINT A",
-    name: "PARLE POINT A ",
+    name: "PARLE POINT A",
     img: "/project_detail_img/PARLE POINT A  - BHARUCH 1.webp",
     path: "/projects/parle",
   },
@@ -31,7 +46,7 @@ const projects = [
   },
   {
     id: "SAI AASHISH",
-    name: "SAI AASHISH ",
+    name: "SAI AASHISH",
     img: "/project_detail_img/SAI AASHISH TRADE CENTRE  - NEW VIP ROAD 2.webp",
     path: "/projects/sai-aashish",
   },
@@ -103,17 +118,20 @@ const projects = [
   },
 ];
 
-const ResidentialDebug = () => {
-  // 🔹 Container animation
+const Residential = () => {
+  // Animation container
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
     },
   };
 
-  // 🔹 Card animation
+  // Card animation
   const getCardVariants = (index) => {
     const directions = [
       { x: -60, y: 0 },
@@ -122,6 +140,7 @@ const ResidentialDebug = () => {
       { x: 0, y: -60 },
     ];
     const dir = directions[index % directions.length];
+
     return {
       hidden: { opacity: 0, ...dir },
       show: {
@@ -145,40 +164,71 @@ const ResidentialDebug = () => {
       </div>
 
       {/* 🔹 Projects Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
-          animate="show" // 👈 Direct animate, no viewport
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
         >
           {projects.map((project, index) => (
             <Link key={project.id} to={project.path}>
               <motion.div
                 variants={getCardVariants(index)}
-                className="bg-white rounded-lg p-4 flex flex-col items-center 
-                           cursor-pointer shadow-md hover:shadow-lg 
-                           border border-gray-200"
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                className="bg-white rounded-md p-4 flex flex-col items-center cursor-pointer shadow-xl hover:shadow"
               >
                 <motion.img
                   src={project.img}
                   alt={project.name}
-                  className="w-full h-48 sm:h-64 md:h-72 object-cover rounded-md"
-                  whileHover={{ scale: 0.95 }}
+                  className="w-full h-72 object-cover zoom-hover rounded-md"
+                  whileHover={{ scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  onError={(e) => (e.target.src = "/fallback.jpg")} // 👈 agar image 404 hai
+                  onError={(e) => (e.target.src = "/fallback.jpg")}
                 />
-                <h3 className="mt-3 text-base sm:text-lg font-semibold text-center text-gray-800">
+                <h3 className="mt-4 text-lg font-semibold text-center">
                   {project.name}
                 </h3>
-                <div className="w-10 h-[2px] bg-blue-800 mt-2"></div>
+                <div className="w-8 sm:w-10 h-[2px] bg-blue-800 mt-2"></div>
               </motion.div>
             </Link>
           ))}
         </motion.div>
       </div>
+
+      {/* 🔹 Map Section */}
+      <div className="w-full h-[500px] mt-10 px-4">
+        <MapContainer
+          center={[19.076, 72.8777]}
+          zoom={11}
+          scrollWheelZoom={false}
+          className="h-full w-full rounded-lg shadow-lg"
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+          />
+          {projects.map(
+            (p) =>
+              p.lat &&
+              p.lng && (
+                <Marker key={p.id} position={[p.lat, p.lng]} icon={markerIcon}>
+                  <Popup>
+                    <div className="text-sm font-semibold">{p.name}</div>
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      className="w-32 h-20 object-cover mt-2 rounded"
+                    />
+                  </Popup>
+                </Marker>
+              )
+          )}
+        </MapContainer>
+      </div>
     </div>
   );
 };
 
-export default ResidentialDebug;
+export default Residential;

@@ -12,27 +12,22 @@ const Hero = () => {
     {
       image: "/hero2.jpg",
       title: "STRUCTURAL GLAZING",
-     
     },
     {
       image: "/hero3.jpg",
       title: "ALUMINUM SYSTEMS",
-     
     },
-     {
+    {
       image: "/hero4.jpg",
       title: "ALUMINUM SYSTEMS",
-     
     },
-     {
+    {
       image: "/hero5.jpg",
       title: "ALUMINUM SYSTEMS",
-     
     },
-     {
+    {
       image: "/hero6.webp",
       title: "ALUMINUM SYSTEMS",
-     
     },
   ];
 
@@ -68,9 +63,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden max-w-full">
+    <div className="relative w-full h-screen overflow-hidden max-w-full ">
       {/* Top Angled Border Strip */}
-      <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full"
@@ -83,11 +78,15 @@ const Hero = () => {
       </div>
 
       {/* Logo box (big) - width 60 */}
-      <div className="hidden lg:block absolute left-0 top-20 z-30">
-        <div className="relative w-60 bg-white p-6   border-r-10 border-[#0B3558]">
+      <div className="hidden lg:block absolute left-0 top-20 z-30 ">
+        <div className="relative w-60 bg-white p-6 border-r-10 border-[#0B3558] rounded-bl-4xl overflow-hidden">
           {/* 🔹 Bottom half blue border */}
-          <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558] "></div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558]"></div>
 
+          {/* 🔹 Bottom half left orange bar with rounded left edge */}
+          <div className="absolute bottom-0 left-0 w-1/2 h-3 bg-[#F37021] rounded-bl-4xl"></div>
+
+          {/* 🔹 Top SVG decoration */}
           <div className="absolute top-0 left-0 w-full h-3 z-50 overflow-hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +102,7 @@ const Hero = () => {
           <img
             src="/logo.png"
             alt="Goodwill Facade"
-            className="w-48 h-auto  object-contain mx-auto"
+            className="w-48 h-auto object-contain mx-auto"
           />
         </div>
       </div>
@@ -320,7 +319,6 @@ const Hero = () => {
                 >
                   {slides[currentSlide].title}
                 </h1> */}
-               
               </motion.div>
             </AnimatePresence>
           </div>
