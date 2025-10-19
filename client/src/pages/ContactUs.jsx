@@ -292,8 +292,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Call us directly",
-      description: "+91 8097998000",
-      action: "tel:+918097998000",
+      description: "+91 91 9892118052",
+      action: "tel:+91 9892118052",
       color: "bg-blue-100",
       iconColor: "text-blue-600",
       hoverColor: "hover:bg-blue-50"
@@ -302,7 +302,7 @@ const ContactSection = () => {
       icon: MessageCircle,
       title: "WhatsApp us",
       description: "Start a conversation",
-      action: "https://wa.me/918097998000",
+      action: "https://wa.me/+91 9892118052",
       color: "bg-green-100",
       iconColor: "text-green-600",
       hoverColor: "hover:bg-green-50"
@@ -310,8 +310,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email us",
-      description: "accounts@mnacaps.com",
-      action: "mailto:accounts@mnacaps.com",
+      description: "thegoodwill@gmail.com",
+      action: "mailto:thegoodwill@gmail.com",
       color: "bg-pink-100",
       iconColor: "text-pink-600",
       hoverColor: "hover:bg-pink-50"
