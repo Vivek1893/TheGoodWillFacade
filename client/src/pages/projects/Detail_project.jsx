@@ -119,19 +119,18 @@ const projects = [
 ];
 
 const Residential = () => {
-  // Animation container
+  // ✅ Container animation (no delay)
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.2, // only stagger, no delay
       },
     },
   };
 
-  // Card animation
+  // Card animation directions
   const getCardVariants = (index) => {
     const directions = [
       { x: -60, y: 0 },
@@ -157,7 +156,7 @@ const Residential = () => {
       {/* 🔹 Hero Section */}
       <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[90vh]">
         <img
-          src="/images/projec.png"
+          src="/project.png"
           alt="Mumbai Skyline"
           className="w-full h-full object-cover"
         />
@@ -195,37 +194,6 @@ const Residential = () => {
             </Link>
           ))}
         </motion.div>
-      </div>
-
-      {/* 🔹 Map Section */}
-      <div className="w-full h-[500px] mt-10 px-4">
-        <MapContainer
-          center={[19.076, 72.8777]}
-          zoom={11}
-          scrollWheelZoom={false}
-          className="h-full w-full rounded-lg shadow-lg"
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-          />
-          {projects.map(
-            (p) =>
-              p.lat &&
-              p.lng && (
-                <Marker key={p.id} position={[p.lat, p.lng]} icon={markerIcon}>
-                  <Popup>
-                    <div className="text-sm font-semibold">{p.name}</div>
-                    <img
-                      src={p.img}
-                      alt={p.name}
-                      className="w-32 h-20 object-cover mt-2 rounded"
-                    />
-                  </Popup>
-                </Marker>
-              )
-          )}
-        </MapContainer>
       </div>
     </div>
   );

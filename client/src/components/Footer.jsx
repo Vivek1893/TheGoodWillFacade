@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -55,11 +55,13 @@ export default function Footer() {
           <ul className="space-y-3">
             <li className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-yellow-500" /> 
-              Borivali West, Mumbai, Maharashtra 400092
+              Disha C.H.S., Opp. Joggers Park, Chikoowadi, Borivali
+                      West, Mumbai - 400 092.
+              
             </li>
             <li className="flex items-center gap-2">
               <FaPhoneAlt className="text-yellow-500" /> 
-              (+62) 81 487 1843
+              (+91) 9892118052
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-yellow-500" /> 
@@ -76,7 +78,7 @@ export default function Footer() {
             Getting an accurate diagnosis can be one of the most impactful experiences that you can have.
           </p>
           <div className="flex items-center bg-yellow-500 text-black p-3 rounded-md gap-3 font-semibold">
-            <FaPhoneAlt /> Call Us Today <br /> (+62) 81 487 1843
+            <FaPhoneAlt /> Call Us Today <br /> 91 9892118052
           </div>
         </div>
       </div>
@@ -96,9 +98,9 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex gap-4 mt-4 md:mt-0">
           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaFacebookF /></a>
-          <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaTwitter /></a>
+          <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaWhatsapp /></a>
           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaInstagram /></a>
-          <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaLinkedinIn /></a>
+         
         </div>
       </div>
 

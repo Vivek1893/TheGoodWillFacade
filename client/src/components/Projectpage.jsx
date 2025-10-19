@@ -8,7 +8,7 @@ const Projects = () => {
     {
       id: 1,
       title: "GodrejPlatinum",
-      img: "./images/project1.webp",
+      img: "./project_detail_img/SHIVEN ARISE.webp",
       path: "/projects/Detail_project/GodrejPlatinum",
     },
     {
