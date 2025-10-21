@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    {
+const slides = [
+  {
       image: "/hero1.jpg",
       title: "ACP CLADDING",
     },
@@ -235,40 +235,40 @@ const Hero = () => {
       {/* Main Hero Area - responsive margins */}
       <div className="relative w-full h-full lg:ml-32">
         {/* Background Mosaic Animation */}
-        <div
-          className="absolute inset-0 grid"
-          style={{
-            gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
-            gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
-          }}
-        >
-          {Array.from({ length: grid.rows * grid.cols }).map((_, i) => {
-            const row = Math.floor(i / grid.cols);
-            const col = i % grid.cols;
+      <div
+        className="absolute inset-0 grid"
+        style={{
+          gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+          gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
+        }}
+      >
+        {Array.from({ length: grid.rows * grid.cols }).map((_, i) => {
+          const row = Math.floor(i / grid.cols);
+          const col = i % grid.cols;
 
-            return (
-              <motion.div
+          return (
+            <motion.div
                 key={`${currentSlide}-${i}`}
-                className="w-full h-full bg-cover bg-center"
-                style={{
+              className="w-full h-full bg-cover bg-center"
+              style={{
                   backgroundImage: `url(${slides[currentSlide].image})`,
-                  backgroundPosition: `${(col / (grid.cols - 1)) * 100}% ${
-                    (row / (grid.rows - 1)) * 100
-                  }%`,
-                  backgroundSize: `${grid.cols * 100}% ${grid.rows * 100}%`,
-                }}
-                initial={{ opacity: 0, scale: 1.3 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 1.2,
-                  delay: (row * grid.cols + col) * 0.015,
-                }}
-              />
-            );
-          })}
-        </div>
+                backgroundPosition: `${(col / (grid.cols - 1)) * 100}% ${
+                  (row / (grid.rows - 1)) * 100
+                }%`,
+                backgroundSize: `${grid.cols * 100}% ${grid.rows * 100}%`,
+              }}
+              initial={{ opacity: 0, scale: 1.3 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1.2,
+                delay: (row * grid.cols + col) * 0.015,
+              }}
+            />
+          );
+        })}
+      </div>
 
-        {/* Dark Overlay */}
+      {/* Dark Overlay */}
         {/* <div className="absolute inset-0 bg-black/50"></div> */}
 
         {/* Navigation Arrows - Mobile responsive positioning */}
@@ -325,30 +325,30 @@ const Hero = () => {
         {/* Hero Content - Mobile responsive */}
         <div className="relative z-10 flex items-center justify-center h-full px-2 sm:px-4 md:px-6 pt-16 md:pt-0 lg:pt-0">
           <div className="text-center max-w-4xl w-full">
-            <AnimatePresence mode="wait">
-              <motion.div
+        <AnimatePresence mode="wait">
+          <motion.div
                 key={currentSlide}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 1 }}
-              >
+            transition={{ duration: 1 }}
+          >
                 {/* <h1
                   className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-6 tracking-wider leading-tight"
                   style={{ color: "white" }}
                 >
                   {slides[currentSlide].title}
                 </h1> */}
-              </motion.div>
-            </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
           </div>
-        </div>
+      </div>
 
         {/* Slide Indicators - Mobile responsive */}
         <div className="absolute bottom-4 md:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
           <div className="flex space-x-2 md:space-x-3">
             {slides.map((_, index) => (
-              <button
+          <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${

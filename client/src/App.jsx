@@ -25,6 +25,7 @@ import Tensile_Fabrics from "./pages/services/Tensile_Fabrics";
 
 import Project_list from "./pages/projects/Project_list";
 import Detail_project from "./pages/projects/Detail_project.jsx";
+import ProjectDetailDynamic from "./pages/projects/ProjectDetailDynamic.jsx";
 
 // Detail project pages  ✅ fixed extension/case
 import Ambit from "./pages/projects/project_info/Ambit.jsx";
@@ -80,6 +81,7 @@ function App() {
           {/* Project pages */}
           <Route path="/projects/Detail_project" element={<Detail_project />} />
           <Route path="/projects/Project_list" element={<Project_list />} />
+          <Route path="/projects/detail/:projectId" element={<ProjectDetailDynamic />} />
 
           {/* Components pages */}
           <Route path="/about" element={<About />} />
