@@ -14,17 +14,17 @@ const Projects = () => {
     {
       id: 2,
       title: "Luxury Apartments",
-      img: "./images/project2.webp",
+      img: "./images/s4.jpg",
     },
     {
       id: 3,
       title: "Cultural Center",
-      img: "./images/project3.webp",
+      img: "./Project_List_img/POLO ELEVATE.webp",
     },
     {
       id: 4,
       title: "Residential Villas",
-      img: "./images/project4.webp",
+      img: "./Project_List_img/VELOCITY 1.webp",
     },
     {
       id: 5,
@@ -88,19 +88,22 @@ const Projects = () => {
         {projectData.map((project, index) => (
           <motion.div
             key={project.id}
-            className={`relative overflow-hidden rounded-tl-4xl rounded-br-4xl group h-[200px] sm:h-[250px] md:h-[300px] ${
-              index === 0 ? "sm:col-span-2 md:col-span-2" : ""
-            }`}
+            className={`relative overflow-hidden rounded-tl-4xl rounded-br-4xl group 
+      h-[250px] sm:h-[320px] md:h-[450px] 
+      ${index === 0 ? "sm:col-span-2 md:col-span-2" : ""}`}
             variants={cardVariants}
           >
-            <img
-              src={project.img}
-              alt={project.title}
-              loading="lazy" 
-              className="w-full h-full object-cover brightness-75 
-             transform transition duration-500 
-             group-hover:scale-110 active:scale-110"
-            />
+            <div className="w-full h-full aspect-[4/3] md:aspect-video">
+              <img
+                src={project.img}
+                alt={project.title}
+                loading="lazy"
+                className="w-full h-full object-cover object-center brightness-75 
+        transform transition duration-500 
+        group-hover:scale-110 active:scale-110"
+              />
+            </div>
+
             {/* Overlay Text */}
             <div className="text-white absolute inset-0 flex items-center justify-center">
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
