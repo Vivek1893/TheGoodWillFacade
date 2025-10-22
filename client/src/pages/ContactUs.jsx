@@ -35,9 +35,9 @@
 //         </div>
 //       </div>
 
-//       {/*     
+//       {/*
 //       <div className="container mx-auto px-6 py-20">
-        
+
 //         <div className="text-center mb-16">
 //           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-800 mb-4">
 //             Get In Touch
@@ -49,7 +49,7 @@
 //         </div>
 
 //         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-       
+
 //           <div className="p-8 bg-white border border-yellow-600/20 shadow-lg rounded-xl">
 //             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
 //               Send us a Message
@@ -84,9 +84,8 @@
 //             </form>
 //           </div>
 
-        
 //           <div className="space-y-10">
-            
+
 //             <div>
 //               <h3 className="text-2xl font-semibold text-gray-800 mb-6">
 //                 Contact Information
@@ -109,7 +108,6 @@
 //               </div>
 //             </div>
 
-           
 //             <div className="space-y-6">
 //               <h4 className="text-xl font-semibold text-gray-800">
 //                 Our Offices
@@ -209,7 +207,7 @@
 //             Mall), Western Express Highway, Borivali (East), Mumbai 400 066
 //           </p>
 //         </a>
-        
+
 //       </div>
 //       <div className="space-y-6">
 //   <h4 className="text-xl font-semibold text-gray-800">Our Offices</h4>
@@ -246,7 +244,6 @@
 //   </div>
 // </div>
 
-
 //       {/* Map Section */}
 //       <div className="w-full h-[400px]">
 //         <iframe
@@ -266,25 +263,12 @@
 
 // export default ContactSection;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // src/components/ContactSection.jsx
 import React from "react";
+
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
@@ -296,16 +280,16 @@ const ContactSection = () => {
       action: "tel:+91 9892118052",
       color: "bg-blue-100",
       iconColor: "text-blue-600",
-      hoverColor: "hover:bg-blue-50"
+      hoverColor: "hover:bg-blue-50",
     },
     {
-      icon: MessageCircle,
+      icon: FaWhatsapp,
       title: "WhatsApp us",
       description: "Start a conversation",
       action: "https://wa.me/+91 9892118052",
       color: "bg-green-100",
       iconColor: "text-green-600",
-      hoverColor: "hover:bg-green-50"
+      hoverColor: "hover:bg-green-50",
     },
     {
       icon: Mail,
@@ -314,25 +298,30 @@ const ContactSection = () => {
       action: "mailto:thegoodwill@gmail.com",
       color: "bg-pink-100",
       iconColor: "text-pink-600",
-      hoverColor: "hover:bg-pink-50"
-    }
+      hoverColor: "hover:bg-pink-50",
+    },
   ];
 
   const offices = [
     {
       city: "Mumbai Office",
-      address: "Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 , PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI - 400 067",
-      mapUrl: "https://maps.google.com/maps?q=Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067"
+      address:
+        "Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 , PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI - 400 067",
+      mapUrl:
+        "https://maps.google.com/maps?q=Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067",
     },
     {
-      city: "Surat Office", 
-      address: "55, The Galleria Shopping Hub, Near Sanjivkumar Auditorium, Opp. kitchen 37, Rto, Pal, Surat - 395009",
-      mapUrl: "https://maps.google.com/maps?q=55,+The+Galleria+Shopping+Hub,+Near+Sanjivkumar+Auditorium,+Opp.+kitchen+37,+Rto,+Pal,+Surat+-+395009"
-    }
+      city: "Surat Office",
+      address:
+        "55, The Galleria Shopping Hub, Near Sanjivkumar Auditorium, Opp. kitchen 37, Rto, Pal, Surat - 395009",
+      mapUrl:
+        "https://maps.google.com/maps?q=55,+The+Galleria+Shopping+Hub,+Near+Sanjivkumar+Auditorium,+Opp.+kitchen+37,+Rto,+Pal,+Surat+-+395009",
+    },
   ];
 
   // Updated Google Maps embed URL with the specific address
-  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzE5LjYiTiA3MsKwNTAnNDMuNiJF!5e0!3m2!1sen!2sin!4v1234567890";
+  const mapUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzE5LjYiTiA3MsKwNTAnNDMuNiJF!5e0!3m2!1sen!2sin!4v1234567890";
 
   return (
     <section id="contact" className="bg-gray-50">
@@ -372,19 +361,25 @@ const ContactSection = () => {
             <motion.a
               key={index}
               href={method.action}
-              target={method.action.startsWith('http') ? "_blank" : "_self"}
-              rel={method.action.startsWith('http') ? "noopener noreferrer" : ""}
+              target={method.action.startsWith("http") ? "_blank" : "_self"}
+              rel={
+                method.action.startsWith("http") ? "noopener noreferrer" : ""
+              }
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 text-center block border-2 border-transparent ${method.hoverColor} hover:border-gray-200`}
             >
               <div className="flex justify-center mb-4">
-                <div className={`w-16 h-16 ${method.color} rounded-full flex items-center justify-center`}>
+                <div
+                  className={`w-16 h-16 ${method.color} rounded-full flex items-center justify-center`}
+                >
                   <method.icon className={`${method.iconColor} w-8 h-8`} />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">{method.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                {method.title}
+              </h3>
               <p className="text-gray-600 text-lg">{method.description}</p>
               <div className="mt-4">
                 <span className="text-sm text-gray-500 hover:text-gray-700 transition-colors">
@@ -397,7 +392,7 @@ const ContactSection = () => {
 
         {/* Offices Section */}
         <div className="mb-16">
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -405,7 +400,7 @@ const ContactSection = () => {
           >
             Our Offices
           </motion.h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {offices.map((office, index) => (
               <motion.a
@@ -423,8 +418,12 @@ const ContactSection = () => {
                     <MapPin className="h-6 w-6 text-yellow-600" />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-3">{office.city}</h4>
-                    <p className="text-gray-600 leading-relaxed">{office.address}</p>
+                    <h4 className="text-xl font-semibold text-gray-800 mb-3">
+                      {office.city}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {office.address}
+                    </p>
                     <div className="mt-4">
                       <span className="text-sm text-yellow-600 hover:text-yellow-700 transition-colors">
                         View on map →
@@ -436,28 +435,94 @@ const ContactSection = () => {
             ))}
           </div>
         </div>
-
-       
       </div>
-       {/* Map Section - Full Screen */}
+      {/* Map Section - Full Screen */}
       <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, delay: 0.7 }}
-  className="w-full h-[450px] rounded-2xl overflow-hidden shadow-lg"
->
-  <iframe
-    title="Google Map - AKASH CHSL, Kandivali West"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a5a6a6a6a6%3A0x3be7b7a5a6a6a6a6!2sSociety%20No%20-374%20%2C%20Gala%20no%20-%20D45%2C%20AKASH%20CHSL%20%2C%20SECTOR%203%20%2C%20PUNJAB%20NATIONAL%20BANK%20LANE%20%2C%20CHARKOP%2C%20KANDIVALI%20WEST%20%2C%20MUMBAI%20-%20400%20067!5e0!3m2!1sen!2sin!4v1234567890"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</motion.div>
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-lg"
+      >
+        {/* Google Map Embed */}
+        <iframe
+          title="Google Map - AKASH CHSL, Kandivali West"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a5a6a6a6a6%3A0x3be7b7a5a6a6a6a6!2sSociety%20No%20-374%20%2C%20Gala%20no%20-%20D45%2C%20AKASH%20CHSL%20%2C%20SECTOR%203%20%2C%20PUNJAB%20NATIONAL%20BANK%20LANE%20%2C%20CHARKOP%2C%20KANDIVALI%20WEST%20%2C%20MUMBAI%20-%20400%20067!5e0!3m2!1sen!2sin!4v1234567890"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
 
+        {/* Address Overlay */}
+        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 max-w-xs border border-gray-200">
+          <div className="flex items-start space-x-3">
+            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg
+                className="w-4 h-4 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 text-sm mb-1">
+                Our Location
+              </h3>
+              <p className="text-xs text-gray-600 leading-tight">
+                Society No -374, Gala no - D45,
+                <br />
+                AKASH CHSL, SECTOR 3,
+                <br />
+                Punjab National Bank Lane,
+                <br />
+                Charkop, Kandivali West,
+                <br />
+                Mumbai - 400067
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Get Directions Button */}
+        <div className="absolute bottom-4 right-4">
+          <a
+            href="https://www.google.com/maps/dir//Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg transition-colors duration-300 flex items-center space-x-2 text-sm font-medium"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+              />
+            </svg>
+            <span>Get Directions</span>
+          </a>
+        </div>
+      </motion.div>
     </section>
   );
 };
