@@ -370,3 +370,288 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// const Hero = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   const slides = [
+//     {
+//       leftImage: "/hero1.jpg",
+//       rightImage: "/hero2.jpg",
+//       title: "ACP CLADDING",
+//     },
+//     {
+//       leftImage: "/hero3.jpg",
+//       rightImage: "/hero4.jpg",
+//       title: "STRUCTURAL GLAZING",
+//     },
+//     {
+//       leftImage: "/hero5.jpg",
+//       rightImage: "/hero4.jpg",
+//       title: "ALUMINUM SYSTEMS",
+//     },
+//     {
+//       leftImage: "/hero4.jpg",
+//       rightImage: "/hero5.jpg",
+//       title: "FACADE DESIGN",
+//     },
+//     {
+//       leftImage: "/hero5.jpg",
+//       rightImage: "/hero5.jpg",
+//       title: "GLASS ELEVATIONS",
+//     },
+//     {
+//       leftImage: "/hero6-left.jpg",
+//       rightImage: "/hero6-right.jpg",
+//       title: "INNOVATIVE STRUCTURES",
+//     },
+//   ];
+
+//   // Auto-advance slides
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+//     return () => clearInterval(timer);
+//   }, [slides.length]);
+
+//   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   const prevSlide = () =>
+//     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+//   return (
+//     <div className="relative w-full h-screen overflow-hidden max-w-full">
+//       {/* 🔹 Top Angled Border Strip */}
+//       <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden">
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           className="w-full h-full"
+//           preserveAspectRatio="none"
+//           viewBox="0 0 100 20"
+//         >
+//           <polygon points="0,0 100,0 100,20 0,20" fill="#0B3558" />
+//           <polygon points="0,0 20,0 50,20 0,20" fill="#F37021" />
+//         </svg>
+//       </div>
+
+//       {/* 🔹 Big Logo Box (Desktop) */}
+//       <div className="hidden lg:block absolute left-0 top-20 z-30">
+//         <div className="relative w-60 bg-white p-6 rounded-bl-4xl overflow-hidden shadow-lg">
+//           {/* Bottom bars */}
+//           <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558]"></div>
+//           <div className="absolute bottom-0 left-0 w-1/2 h-3 bg-[#F37021] rounded-bl-4xl"></div>
+
+//           {/* Top decoration */}
+//           <div className="absolute top-0 left-0 w-full h-3 overflow-hidden">
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="w-full h-full"
+//               preserveAspectRatio="none"
+//               viewBox="0 0 100 20"
+//             >
+//               <polygon points="0,0 100,0 100,20 0,20" fill="#0B3558" />
+//               <polygon points="0,0 50,0 65,20 0,20" fill="#F37021" />
+//             </svg>
+//           </div>
+
+//           <img
+//             src="/logo.png"
+//             alt="Goodwill Facade"
+//             className="w-48 h-auto object-contain mx-auto"
+//           />
+//         </div>
+//       </div>
+
+//       {/* 🔹 Vertical Text */}
+//       <div className="hidden lg:block absolute left-0 top-[60%] transform -translate-y-1/2 z-50 pointer-events-none">
+//         <div
+//           className="text-gray-400 text-sm font-medium tracking-wider"
+//           style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+//         >
+//           WORK ARCHITECTURE
+//         </div>
+//       </div>
+
+//       {/* 🔹 Social Box (Desktop) */}
+//       <div className="hidden lg:block absolute left-0 bottom-0 z-30">
+//         <div className="relative w-30 bg-white p-8 shadow-2xl h-98 flex flex-col justify-end items-center">
+//           <div className="absolute top-0 bottom-0 -right-2 w-[10px] bg-[#F37021]"></div>
+//           <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#F37021]"></div>
+
+//           <div className="flex flex-col items-center space-y-4">
+//             <a
+//               href="https://wa.me/919876543210"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//             >
+//               <svg
+//                 className="w-5 h-5 text-green-500"
+//                 fill="currentColor"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <path d="M12.004 2.003c-5.523 0-10 4.477-10 10 0 1.77.463 3.45 1.343 4.945L2 22l5.221-1.338A9.94 9.94 0 0012 22.003c5.523 0 10-4.477 10-10s-4.477-10-9.996-10z" />
+//               </svg>
+//             </a>
+
+//             <a
+//               href="https://www.instagram.com/"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//             >
+//               <svg
+//                 className="w-5 h-5 text-pink-500"
+//                 fill="currentColor"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9A5.5 5.5 0 0116.5 22h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2z" />
+//               </svg>
+//             </a>
+
+//             <a
+//               href="https://www.facebook.com/"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//             >
+//               <svg
+//                 className="w-5 h-5 text-blue-600"
+//                 fill="currentColor"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073" />
+//               </svg>
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* 🔹 Mobile Logo */}
+//       <div className="lg:hidden absolute top-20 left-0 z-30">
+//         <div className="bg-white p-4 rounded-br-2xl shadow-lg relative">
+//           <div className="absolute top-0 left-0 w-full h-5 z-50 overflow-hidden">
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               className="w-full h-full"
+//               preserveAspectRatio="none"
+//               viewBox="0 0 100 20"
+//             >
+//               <polygon points="0,0 100,0 95,20 0,20" fill="#0B3558" />
+//               <polygon points="0,0 20,0 15,20 0,20" fill="#F37021" />
+//             </svg>
+//           </div>
+//           <img
+//             src="/logo.png"
+//             alt="Goodwill Facade"
+//             className="w-32 h-auto object-contain"
+//           />
+//         </div>
+//       </div>
+
+//       {/* 🔹 Background Split Image */}
+//       <div className="absolute inset-0 flex">
+//         {/* Left Half */}
+//         <motion.div
+//           key={`left-${currentSlide}`}
+//           className="w-1/2 h-full bg-cover bg-center"
+//           style={{
+//             backgroundImage: `url(${slides[currentSlide].leftImage})`,
+//           }}
+//           initial={{ opacity: 0, scale: 1.2 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1.2 }}
+//         ></motion.div>
+
+//         {/* Right Half */}
+//         <motion.div
+//           key={`right-${currentSlide}`}
+//           className="w-1/2 h-full bg-cover bg-center"
+//           style={{
+//             backgroundImage: `url(${slides[currentSlide].rightImage})`,
+//           }}
+//           initial={{ opacity: 0, scale: 1.2 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1.2, delay: 0.2 }}
+//         ></motion.div>
+
+//         {/* Optional soft divider line */}
+//         <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent z-10"></div>
+//       </div>
+
+//       {/* 🔹 Navigation Arrows */}
+//       <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-8">
+//         <button
+//           onClick={prevSlide}
+//           className="text-white hover:text-orange-400 transition-colors group"
+//         >
+//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+//             <svg
+//               className="w-5 h-5"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M15 19l-7-7 7-7"
+//               />
+//             </svg>
+//             <span className="text-sm font-medium tracking-wider hidden sm:block">
+//               PREV
+//             </span>
+//           </div>
+//         </button>
+
+//         <button
+//           onClick={nextSlide}
+//           className="text-white hover:text-orange-400 transition-colors group"
+//         >
+//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+//             <span className="text-sm font-medium tracking-wider hidden sm:block">
+//               NEXT
+//             </span>
+//             <svg
+//               className="w-5 h-5"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M9 5l7 7-7 7"
+//               />
+//             </svg>
+//           </div>
+//         </button>
+//       </div>
+
+//       {/* 🔹 Slide Indicators */}
+//       <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+//         <div className="flex space-x-3">
+//           {slides.map((_, index) => (
+//             <button
+//               key={index}
+//               onClick={() => setCurrentSlide(index)}
+//               className={`w-3 h-3 rounded-full transition-all duration-300 ${
+//                 index === currentSlide
+//                   ? "bg-[#F37021] scale-110"
+//                   : "bg-white/50 hover:bg-white/80"
+//               }`}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Hero;
