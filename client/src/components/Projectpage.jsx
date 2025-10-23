@@ -71,7 +71,7 @@ const Projects = () => {
         >
           Our Projects
         </h2>
-        <p className="text-sm  sm:text-base text-gray-600 max-w-2xl mx-auto mt-4 px-4">
+        <p className="text-lg   text-gray-600 max-w-2xl mx-auto mt-4 px-4">
           From high-end homes to modern office spaces, each Brikly project is a
           reflection of quality, detail, and dedication.
         </p>
@@ -105,11 +105,22 @@ const Projects = () => {
             </div>
 
             {/* Overlay Text */}
-            <div className="text-white absolute inset-0 flex items-center justify-center">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
+            <div className="text-white absolute inset-0 flex items-end justify-start p-4">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-medium">
                 {project.title}
               </h3>
             </div>
+
+            {/* <div className="absolute bottom-0 left-0 w-full flex justify-center">
+              <div className="translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out bg-white/90 w-full text-center p-4 shadow-md">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#0B3558]">
+                  {project.title}
+                </h3>
+                <div className="mt-2 flex justify-center">
+                  <div className="w-8 h-1 bg-[#F37021] rounded-full"></div>
+                </div>
+              </div>
+            </div> */}
           </motion.div>
         ))}
       </motion.div>

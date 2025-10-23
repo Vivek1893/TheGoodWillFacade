@@ -132,7 +132,7 @@ const Footer = () => {
                 className="h-20 w-auto bg-white"
                 alt="The Goodwill Logo"
               />
-              <span className="ml-3 text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+              <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
                 The Goodwill
               </span>
             </div>

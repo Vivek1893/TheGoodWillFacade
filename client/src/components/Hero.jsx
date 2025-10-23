@@ -375,326 +375,6 @@
 
 
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    { image: "/hero1.jpg", title: "ACP CLADDING" },
-    { image: "/hero2.jpg", title: "STRUCTURAL GLAZING" },
-    { image: "/hero3.jpg", title: "ALUMINUM SYSTEMS" },
-    { image: "/hero4.jpg", title: "ALUMINUM SYSTEMS" },
-    { image: "/hero5.jpg", title: "ALUMINUM SYSTEMS" },
-    { image: "/hero6.webp", title: "ALUMINUM SYSTEMS" },
-  ];
-
-  // Auto-advance slides
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  // Grid animation function
-  const getGrid = () => {
-    if (window.innerWidth < 640) return { rows: 4, cols: 6 };
-    if (window.innerWidth < 1024) return { rows: 5, cols: 8 };
-    return { rows: 6, cols: 10 };
-  };
-
-  const [grid, setGrid] = useState(getGrid());
-
-  useEffect(() => {
-    const handleResize = () => setGrid(getGrid());
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return (
-    <div className="relative w-full h-screen overflow-hidden max-w-full ">
-      {/* Top Angled Border Strip */}
-      <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden ">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-          preserveAspectRatio="none"
-          viewBox="0 0 100 20"
-        >
-          <polygon points="0,0 100,0 100,20 0,20" fill="#0B3558" />
-          <polygon points="0,0 20,0 50,20 0,20" fill="#F37021" />
-        </svg>
-      </div>
-
-      {/* Desktop & Tablet Logo (hidden only on mobile) */}
-      <div className="hidden sm:block absolute left-0 top-20 z-30">
-        <div className="relative w-60 bg-white p-6 border-r-10 border-[#0B3558] rounded-bl-4xl overflow-hidden">
-          <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558]"></div>
-          <div className="absolute bottom-0 left-0 w-1/2 h-3 bg-[#F37021] rounded-bl-4xl"></div>
-          <div className="absolute top-0 left-0 w-full h-3 z-50 overflow-hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full"
-              preserveAspectRatio="none"
-              viewBox="0 0 100 20"
-            >
-              <polygon points="0,0 100,0 100,20 0,20" fill="#0B3558" />
-              <polygon points="0,0 50,0 65,20 0,20" fill="#F37021" />
-            </svg>
-          </div>
-          <img
-            src="/logo.png"
-            alt="Goodwill Facade"
-            className="w-48 h-auto object-contain mx-auto"
-          />
-        </div>
-      </div>
-
-      {/* Vertical text between logo and social */}
-      <div className="hidden lg:block absolute left-0 top-[60%] transform -translate-y-1/2 z-50 pointer-events-none">
-        <div
-          className="text-gray-400 text-sm font-medium tracking-wider"
-          style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
-        >
-          WORK ARCHITECTURE
-        </div>
-      </div>
-
-      {/* Social box */}
-      <div className="hidden lg:block absolute left-0 bottom-0 z-30">
-        <div className="relative w-30 bg-white p-8 shadow-2xl h-98 flex flex-col justify-end items-center">
-          <div className="absolute top-0 bottom-0 -right-2 w-[10px] bg-[#F37021]"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#F37021]"></div>
-          <div className="flex flex-col items-center space-y-4">
-            {/* WhatsApp */}
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12.004 2.003c-5.523 0-10 4.477-10 10 0 1.77.463 3.45 1.343 4.945L2 22l5.221-1.338A9.94 9.94 0 0012 22.003c5.523 0 10-4.477 10-10s-4.477-10-9.996-10zm0 18.17a8.1 8.1 0 01-4.119-1.137l-.294-.174-3.097.795.829-3.025-.19-.311a8.083 8.083 0 01-1.235-4.41c0-4.48 3.642-8.122 8.106-8.122 2.166 0 4.201.843 5.733 2.375a8.072 8.072 0 012.37 5.747c-.004 4.479-3.646 8.162-8.103 8.162zm4.568-6.075c-.25-.125-1.475-.726-1.703-.81-.228-.084-.395-.125-.562.125-.167.25-.645.81-.79.977-.145.167-.292.188-.542.063-.25-.125-1.056-.389-2.014-1.242-.745-.664-1.247-1.484-1.393-1.734-.145-.25-.015-.386.11-.511.113-.113.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.562-1.354-.77-1.854-.203-.489-.411-.424-.562-.433l-.479-.009c-.167 0-.438.063-.667.313-.228.25-.874.854-.874 2.084 0 1.229.896 2.416 1.021 2.584.125.167 1.758 2.69 4.263 3.77.596.257 1.061.41 1.424.525.598.19 1.143.163 1.573.099.48-.072 1.475-.602 1.683-1.182.208-.58.208-1.077.145-1.182-.062-.104-.229-.167-.479-.292z" />
-              </svg>
-            </a>
-            {/* Instagram */}
-            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg className="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.25 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-              </svg>
-            </a>
-            {/* Facebook */}
-            <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Hero Area */}
-      <div className="relative w-full h-full lg:ml-32">
-        <div
-          className="absolute inset-0 grid"
-          style={{
-            gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
-            gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
-          }}
-        >
-          {Array.from({ length: grid.rows * grid.cols }).map((_, i) => {
-            const row = Math.floor(i / grid.cols);
-            const col = i % grid.cols;
-            return (
-              <motion.div
-                key={`${currentSlide}-${i}`}
-                className="w-full h-full bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${slides[currentSlide].image})`,
-                  backgroundPosition: `${(col / (grid.cols - 1)) * 100}% ${(row / (grid.rows - 1)) * 100}%`,
-                  backgroundSize: `${grid.cols * 100}% ${grid.rows * 100}%`,
-                }}
-                initial={{ opacity: 0, scale: 1.3 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, delay: (row * grid.cols + col) * 0.015 }}
-              />
-            );
-          })}
-        </div>
-
-        {/* Navigation Arrows */}
-        <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-4 md:space-x-8">
-          <button onClick={prevSlide} className="text-white hover:text-orange-400 transition-colors group">
-            <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-1 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
-              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              <span className="text-xs md:text-sm font-medium tracking-wider hidden sm:block">PREV</span>
-            </div>
-          </button>
-          <button onClick={nextSlide} className="text-white hover:text-orange-400 transition-colors group">
-            <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-1 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
-              <span className="text-xs md:text-sm font-medium tracking-wider hidden sm:block">NEXT</span>
-              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Hero;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useState, useEffect } from "react";
 // import { motion, AnimatePresence } from "framer-motion";
 
@@ -702,36 +382,12 @@ export default Hero;
 //   const [currentSlide, setCurrentSlide] = useState(0);
 
 //   const slides = [
-//     {
-//       leftImage: "/hero1.jpg",
-//       rightImage: "/hero2.jpg",
-//       title: "ACP CLADDING",
-//     },
-//     {
-//       leftImage: "/hero3.jpg",
-//       rightImage: "/hero4.jpg",
-//       title: "STRUCTURAL GLAZING",
-//     },
-//     {
-//       leftImage: "/hero5.jpg",
-//       rightImage: "/hero4.jpg",
-//       title: "ALUMINUM SYSTEMS",
-//     },
-//     {
-//       leftImage: "/hero4.jpg",
-//       rightImage: "/hero5.jpg",
-//       title: "FACADE DESIGN",
-//     },
-//     {
-//       leftImage: "/hero5.jpg",
-//       rightImage: "/hero5.jpg",
-//       title: "GLASS ELEVATIONS",
-//     },
-//     {
-//       leftImage: "/hero6-left.jpg",
-//       rightImage: "/hero6-right.jpg",
-//       title: "INNOVATIVE STRUCTURES",
-//     },
+//     { image: "/hero1.jpg", title: "ACP CLADDING" },
+//     { image: "/hero2.jpg", title: "STRUCTURAL GLAZING" },
+//     { image: "/hero3.jpg", title: "ALUMINUM SYSTEMS" },
+//     { image: "/hero4.jpg", title: "ALUMINUM SYSTEMS" },
+//     { image: "/hero5.jpg", title: "ALUMINUM SYSTEMS" },
+//     { image: "/hero6.webp", title: "ALUMINUM SYSTEMS" },
 //   ];
 
 //   // Auto-advance slides
@@ -742,14 +398,33 @@ export default Hero;
 //     return () => clearInterval(timer);
 //   }, [slides.length]);
 
-//   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-//   const prevSlide = () =>
+//   const nextSlide = () => {
+//     setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   };
+
+//   const prevSlide = () => {
 //     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+//   };
+
+//   // Grid animation function
+//   const getGrid = () => {
+//     if (window.innerWidth < 640) return { rows: 4, cols: 6 };
+//     if (window.innerWidth < 1024) return { rows: 5, cols: 8 };
+//     return { rows: 6, cols: 10 };
+//   };
+
+//   const [grid, setGrid] = useState(getGrid());
+
+//   useEffect(() => {
+//     const handleResize = () => setGrid(getGrid());
+//     window.addEventListener("resize", handleResize);
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
 
 //   return (
-//     <div className="relative w-full h-screen overflow-hidden max-w-full">
-//       {/* 🔹 Top Angled Border Strip */}
-//       <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden">
+//     <div className="relative w-full h-screen overflow-hidden max-w-full ">
+//       {/* Top Angled Border Strip */}
+//       <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden ">
 //         <svg
 //           xmlns="http://www.w3.org/2000/svg"
 //           className="w-full h-full"
@@ -761,15 +436,12 @@ export default Hero;
 //         </svg>
 //       </div>
 
-//       {/* 🔹 Big Logo Box (Desktop) */}
-//       <div className="hidden lg:block absolute left-0 top-20 z-30">
-//         <div className="relative w-60 bg-white p-6 rounded-bl-4xl overflow-hidden shadow-lg">
-//           {/* Bottom bars */}
+//       {/* Desktop & Tablet Logo (hidden only on mobile) */}
+//       <div className="hidden sm:block absolute left-0 top-20 z-30">
+//         <div className="relative w-60 bg-white p-6 border-r-10 border-[#0B3558] rounded-bl-4xl overflow-hidden">
 //           <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558]"></div>
 //           <div className="absolute bottom-0 left-0 w-1/2 h-3 bg-[#F37021] rounded-bl-4xl"></div>
-
-//           {/* Top decoration */}
-//           <div className="absolute top-0 left-0 w-full h-3 overflow-hidden">
+//           <div className="absolute top-0 left-0 w-full h-3 z-50 overflow-hidden">
 //             <svg
 //               xmlns="http://www.w3.org/2000/svg"
 //               className="w-full h-full"
@@ -780,7 +452,6 @@ export default Hero;
 //               <polygon points="0,0 50,0 65,20 0,20" fill="#F37021" />
 //             </svg>
 //           </div>
-
 //           <img
 //             src="/logo.png"
 //             alt="Goodwill Facade"
@@ -789,7 +460,7 @@ export default Hero;
 //         </div>
 //       </div>
 
-//       {/* 🔹 Vertical Text */}
+//       {/* Vertical text between logo and social */}
 //       <div className="hidden lg:block absolute left-0 top-[60%] transform -translate-y-1/2 z-50 pointer-events-none">
 //         <div
 //           className="text-gray-400 text-sm font-medium tracking-wider"
@@ -799,175 +470,81 @@ export default Hero;
 //         </div>
 //       </div>
 
-//       {/* 🔹 Social Box (Desktop) */}
+//       {/* Social box */}
 //       <div className="hidden lg:block absolute left-0 bottom-0 z-30">
 //         <div className="relative w-30 bg-white p-8 shadow-2xl h-98 flex flex-col justify-end items-center">
 //           <div className="absolute top-0 bottom-0 -right-2 w-[10px] bg-[#F37021]"></div>
 //           <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#F37021]"></div>
-
 //           <div className="flex flex-col items-center space-y-4">
-//             <a
-//               href="https://wa.me/919876543210"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//             >
-//               <svg
-//                 className="w-5 h-5 text-green-500"
-//                 fill="currentColor"
-//                 viewBox="0 0 24 24"
-//               >
-//                 <path d="M12.004 2.003c-5.523 0-10 4.477-10 10 0 1.77.463 3.45 1.343 4.945L2 22l5.221-1.338A9.94 9.94 0 0012 22.003c5.523 0 10-4.477 10-10s-4.477-10-9.996-10z" />
+//             {/* WhatsApp */}
+//             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+//               <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+//                 <path d="M12.004 2.003c-5.523 0-10 4.477-10 10 0 1.77.463 3.45 1.343 4.945L2 22l5.221-1.338A9.94 9.94 0 0012 22.003c5.523 0 10-4.477 10-10s-4.477-10-9.996-10zm0 18.17a8.1 8.1 0 01-4.119-1.137l-.294-.174-3.097.795.829-3.025-.19-.311a8.083 8.083 0 01-1.235-4.41c0-4.48 3.642-8.122 8.106-8.122 2.166 0 4.201.843 5.733 2.375a8.072 8.072 0 012.37 5.747c-.004 4.479-3.646 8.162-8.103 8.162zm4.568-6.075c-.25-.125-1.475-.726-1.703-.81-.228-.084-.395-.125-.562.125-.167.25-.645.81-.79.977-.145.167-.292.188-.542.063-.25-.125-1.056-.389-2.014-1.242-.745-.664-1.247-1.484-1.393-1.734-.145-.25-.015-.386.11-.511.113-.113.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.562-1.354-.77-1.854-.203-.489-.411-.424-.562-.433l-.479-.009c-.167 0-.438.063-.667.313-.228.25-.874.854-.874 2.084 0 1.229.896 2.416 1.021 2.584.125.167 1.758 2.69 4.263 3.77.596.257 1.061.41 1.424.525.598.19 1.143.163 1.573.099.48-.072 1.475-.602 1.683-1.182.208-.58.208-1.077.145-1.182-.062-.104-.229-.167-.479-.292z" />
 //               </svg>
 //             </a>
-
-//             <a
-//               href="https://www.instagram.com/"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//             >
-//               <svg
-//                 className="w-5 h-5 text-pink-500"
-//                 fill="currentColor"
-//                 viewBox="0 0 24 24"
-//               >
-//                 <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9A5.5 5.5 0 0116.5 22h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2z" />
+//             {/* Instagram */}
+//             <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+//               <svg className="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+//                 <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.25 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
 //               </svg>
 //             </a>
-
-//             <a
-//               href="https://www.facebook.com/"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//             >
-//               <svg
-//                 className="w-5 h-5 text-blue-600"
-//                 fill="currentColor"
-//                 viewBox="0 0 24 24"
-//               >
-//                 <path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073" />
+//             {/* Facebook */}
+//             <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+//               <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+//                 <path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
 //               </svg>
 //             </a>
 //           </div>
 //         </div>
 //       </div>
 
-//       {/* 🔹 Mobile Logo */}
-//       <div className="lg:hidden absolute top-20 left-0 z-30">
-//         <div className="bg-white p-4 rounded-br-2xl shadow-lg relative">
-//           <div className="absolute top-0 left-0 w-full h-5 z-50 overflow-hidden">
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               className="w-full h-full"
-//               preserveAspectRatio="none"
-//               viewBox="0 0 100 20"
-//             >
-//               <polygon points="0,0 100,0 95,20 0,20" fill="#0B3558" />
-//               <polygon points="0,0 20,0 15,20 0,20" fill="#F37021" />
-//             </svg>
-//           </div>
-//           <img
-//             src="/logo.png"
-//             alt="Goodwill Facade"
-//             className="w-32 h-auto object-contain"
-//           />
+//       {/* Main Hero Area */}
+//       <div className="relative w-full h-full lg:ml-32">
+//         <div
+//           className="absolute inset-0 grid"
+//           style={{
+//             gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+//             gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
+//           }}
+//         >
+//           {Array.from({ length: grid.rows * grid.cols }).map((_, i) => {
+//             const row = Math.floor(i / grid.cols);
+//             const col = i % grid.cols;
+//             return (
+//               <motion.div
+//                 key={`${currentSlide}-${i}`}
+//                 className="w-full h-full bg-cover bg-center"
+//                 style={{
+//                   backgroundImage: `url(${slides[currentSlide].image})`,
+//                   backgroundPosition: `${(col / (grid.cols - 1)) * 100}% ${(row / (grid.rows - 1)) * 100}%`,
+//                   backgroundSize: `${grid.cols * 100}% ${grid.rows * 100}%`,
+//                 }}
+//                 initial={{ opacity: 0, scale: 1.3 }}
+//                 animate={{ opacity: 1, scale: 1 }}
+//                 transition={{ duration: 1.2, delay: (row * grid.cols + col) * 0.015 }}
+//               />
+//             );
+//           })}
 //         </div>
-//       </div>
 
-//       {/* 🔹 Background Split Image */}
-//       <div className="absolute inset-0 flex">
-//         {/* Left Half */}
-//         <motion.div
-//           key={`left-${currentSlide}`}
-//           className="w-1/2 h-full bg-cover bg-center"
-//           style={{
-//             backgroundImage: `url(${slides[currentSlide].leftImage})`,
-//           }}
-//           initial={{ opacity: 0, scale: 1.2 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 1.2 }}
-//         ></motion.div>
-
-//         {/* Right Half */}
-//         <motion.div
-//           key={`right-${currentSlide}`}
-//           className="w-1/2 h-full bg-cover bg-center"
-//           style={{
-//             backgroundImage: `url(${slides[currentSlide].rightImage})`,
-//           }}
-//           initial={{ opacity: 0, scale: 1.2 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 1.2, delay: 0.2 }}
-//         ></motion.div>
-
-//         {/* Optional soft divider line */}
-//         <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent z-10"></div>
-//       </div>
-
-//       {/* 🔹 Navigation Arrows */}
-//       <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-8">
-//         <button
-//           onClick={prevSlide}
-//           className="text-white hover:text-orange-400 transition-colors group"
-//         >
-//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
-//             <svg
-//               className="w-5 h-5"
-//               fill="none"
-//               stroke="currentColor"
-//               viewBox="0 0 24 24"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth={2}
-//                 d="M15 19l-7-7 7-7"
-//               />
-//             </svg>
-//             <span className="text-sm font-medium tracking-wider hidden sm:block">
-//               PREV
-//             </span>
-//           </div>
-//         </button>
-
-//         <button
-//           onClick={nextSlide}
-//           className="text-white hover:text-orange-400 transition-colors group"
-//         >
-//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
-//             <span className="text-sm font-medium tracking-wider hidden sm:block">
-//               NEXT
-//             </span>
-//             <svg
-//               className="w-5 h-5"
-//               fill="none"
-//               stroke="currentColor"
-//               viewBox="0 0 24 24"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth={2}
-//                 d="M9 5l7 7-7 7"
-//               />
-//             </svg>
-//           </div>
-//         </button>
-//       </div>
-
-//       {/* 🔹 Slide Indicators */}
-//       <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-//         <div className="flex space-x-3">
-//           {slides.map((_, index) => (
-//             <button
-//               key={index}
-//               onClick={() => setCurrentSlide(index)}
-//               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-//                 index === currentSlide
-//                   ? "bg-[#F37021] scale-110"
-//                   : "bg-white/50 hover:bg-white/80"
-//               }`}
-//             />
-//           ))}
+//         {/* Navigation Arrows */}
+//         <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-4 md:space-x-8">
+//           <button onClick={prevSlide} className="text-white hover:text-orange-400 transition-colors group">
+//             <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-1 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
+//               <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+//               </svg>
+//               <span className="text-xs md:text-sm font-medium tracking-wider hidden sm:block">PREV</span>
+//             </div>
+//           </button>
+//           <button onClick={nextSlide} className="text-white hover:text-orange-400 transition-colors group">
+//             <div className="flex items-center space-x-1 md:space-x-2 bg-black/60 backdrop-blur-sm px-1 md:px-4 py-2 md:py-3 rounded-full border border-white/30">
+//               <span className="text-xs md:text-sm font-medium tracking-wider hidden sm:block">NEXT</span>
+//               <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+//               </svg>
+//             </div>
+//           </button>
 //         </div>
 //       </div>
 //     </div>
@@ -975,3 +552,297 @@ export default Hero;
 // };
 
 // export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      leftImage: "/hero1.jpg",
+      rightImage: "/hero2.jpg",
+      title: "ACP CLADDING",
+    },
+    {
+      leftImage: "/hero3.jpg",
+      rightImage: "/hero4.jpg",
+      title: "STRUCTURAL GLAZING",
+    },
+    {
+      leftImage: "/hero5.jpg",
+      rightImage: "/hero4.jpg",
+      title: "ALUMINUM SYSTEMS",
+    },
+    {
+      leftImage: "/hero4.jpg",
+      rightImage: "/hero5.jpg",
+      title: "FACADE DESIGN",
+    },
+    {
+      leftImage: "/hero5.jpg",
+      rightImage: "/hero5.jpg",
+      title: "GLASS ELEVATIONS",
+    },
+    {
+      leftImage: "/hero6-left.jpg",
+      rightImage: "/hero6-right.jpg",
+      title: "INNOVATIVE STRUCTURES",
+    },
+  ];
+
+  // Auto-advance slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  return (
+    <div className="relative w-full h-screen overflow-hidden max-w-full">
+      {/* 🔹 Top Angled Border Strip */}
+      <div className="absolute top-0 left-0 w-full h-6 z-50 overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 100 20"
+        >
+          <polygon points="0,0 100,0 100,20 0,20" fill="#0B3558" />
+          <polygon points="0,0 20,0 50,20 0,20" fill="#F37021" />
+        </svg>
+      </div>
+
+      {/* 🔹 Big Logo Box (Desktop) */}
+      <div className="hidden lg:block absolute left-0 top-20 z-30">
+        <div className="relative w-60 bg-white p-6 rounded-bl-4xl overflow-hidden shadow-lg">
+          {/* Bottom bars */}
+          <div className="absolute bottom-0 right-0 w-1/2 h-3 bg-[#0B3558]"></div>
+          <div className="absolute bottom-0 left-0 w-1/2 h-3 bg-[#F37021] rounded-bl-4xl"></div>
+
+          {/* Top decoration */}
+          <div className="absolute top-0 left-0 w-full h-3 overflow-hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+              preserveAspectRatio="none"
+              viewBox="0 0 100 20"
+            >
+              <polygon points="0,0 100,0 100,20 0,20" fill="#0B3558" />
+              <polygon points="0,0 50,0 65,20 0,20" fill="#F37021" />
+            </svg>
+          </div>
+
+          <img
+            src="/logo.png"
+            alt="Goodwill Facade"
+            className="w-48 h-auto object-contain mx-auto"
+          />
+        </div>
+      </div>
+
+      {/* 🔹 Vertical Text */}
+      <div className="hidden lg:block absolute left-0 top-[60%] transform -translate-y-1/2 z-50 pointer-events-none">
+        <div
+          className="text-gray-400 text-sm font-medium tracking-wider"
+          style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+        >
+          WORK ARCHITECTURE
+        </div>
+      </div>
+
+      {/* 🔹 Social Box (Desktop) */}
+      <div className="hidden lg:block absolute left-0 bottom-0 z-30">
+        <div className="relative w-30 bg-white p-8 shadow-2xl h-98 flex flex-col justify-end items-center">
+          <div className="absolute top-0 bottom-0 -right-2 w-[10px] bg-[#F37021]"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-[10px] bg-[#F37021]"></div>
+
+          <div className="flex flex-col items-center space-y-4">
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                className="w-5 h-5 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12.004 2.003c-5.523 0-10 4.477-10 10 0 1.77.463 3.45 1.343 4.945L2 22l5.221-1.338A9.94 9.94 0 0012 22.003c5.523 0 10-4.477 10-10s-4.477-10-9.996-10z" />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                className="w-5 h-5 text-pink-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9A5.5 5.5 0 0116.5 22h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2z" />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                className="w-5 h-5 text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 🔹 Mobile Logo */}
+      <div className="lg:hidden absolute top-20 left-0 z-30">
+        <div className="bg-white p-4 rounded-br-2xl shadow-lg relative">
+          <div className="absolute top-0 left-0 w-full h-5 z-50 overflow-hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+              preserveAspectRatio="none"
+              viewBox="0 0 100 20"
+            >
+              <polygon points="0,0 100,0 95,20 0,20" fill="#0B3558" />
+              <polygon points="0,0 20,0 15,20 0,20" fill="#F37021" />
+            </svg>
+          </div>
+          <img
+            src="/logo.png"
+            alt="Goodwill Facade"
+            className="w-32 h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      {/* 🔹 Background Split Image */}
+      <div className="absolute inset-0 flex">
+        {/* Left Half */}
+        <motion.div
+          key={`left-${currentSlide}`}
+          className="w-1/2 h-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${slides[currentSlide].leftImage})`,
+          }}
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+        ></motion.div>
+
+        {/* Right Half */}
+        <motion.div
+          key={`right-${currentSlide}`}
+          className="w-1/2 h-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${slides[currentSlide].rightImage})`,
+          }}
+          initial={{ opacity: 0, scale: 1.2 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        ></motion.div>
+
+        {/* Optional soft divider line */}
+        <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent z-10"></div>
+      </div>
+
+      {/* 🔹 Navigation Arrows */}
+      <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-8">
+        <button
+          onClick={prevSlide}
+          className="text-white hover:text-orange-400 transition-colors group"
+        >
+          <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            <span className="text-sm font-medium tracking-wider hidden sm:block">
+              PREV
+            </span>
+          </div>
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="text-white hover:text-orange-400 transition-colors group"
+        >
+          <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+            <span className="text-sm font-medium tracking-wider hidden sm:block">
+              NEXT
+            </span>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+
+      {/* 🔹 Slide Indicators */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="flex space-x-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "bg-[#F37021] scale-110"
+                  : "bg-white/50 hover:bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

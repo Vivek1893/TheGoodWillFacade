@@ -215,10 +215,10 @@ const Residential = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                   />
-                  <h3 className="mt-4 text-lg font-semibold text-center">
+                  <h3 className="mt-4 text-lg text-[#0B3558] font-semibold text-center">
                     {project.name}
                   </h3>
-                  <div className="w-8 sm:w-10 h-[2px] bg-blue-800 mt-2"></div>
+                  <div className="w-10 sm:w-12 h-[3px] bg-[#F37021] mt-2"></div>
                 </motion.div>
               </Link>
             ))}

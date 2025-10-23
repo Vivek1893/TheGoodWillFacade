@@ -1,129 +1,129 @@
-import React, { useState, useEffect } from "react";
+// import React from "react";
 
-const ClientLogoSlider = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [pauseAuto, setPauseAuto] = useState(false);
-  const [slideWidth, setSlideWidth] = useState(250);
+// const ClientsSection = () => {
+//   const clients = [
+//     { name: "abof", logo: "/clientlogo/logo1.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo2.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo3.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo4.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo5.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo6.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo7.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo8.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo9.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo10.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo11.jpg" },
 
+//     { name: "abof", logo: "/clientlogo/logo12.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo13.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo14.jpg" },
+//     { name: "abof", logo: "/clientlogo/logo15.jpg" },
+//   ];
+
+//   return (
+//     <section className="py-16 bg-white">
+//       <div className="max-w-7xl mx-auto px-4 text-center">
+//         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2">Our Clients</h2>
+//         <p className="text-gray-500 text-lg mb-12">Meet our happy clients</p>
+
+//         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center">
+//           {clients.map((client, index) => (
+//             <div key={index} className="flex items-center justify-center p-4">
+//               <img
+//                 src={client.logo}
+//                 alt={client.name}
+//                 className="max-h-30 object-contain"
+//               />
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ClientsSection;
+
+
+
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const ClientLogoGrid = () => {
   const clientLogos = [
-   
-    { id: 14, src: "/Picture14.webp", alt: "Client Logo" },
-    { id: 15, src: "/Picture15.webp", alt: "Client Logo" },
-    { id: 16, src: "/Picture16.webp", alt: "Client Logo" },
-    { id: 17, src: "/Picture17.webp", alt: "Client Logo" },
-    { id: 18, src: "/Picture18.webp", alt: "Client Logo" },
-    
-    { id: 26, src: "/Picture26.webp", alt: "Client Logo" },
+    { id: 1, src: "/clientlogo/logo1.jpg", alt: "abof" },
+    { id: 2, src: "/clientlogo/logo2.jpg", alt: "Lucubrate" },
+    { id: 3, src: "/clientlogo/logo3.jpg", alt: "Restaurant" },
+    { id: 4, src: "/clientlogo/logo4.jpg", alt: "Airplane Desert" },
+    { id: 5, src: "/clientlogo/logo5.jpg", alt: "cityus" },
+    { id: 6, src:"/clientlogo/logo6.jpg", alt: "Trustly" },
+    { id: 7, src: "/clientlogo/logo7.jpg", alt: "oldendoff" },
+    { id: 8, src:"/clientlogo/logo8.jpg",alt: "grabyo" },
+    { id: 9, src:"/clientlogo/logo9.jpg",alt: "grabyo" },
+    { id: 10, src:"/clientlogo/logo10.jpg",alt: "grabyo" },
+    { id: 11, src:"/clientlogo/logo11.jpg",alt: "grabyo" },
+    { id: 12, src:"/clientlogo/logo12.jpg",alt: "grabyo" },
+    { id: 13, src:"/clientlogo/logo13.jpg",alt: "grabyo" },
+    { id: 14, src:"/clientlogo/logo14.jpg",alt: "grabyo" },
+    { id: 15, src:"/clientlogo/logo15.jpg",alt: "grabyo" },
   ];
 
-  const totalSlides = clientLogos.length;
-
-  // Adjust slide width on window resize
-  useEffect(() => {
-    const updateSlideWidth = () => {
-      const width = window.innerWidth;
-      if (width < 480) setSlideWidth(140); // small phones
-      else if (width < 640) setSlideWidth(160); // mobile
-      else if (width < 768) setSlideWidth(200); // tablet
-      else setSlideWidth(250); // desktop
-    };
-
-    updateSlideWidth();
-    window.addEventListener("resize", updateSlideWidth);
-    return () => window.removeEventListener("resize", updateSlideWidth);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    pauseAutoScroll();
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-    pauseAutoScroll();
-  };
-
-  const pauseAutoScroll = () => {
-    setPauseAuto(true);
-    setTimeout(() => setPauseAuto(false), 4000);
-  };
-
-  // Auto-scroll
-  useEffect(() => {
-    if (!isPlaying || pauseAuto) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [isPlaying, pauseAuto, totalSlides]);
-
-  const handleMouseEnter = () => setPauseAuto(true);
-  const handleMouseLeave = () => setPauseAuto(false);
-
   return (
-    <section className="bg-white  ">
-      <div className="container mx-auto px-4 -mb-8 sm:px-6 lg:px-1">
-        {/* Heading */}
-        <div className="text-center mb-8 md:mb-12">
-          <h2
-            className="text-[36px] sm:text-4xl lg:text-5xl font-semibold text-[#0B2146]  tracking-wide"
-            style={{
-              background:
-                "linear-gradient(90deg, #E86C0C 0%, #001F5F 70%, #C4C4C4 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+    <section className="bg-white py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading Section */}
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
           >
             Our Clients
-          </h2>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-2xl text-gray-600 max-w-2xl mx-auto"
+          >
+            Most our happy clients
+          </motion.p>
         </div>
 
-        {/* Slider */}
-        <div className="relative overflow-hidden mt-10 sm:mt-16 mb-16 sm:mb-24">
-          {/* Left Arrow */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 sm:-left-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 rounded-full shadow-md flex items-center justify-center text-blue-700 text-lg sm:text-2xl hover:bg-white transition-all duration-300 cursor-pointer"
-          >
-            &#10094;
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 sm:-right-2 top-1/2 transform -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 rounded-full shadow-md flex items-center justify-center text-blue-700 text-lg sm:text-2xl hover:bg-white transition-all duration-300 cursor-pointer"
-          >
-            &#10095;
-          </button>
-
-          {/* Slider Track */}
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              transform: `translateX(-${currentSlide * slideWidth}px)`,
-            }}
-          >
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 mx-2 w-[140px] sm:w-[160px] md:w-[200px] lg:w-[250px] h-20 sm:h-24 md:h-28 flex items-center justify-center bg-white rounded-xl shadow-md sm:shadow-lg p-2 sm:p-3 border border-gray-100 group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="max-h-14 sm:max-h-16 md:max-h-20 object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
+        {/* Logo Grid with Extra Large Images */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
+          {clientLogos.map((logo, index) => (
+            <motion.div
+              key={logo.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.08 }}
+              className="bg-white rounded-xl p-8 flex items-center justify-center h-40 md:h-48 border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-28 md:max-h-32 w-auto object-contain filter  transition-all duration-300"
+              />
+            </motion.div>
+          ))}
         </div>
+
+        {/* Trust Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-20"
+        >
+         
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default ClientLogoSlider;
+export default ClientLogoGrid;

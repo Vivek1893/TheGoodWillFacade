@@ -596,13 +596,13 @@ const Navbar = () => {
                         to="/projects/Detail_project"
                         className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
                       >
-                        Project Completed
+                        Project Detail
                       </Link>
                       <Link
                         to="/projects/Project_list"
                         className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
                       >
-                        Project Ongoing
+                        Project List
                       </Link>
                     </div>
                   </div>
@@ -750,14 +750,14 @@ const Navbar = () => {
                     onClick={handleLinkClick}
                     className="block text-black hover:text-orange-500"
                   >
-                    Project Completed
+                    Project Detail
                   </Link>
                   <Link
                     to="/projects/Project_list"
                     onClick={handleLinkClick}
                     className="block text-black hover:text-orange-500"
                   >
-                    Project Ongoing
+                    Project List
                   </Link>
                 </div>
               )}

@@ -92,7 +92,7 @@
 //                     onError={(e) => (e.target.src = "/fallback.jpg")}
 //                   />
 //                 </div>
-                
+
 //                 {/* Project Title - Always Visible */}
 //                 <div className="p-4 bg-white">
 //                   <h3 className="text-gray-800 text-lg font-semibold text-center">
@@ -119,7 +119,6 @@
 // };
 
 // export default Projects;
-
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -189,7 +188,9 @@ const Projects = () => {
         ) : error ? (
           <div className="flex items-center justify-center py-12">
             <div className="text-center">
-              <p className="text-red-600 mb-4">Error loading projects: {error}</p>
+              <p className="text-red-600 mb-4">
+                Error loading projects: {error}
+              </p>
               <p className="text-gray-600">
                 Please check your Contentful configuration.
               </p>
@@ -216,20 +217,20 @@ const Projects = () => {
                     alt={project.name}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    onError={(e) => (e.target.src = '/fallback.jpg')}
+                    onError={(e) => (e.target.src = "/fallback.jpg")}
                   />
 
                   {/* Transparent Overlay */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
 
                   {/* Title Slide Up from Bottom */}
                   <div className="absolute bottom-0 left-0 w-full flex justify-center">
-                    <div className="translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out bg-transparent p-4">
-                      <h3 className="text-white text-lg font-semibold drop-shadow-lg">
+                    <div className="translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out bg-white/90 w-full text-center p-4 shadow-md">
+                      <h3 className="text-lg text-[#0B3558] font-semibold drop-shadow-sm text-center">
                         {project.name}
                       </h3>
                       <div className="mt-2 flex justify-center">
-                        <div className="w-8 h-1 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full"></div>
+                        <div className="w-10 h-1 bg-[#F37021] rounded-full"></div>
                       </div>
                     </div>
                   </div>
@@ -244,4 +245,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

@@ -1,9 +1,63 @@
-// // src/components/ContactSection.jsx
+
 // import React from "react";
-// import { Phone, Mail, MapPin } from "lucide-react";
+
+// import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+// import { FaWhatsapp } from "react-icons/fa";
+
 // import { motion } from "framer-motion";
 
 // const ContactSection = () => {
+//   const contactMethods = [
+//     {
+//       icon: Phone,
+//       title: "Call us directly",
+//       description: "+91 91 9892118052",
+//       action: "tel:+91 9892118052",
+//       color: "bg-blue-100",
+//       iconColor: "text-blue-600",
+//       hoverColor: "hover:bg-blue-50",
+//     },
+//     {
+//       icon: FaWhatsapp,
+//       title: "WhatsApp us",
+//       description: "Start a conversation",
+//       action: "https://wa.me/+91 9892118052",
+//       color: "bg-green-100",
+//       iconColor: "text-green-600",
+//       hoverColor: "hover:bg-green-50",
+//     },
+//     {
+//       icon: Mail,
+//       title: "Email us",
+//       description: "thegoodwill@gmail.com",
+//       action: "mailto:thegoodwill@gmail.com",
+//       color: "bg-pink-100",
+//       iconColor: "text-pink-600",
+//       hoverColor: "hover:bg-pink-50",
+//     },
+//   ];
+
+//   const offices = [
+//     {
+//       city: "Mumbai Office",
+//       address:
+//         "Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 , PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI - 400 067",
+//       mapUrl:
+//         "https://maps.google.com/maps?q=Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067",
+//     },
+//     {
+//       city: "Surat Office",
+//       address:
+//         "55, The Galleria Shopping Hub, Near Sanjivkumar Auditorium, Opp. kitchen 37, Rto, Pal, Surat - 395009",
+//       mapUrl:
+//         "https://maps.google.com/maps?q=55,+The+Galleria+Shopping+Hub,+Near+Sanjivkumar+Auditorium,+Opp.+kitchen+37,+Rto,+Pal,+Surat+-+395009",
+//     },
+//   ];
+
+//   // Updated Google Maps embed URL with the specific address
+//   const mapUrl =
+//     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzE5LjYiTiA3MsKwNTAnNDMuNiJF!5e0!3m2!1sen!2sin!4v1234567890";
+
 //   return (
 //     <section id="contact" className="bg-gray-50">
 //       {/* Hero Banner */}
@@ -35,220 +89,99 @@
 //         </div>
 //       </div>
 
-//       {/*
-//       <div className="container mx-auto px-6 py-20">
-
-//         <div className="text-center mb-16">
-//           <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-800 mb-4">
-//             Get In Touch
-//           </h2>
-//           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-//             Ready to transform your architectural vision? Contact us today for a
-//             consultation.
-//           </p>
-//         </div>
-
-//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-//           <div className="p-8 bg-white border border-yellow-600/20 shadow-lg rounded-xl">
-//             <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-//               Send us a Message
-//             </h3>
-//             <form className="space-y-6">
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-//                 <input
-//                   placeholder="Your Name"
-//                   className="w-full border border-gray-300 focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 p-3 rounded outline-none transition"
-//                 />
-//                 <input
-//                   type="email"
-//                   placeholder="Your Email"
-//                   className="w-full border border-gray-300 focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 p-3 rounded outline-none transition"
-//                 />
+//       {/* Contact Methods - 3 Boxes */}
+//       <div className="max-w-7xl mx-auto px-6 py-16">
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+//           {contactMethods.map((method, index) => (
+//             <motion.a
+//               key={index}
+//               href={method.action}
+//               target={method.action.startsWith("http") ? "_blank" : "_self"}
+//               rel={
+//                 method.action.startsWith("http") ? "noopener noreferrer" : ""
+//               }
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.5, delay: index * 0.1 }}
+//               className={`bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 text-center block border-2 border-transparent ${method.hoverColor} hover:border-gray-200`}
+//             >
+//               <div className="flex justify-center mb-4">
+//                 <div
+//                   className={`w-16 h-16 ${method.color} rounded-full flex items-center justify-center`}
+//                 >
+//                   <method.icon className={`${method.iconColor} w-8 h-8`} />
+//                 </div>
 //               </div>
-//               <input
-//                 placeholder="Subject"
-//                 className="w-full border border-gray-300 focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 p-3 rounded outline-none transition"
-//               />
-//               <textarea
-//                 placeholder="Your Message"
-//                 rows={6}
-//                 className="w-full border border-gray-300 focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 p-3 rounded resize-none outline-none transition"
-//               />
-//               <button
-//                 type="submit"
-//                 className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 rounded-lg transition shadow-md"
-//               >
-//                 Send Message
-//               </button>
-//             </form>
-//           </div>
-
-//           <div className="space-y-10">
-
-//             <div>
-//               <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-//                 Contact Information
+//               <h3 className="text-xl font-semibold mb-3 text-gray-800">
+//                 {method.title}
 //               </h3>
-//               <div className="space-y-6">
-//                 <div className="flex items-start space-x-4">
-//                   <Phone className="h-6 w-6 text-yellow-600 mt-1" />
-//                   <div>
-//                     <h4 className="font-semibold text-gray-800">Phone</h4>
-//                     <p className="text-gray-600">+91 9892118052</p>
-//                   </div>
-//                 </div>
-//                 <div className="flex items-start space-x-4">
-//                   <Mail className="h-6 w-6 text-yellow-600 mt-1" />
-//                   <div>
-//                     <h4 className="font-semibold text-gray-800">Email</h4>
-//                     <p className="text-gray-600">Thegoodwill@gmail.com</p>
-//                   </div>
-//                 </div>
+//               <p className="text-gray-600 text-lg">{method.description}</p>
+//               <div className="mt-4">
+//                 <span className="text-sm text-gray-500 hover:text-gray-700 transition-colors">
+//                   Click to connect →
+//                 </span>
 //               </div>
-//             </div>
+//             </motion.a>
+//           ))}
+//         </div>
 
-//             <div className="space-y-6">
-//               <h4 className="text-xl font-semibold text-gray-800">
-//                 Our Offices
-//               </h4>
+//         {/* Offices Section */}
+//         <div className="mb-16">
+//           <motion.h3
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             transition={{ delay: 0.4 }}
+//             className="text-3xl font-bold text-center text-gray-800 mb-12"
+//           >
+//             Our Offices
+//           </motion.h3>
 
-//               <div className="p-6 bg-yellow-50 border border-yellow-600/20 rounded-xl shadow-sm hover:shadow-md transition">
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+//             {offices.map((office, index) => (
+//               <motion.a
+//                 key={index}
+//                 href={office.mapUrl}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+//                 animate={{ opacity: 1, x: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+//                 className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-yellow-200 hover:bg-yellow-50"
+//               >
 //                 <div className="flex items-start space-x-4">
-//                   <MapPin className="h-6 w-6 text-yellow-600 mt-1" />
-//                   <div>
-//                     <h5 className="font-semibold text-gray-800 mb-2">
-//                       Mumbai Office
-//                     </h5>
+//                   <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+//                     <MapPin className="h-6 w-6 text-yellow-600" />
+//                   </div>
+//                   <div className="text-left">
+//                     <h4 className="text-xl font-semibold text-gray-800 mb-3">
+//                       {office.city}
+//                     </h4>
 //                     <p className="text-gray-600 leading-relaxed">
-//                       Disha C.H.S., Opp. Joggers Park, Chikoowadi, Borivali
-//                       West, Mumbai - 400 092.
+//                       {office.address}
 //                     </p>
+//                     <div className="mt-4">
+//                       <span className="text-sm text-yellow-600 hover:text-yellow-700 transition-colors">
+//                         View on map →
+//                       </span>
+//                     </div>
 //                   </div>
 //                 </div>
-//               </div>
-
-//               <div className="p-6 bg-yellow-50 border border-yellow-600/20 rounded-xl shadow-sm hover:shadow-md transition">
-//                 <div className="flex items-start space-x-4">
-//                   <MapPin className="h-6 w-6 text-yellow-600 mt-1" />
-//                   <div>
-//                     <h5 className="font-semibold text-gray-800 mb-2">
-//                       Surat Office
-//                     </h5>
-//                     <p className="text-gray-600 leading-relaxed">
-//                       55, The Galleria Shopping Hub, Near Sanjivkumar
-//                       Auditorium, Opp. kitchen 37, Rto, Pal, Surat - 395009
-//                     </p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
+//               </motion.a>
+//             ))}
 //           </div>
-//         </div>
-//       </div> */}
-
-//       {/* Contact Info Section */}
-//       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//         {/* Call */}
-//         <a
-//           href="tel:+918097998000"
-//           className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow text-center block "
-//         >
-//           <div className="flex justify-center mb-4">
-//             <div className="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center">
-//               <Phone className="text-pink-600 w-7 h-7" />
-//             </div>
-//           </div>
-//           <h3 className="text-xl font-semibold mb-2">Call us directly</h3>
-//           <p className="text-gray-700 text-lg">+91 8097998000</p>
-//         </a>
-
-//         {/* Mail */}
-//         <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow text-center block ">
-//           <div className="flex justify-center mb-4">
-//             <div className="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center">
-//               <Mail className="text-pink-600 w-7 h-7" />
-//             </div>
-//           </div>
-//           <h3 className="text-xl font-semibold mb-4">Mail us</h3>
-//           <div className="flex flex-col gap-2 text-lg">
-//             <a
-//               href="mailto:mnacapital@example.com"
-//               className="text-gray-700 hover:text-[#EC7310] transition-colors"
-//             >
-//               <span className="font-semibold text-black">For Enquiry:</span>{" "}
-//               accounts@mnacaps.com
-//             </a>
-//             <a
-//               href="mailto:hr@mnacaps.com"
-//               className="text-gray-700 hover:text-[#EC7310] transition-colors"
-//             >
-//               <span className="font-semibold text-black">For Careers:</span>{" "}
-//               hr@mnacaps.com
-//             </a>
-//           </div>
-//         </div>
-
-//         {/* Address */}
-//         <a
-//           href="https://www.google.com/maps/place/MNA+Capital+Advisors+LLP/@19.2186832,72.855759,15z"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow text-center block "
-//         >
-//           <div className="flex justify-center mb-4">
-//             <div className="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center">
-//               <MapPin className="text-pink-600 w-7 h-7" />
-//             </div>
-//           </div>
-//           <h3 className="text-xl font-semibold mb-2">Visit our office</h3>
-//           <p className="text-gray-700 text-justify">
-//             506, A Wing, Western Edge II (Behind Metro Cash & Carry - Metro
-//             Mall), Western Express Highway, Borivali (East), Mumbai 400 066
-//           </p>
-//         </a>
-
-//       </div>
-//       <div className="space-y-6">
-//   <h4 className="text-xl font-semibold text-gray-800">Our Offices</h4>
-
-//   {/* 2 Column Responsive Layout */}
-//   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//     {/* Mumbai Office */}
-//     <div className="p-6 bg-yellow-50 border border-yellow-600/20 rounded-xl shadow-sm hover:shadow-md transition">
-//       <div className="flex items-start space-x-4">
-//         <MapPin className="h-6 w-6 text-yellow-600 mt-1" />
-//         <div>
-//           <h5 className="font-semibold text-gray-800 mb-2">Mumbai Office</h5>
-//           <p className="text-gray-600 leading-relaxed">
-//             Disha C.H.S., Opp. Joggers Park, Chikoowadi, Borivali West,
-//             Mumbai - 400 092.
-//           </p>
 //         </div>
 //       </div>
-//     </div>
-
-//     {/* Surat Office */}
-//     <div className="p-6 bg-yellow-50 border border-yellow-600/20 rounded-xl shadow-sm hover:shadow-md transition">
-//       <div className="flex items-start space-x-4">
-//         <MapPin className="h-6 w-6 text-yellow-600 mt-1" />
-//         <div>
-//           <h5 className="font-semibold text-gray-800 mb-2">Surat Office</h5>
-//           <p className="text-gray-600 leading-relaxed">
-//             55, The Galleria Shopping Hub, Near Sanjivkumar Auditorium,
-//             Opp. kitchen 37, Rto, Pal, Surat - 395009
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-//       {/* Map Section */}
-//       <div className="w-full h-[400px]">
+//       {/* Map Section - Full Screen */}
+//       <motion.div
+//         initial={{ opacity: 0, y: 20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.5, delay: 0.7 }}
+//         className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-lg"
+//       >
+//         {/* Google Map Embed */}
 //         <iframe
-//           title="Google Map"
-//           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3942498238756!2d72.94929187519115!3d19.13437948208821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b902f1adfd45%3A0xfbe26d1c6750c5a!2sMulund%20West%2C%20Mumbai%2C%20Maharashtra%20400080!5e0!3m2!1sen!2sin!4v1695200000000!5m2!1sen!2sin"
+//           title="Google Map - AKASH CHSL, Kandivali West"
+//           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a5a6a6a6a6%3A0x3be7b7a5a6a6a6a6!2sSociety%20No%20-374%20%2C%20Gala%20no%20-%20D45%2C%20AKASH%20CHSL%20%2C%20SECTOR%203%20%2C%20PUNJAB%20NATIONAL%20BANK%20LANE%20%2C%20CHARKOP%2C%20KANDIVALI%20WEST%20%2C%20MUMBAI%20-%20400%20067!5e0!3m2!1sen!2sin!4v1234567890"
 //           width="100%"
 //           height="100%"
 //           style={{ border: 0 }}
@@ -256,19 +189,88 @@
 //           loading="lazy"
 //           referrerPolicy="no-referrer-when-downgrade"
 //         ></iframe>
-//       </div>
+
+//         {/* Address Overlay */}
+//         <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 max-w-xs border border-gray-200">
+//           <div className="flex items-start space-x-3">
+//             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+//               <svg
+//                 className="w-4 h-4 text-white"
+//                 fill="none"
+//                 stroke="currentColor"
+//                 viewBox="0 0 24 24"
+//               >
+//                 <path
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth={2}
+//                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+//                 />
+//                 <path
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                   strokeWidth={2}
+//                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+//                 />
+//               </svg>
+//             </div>
+//             <div>
+//               <h3 className="font-semibold text-gray-900 text-sm mb-1">
+//                 Our Location
+//               </h3>
+//               <p className="text-xs text-gray-600 leading-tight">
+//                 Society No -374, Gala no - D45,
+//                 <br />
+//                 AKASH CHSL, SECTOR 3,
+//                 <br />
+//                 Punjab National Bank Lane,
+//                 <br />
+//                 Charkop, Kandivali West,
+//                 <br />
+//                 Mumbai - 400067
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Get Directions Button */}
+//         <div className="absolute bottom-4 right-4">
+//           <a
+//             href="https://www.google.com/maps/dir//Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg transition-colors duration-300 flex items-center space-x-2 text-sm font-medium"
+//           >
+//             <svg
+//               className="w-4 h-4"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+//               />
+//             </svg>
+//             <span>Get Directions</span>
+//           </a>
+//         </div>
+//       </motion.div>
 //     </section>
 //   );
 // };
 
 // export default ContactSection;
 
-// src/components/ContactSection.jsx
+
+
+
+
 import React from "react";
-
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
@@ -276,29 +278,32 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Call us directly",
-      description: "+91 91 9892118052",
+      description: "+91 9892118052",
       action: "tel:+91 9892118052",
-      color: "bg-blue-100",
+      color: "bg-blue-50",
       iconColor: "text-blue-600",
-      hoverColor: "hover:bg-blue-50",
+      borderColor: "border-blue-200",
+      hoverColor: "hover:bg-blue-100",
     },
     {
       icon: FaWhatsapp,
       title: "WhatsApp us",
       description: "Start a conversation",
-      action: "https://wa.me/+91 9892118052",
-      color: "bg-green-100",
+      action: "https://wa.me/919892118052",
+      color: "bg-green-50",
       iconColor: "text-green-600",
-      hoverColor: "hover:bg-green-50",
+      borderColor: "border-green-200",
+      hoverColor: "hover:bg-green-100",
     },
     {
       icon: Mail,
       title: "Email us",
       description: "thegoodwill@gmail.com",
       action: "mailto:thegoodwill@gmail.com",
-      color: "bg-pink-100",
-      iconColor: "text-pink-600",
-      hoverColor: "hover:bg-pink-50",
+      color: "bg-purple-50",
+      iconColor: "text-purple-600",
+      borderColor: "border-purple-200",
+      hoverColor: "hover:bg-purple-100",
     },
   ];
 
@@ -308,7 +313,7 @@ const ContactSection = () => {
       address:
         "Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 , PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI - 400 067",
       mapUrl:
-        "https://maps.google.com/maps?q=Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067",
+        "https://maps.google.com/maps?q=Society+No+-374,+Gala+no+-+D45,+AKASH+CHSL,+SECTOR+3,+PUNJAB+NATIONAL+BANK+LANE,+CHARKOP,+KANDIVALI+WEST,+MUMBAI+-+400+067",
     },
     {
       city: "Surat Office",
@@ -319,210 +324,331 @@ const ContactSection = () => {
     },
   ];
 
-  // Updated Google Maps embed URL with the specific address
-  const mapUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEyJzE5LjYiTiA3MsKwNTAnNDMuNiJF!5e0!3m2!1sen!2sin!4v1234567890";
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
 
   return (
-    <section id="contact" className="bg-gray-50">
+    <section id="contact" className="bg-gradient-to-br from-gray-50 to-blue-50/30">
       {/* Hero Banner */}
-      <div className="relative w-full h-[75vh]">
+      <div className="relative w-full h-[60vh] min-h-[600px] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/60 z-10" />
         <img
           src="/contact us.jpg"
           alt="Glass Railing System"
           className="w-full h-full object-cover"
         />
-
-        {/* Centered Heading */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
-          >
-            <span className="text-white"> Contact </span>{" "}
-            <span className="text-orange-400">Us</span>
-          </motion.h1>
-
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full"
-          ></motion.div>
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-purple-400/20 rounded-full blur-xl"></div>
         </div>
+
+        {/* Centered Content */}
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Get In <span className="text-orange-400">Touch</span>
+            </h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed"
+            >
+              Let's discuss your project and bring your vision to life
+            </motion.p>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.6, duration: 1 }}
+              className="w-32 h-1.5 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full mx-auto"
+            ></motion.div>
+          </motion.div>
+        </div>
+
+        {/* Scroll Indicator */}
+        {/* <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        >
+          <div className="animate-bounce">
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-1 h-3 bg-white rounded-full mt-2"
+              ></motion.div>
+            </div>
+          </div>
+        </motion.div> */}
       </div>
 
-      {/* Contact Methods - 3 Boxes */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        {/* Contact Methods */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+        >
           {contactMethods.map((method, index) => (
             <motion.a
               key={index}
               href={method.action}
               target={method.action.startsWith("http") ? "_blank" : "_self"}
-              rel={
-                method.action.startsWith("http") ? "noopener noreferrer" : ""
-              }
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 text-center block border-2 border-transparent ${method.hoverColor} hover:border-gray-200`}
+              rel={method.action.startsWith("http") ? "noopener noreferrer" : ""}
+              variants={itemVariants}
+              whileHover={{ 
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
+              className={`bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center block border-2 ${method.borderColor} ${method.hoverColor} group relative overflow-hidden`}
             >
-              <div className="flex justify-center mb-4">
-                <div
-                  className={`w-16 h-16 ${method.color} rounded-full flex items-center justify-center`}
-                >
-                  <method.icon className={`${method.iconColor} w-8 h-8`} />
+              {/* Background Effect */}
+              <div className={`absolute inset-0 ${method.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              
+              <div className="relative z-10">
+                <div className="flex justify-center mb-6">
+                  <div
+                    className={`w-20 h-20 ${method.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md`}
+                  >
+                    <method.icon className={`${method.iconColor} w-10 h-10`} />
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">
-                {method.title}
-              </h3>
-              <p className="text-gray-600 text-lg">{method.description}</p>
-              <div className="mt-4">
-                <span className="text-sm text-gray-500 hover:text-gray-700 transition-colors">
-                  Click to connect →
-                </span>
+                <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-gray-900 transition-colors">
+                  {method.title}
+                </h3>
+                <p className="text-gray-600 text-lg mb-6 group-hover:text-gray-700 transition-colors">
+                  {method.description}
+                </p>
+                <div className="mt-4">
+                  <span className={`inline-flex items-center text-sm font-semibold ${method.iconColor} group-hover:translate-x-2 transition-transform duration-300`}>
+                    Connect with us
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </motion.a>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Offices Section */}
-        <div className="mb-16">
-          <motion.h3
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-3xl font-bold text-center text-gray-800 mb-12"
+        {/* Offices & Hours Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          {/* Offices */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
           >
-            Our Offices
-          </motion.h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <motion.a
-                key={index}
-                href={office.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-yellow-200 hover:bg-yellow-50"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-yellow-600" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-xl font-semibold text-gray-800 mb-3">
-                      {office.city}
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed">
-                      {office.address}
-                    </p>
-                    <div className="mt-4">
-                      <span className="text-sm text-yellow-600 hover:text-yellow-700 transition-colors">
-                        View on map →
-                      </span>
+            <div className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-3xl shadow-lg border border-blue-100">
+              <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center md:text-left">
+                Our <span className="text-blue-600">Offices</span>
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {offices.map((office, index) => (
+                  <motion.a
+                    key={index}
+                    href={office.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-blue-200 group"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <MapPin className="h-7 w-7 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-700 transition-colors">
+                          {office.city}
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed text-sm">
+                          {office.address}
+                        </p>
+                        <div className="mt-4">
+                          <span className="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">
+                            View on map
+                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
                     </div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Opening Hours */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="lg:col-span-1"
+          >
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-3xl shadow-lg border border-orange-100 h-full">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Clock className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-800 mb-2">
+                  Opening Hours
+                </h3>
+                <p className="text-gray-600">We're here when you need us</p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="bg-white/80 p-4 rounded-xl shadow-sm border border-orange-100">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-gray-800">Monday – Saturday</span>
+                    <span className="text-orange-600 font-bold">9:30 AM – 6:30 PM</span>
                   </div>
                 </div>
-              </motion.a>
-            ))}
-          </div>
+                <div className="bg-white/80 p-4 rounded-xl shadow-sm border border-red-100">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-gray-800">Sunday</span>
+                    <span className="text-red-500 font-bold">Closed</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-white/50 rounded-xl border border-orange-200">
+                <p className="text-sm text-gray-600 text-center">
+                  <span className="font-semibold text-orange-600">Note:</span> Feel free to reach out outside business hours. We'll get back to you as soon as possible.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-      {/* Map Section - Full Screen */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-lg"
-      >
-        {/* Google Map Embed */}
-        <iframe
-          title="Google Map - AKASH CHSL, Kandivali West"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a5a6a6a6a6%3A0x3be7b7a5a6a6a6a6!2sSociety%20No%20-374%20%2C%20Gala%20no%20-%20D45%2C%20AKASH%20CHSL%20%2C%20SECTOR%203%20%2C%20PUNJAB%20NATIONAL%20BANK%20LANE%20%2C%20CHARKOP%2C%20KANDIVALI%20WEST%20%2C%20MUMBAI%20-%20400%20067!5e0!3m2!1sen!2sin!4v1234567890"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
 
-        {/* Address Overlay */}
-        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-4 max-w-xs border border-gray-200">
-          <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg
-                className="w-4 h-4 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900 text-sm mb-1">
-                Our Location
-              </h3>
-              <p className="text-xs text-gray-600 leading-tight">
-                Society No -374, Gala no - D45,
-                <br />
-                AKASH CHSL, SECTOR 3,
-                <br />
-                Punjab National Bank Lane,
-                <br />
-                Charkop, Kandivali West,
-                <br />
-                Mumbai - 400067
-              </p>
+      {/* Full Width Map Section */}
+      <div className="w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="relative w-full h-[600px] overflow-hidden"
+        >
+          <iframe
+            title="Google Map - AKASH CHSL, Kandivali West"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.123456789012!2d72.844321!3d19.205456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a5a6a6a6a6%3A0x3be7b7a5a6a6a6a6!2sSociety%20No%20-374%20%2C%20Gala%20no%20-%20D45%2C%20AKASH%20CHSL%20%2C%20SECTOR%203%20%2C%20PUNJAB%20NATIONAL%20BANK%20LANE%20%2C%20CHARKOP%2C%20KANDIVALI%20WEST%20%2C%20MUMBAI%20-%20400%20067!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+          
+          {/* Map Pins/Overlays for Addresses */}
+          <div className="absolute top-1/4 left-1/4 z-20">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-2xl border border-blue-200 max-w-xs"
+            >
+              <div className="flex items-start space-x-2">
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <MapPin className="h-4 w-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800 text-sm mb-1">Mumbai Office</h4>
+                  <p className="text-xs text-gray-600 leading-tight">
+                    Society No -374, Gala no - D45, AKASH CHSL, SECTOR 3, CHARKOP, KANDIVALI WEST
+                  </p>
+                  <a 
+                    href={offices[0].mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-600 font-semibold mt-1 inline-block hover:text-blue-700"
+                  >
+                    Get Directions →
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="absolute bottom-1/3 right-1/3 z-20">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-2xl border border-green-200 max-w-xs"
+            >
+              <div className="flex items-start space-x-2">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <MapPin className="h-4 w-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800 text-sm mb-1">Surat Office</h4>
+                  <p className="text-xs text-gray-600 leading-tight">
+                    55, The Galleria Shopping Hub, Near Sanjivkumar Auditorium, Pal, Surat
+                  </p>
+                  <a 
+                    href={offices[1].mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-green-600 font-semibold mt-1 inline-block hover:text-green-700"
+                  >
+                    Get Directions →
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Map Controls Overlay */}
+          <div className="absolute top-6 left-6 z-20">
+            <div className="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-lg border border-gray-200">
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-5 w-5 text-blue-600" />
+                <span className="font-semibold text-gray-800">Our Locations</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Get Directions Button */}
-        <div className="absolute bottom-4 right-4">
-          <a
-            href="https://www.google.com/maps/dir//Society+No+-374+,+Gala+no+-+D45,+AKASH+CHSL+,+SECTOR+3+,+PUNJAB+NATIONAL+BANK+LANE+,+CHARKOP,+KANDIVALI+WEST+,+MUMBAI+-+400+067"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg transition-colors duration-300 flex items-center space-x-2 text-sm font-medium"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-              />
-            </svg>
-            <span>Get Directions</span>
-          </a>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
