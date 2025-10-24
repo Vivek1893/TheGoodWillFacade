@@ -814,35 +814,43 @@ const Navbar = () => {
     setProjectsOpen(false);
   };
 
-  // Keep dropdown open while hovering on desktop
+  // Hover behavior for desktop/tablet
   const handleMouseEnter = (menu) => {
-    if (window.innerWidth < 768) return; // disable hover on mobile
-    if (menu === "services") {
-      clearTimeout(servicesTimeout.current);
-      setServicesOpen(true);
-    } else if (menu === "projects") {
-      clearTimeout(projectsTimeout.current);
-      setProjectsOpen(true);
+    if (window.innerWidth >= 768) {
+      if (menu === "services") {
+        clearTimeout(servicesTimeout.current);
+        setServicesOpen(true);
+      } else if (menu === "projects") {
+        clearTimeout(projectsTimeout.current);
+        setProjectsOpen(true);
+      }
     }
   };
 
-  // Close dropdown only after short delay (desktop)
   const handleMouseLeave = (menu) => {
-    if (window.innerWidth < 768) return; // disable hover on mobile
+    if (window.innerWidth >= 768) {
+      if (menu === "services") {
+        servicesTimeout.current = setTimeout(() => setServicesOpen(false), 300);
+      } else if (menu === "projects") {
+        projectsTimeout.current = setTimeout(() => setProjectsOpen(false), 300);
+      }
+    }
+  };
+
+  const toggleDropdown = (menu) => {
     if (menu === "services") {
-      servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200);
+      setServicesOpen(!servicesOpen);
+      setProjectsOpen(false);
     } else if (menu === "projects") {
-      projectsTimeout.current = setTimeout(() => setProjectsOpen(false), 200);
+      setProjectsOpen(!projectsOpen);
+      setServicesOpen(false);
     }
   };
 
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-lg border-b-4 border-b-[#F37021] rounded-b-3xl transition-all duration-300">
-        <div
-          ref={menuRef}
-          className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between"
-        >
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
@@ -861,24 +869,18 @@ const Navbar = () => {
               ABOUT US
             </Link>
 
-            {/* SERVICES Dropdown */}
+            {/* Services Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("services")}
               onMouseLeave={() => handleMouseLeave("services")}
             >
               <button
+                onClick={() => toggleDropdown("services")}
                 className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors"
-                onClick={() => setServicesOpen((prev) => !prev)} // toggle for mobile
               >
                 SERVICES
-                <svg
-                  className={`w-4 h-4 transform transition-transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -887,14 +889,17 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {servicesOpen && (
+              <div
+                className="absolute top-full left-0 w-64 mt-2 rounded-lg p-[3px] z-50"
+                onMouseEnter={() => clearTimeout(servicesTimeout.current)}
+                onMouseLeave={() =>
+                  (servicesTimeout.current = setTimeout(() => setServicesOpen(false), 300))
+                }
+                style={{ display: servicesOpen ? "block" : "none" }}
+              >
                 <div
-                  className="absolute md:absolute top-full left-0 w-64 mt-2 rounded-lg p-[3px] z-50 md:block"
-                  style={{
-                    background: "linear-gradient(135deg, #0B3558, #F37021)",
-                  }}
-                  onMouseEnter={() => handleMouseEnter("services")}
-                  onMouseLeave={() => handleMouseLeave("services")}
+                  style={{ background: "linear-gradient(135deg, #0B3558, #F37021)" }}
+                  className="rounded-lg p-[2px]"
                 >
                   <div className="bg-white rounded-lg shadow-xl py-2">
                     {[
@@ -918,27 +923,21 @@ const Navbar = () => {
                     ))}
                   </div>
                 </div>
-              )}
+              </div>
             </div>
 
-            {/* PROJECTS Dropdown */}
+            {/* Projects Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("projects")}
               onMouseLeave={() => handleMouseLeave("projects")}
             >
               <button
+                onClick={() => toggleDropdown("projects")}
                 className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors"
-                onClick={() => setProjectsOpen((prev) => !prev)} // toggle for mobile
               >
                 PROJECTS
-                <svg
-                  className={`w-4 h-4 transform transition-transform ${
-                    projectsOpen ? "rotate-180" : ""
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -947,14 +946,17 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {projectsOpen && (
+              <div
+                className="absolute top-full left-0 w-48 mt-2 rounded-lg p-[3px] z-50"
+                onMouseEnter={() => clearTimeout(projectsTimeout.current)}
+                onMouseLeave={() =>
+                  (projectsTimeout.current = setTimeout(() => setProjectsOpen(false), 300))
+                }
+                style={{ display: projectsOpen ? "block" : "none" }}
+              >
                 <div
-                  className="absolute md:absolute top-full left-0 w-48 mt-2 rounded-lg p-[3px] z-50 md:block"
-                  style={{
-                    background: "linear-gradient(135deg, #0B3558, #F37021)",
-                  }}
-                  onMouseEnter={() => handleMouseEnter("projects")}
-                  onMouseLeave={() => handleMouseLeave("projects")}
+                  style={{ background: "linear-gradient(135deg, #0B3558, #F37021)" }}
+                  className="rounded-lg p-[2px]"
                 >
                   <div className="bg-white rounded-lg shadow-xl py-2">
                     <Link
@@ -973,14 +975,14 @@ const Navbar = () => {
                     </Link>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
 
             <Link to="/ContactUs" className="text-gray-800 hover:text-orange-500 font-medium">
               CONTACT US
             </Link>
 
-            {/* Social Icons */}
+            {/* Desktop Social Icons */}
             <div className="flex items-center space-x-4 pl-4 border-l border-gray-300">
               <a
                 href="https://www.facebook.com/"
@@ -1014,12 +1016,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg text-black hover:bg-gray-100 transition"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -1030,47 +1027,38 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white border-t shadow-lg">
-            <div className="px-6 py-4 space-y-3">
-              <Link
-                to="/"
-                className="block text-gray-800 hover:text-orange-500 font-medium"
-                onClick={handleLinkClick}
-              >
-                HOME
-              </Link>
-              <Link
-                to="/Aboutus"
-                className="block text-gray-800 hover:text-orange-500 font-medium"
-                onClick={handleLinkClick}
-              >
-                ABOUT US
-              </Link>
+          <div
+            ref={menuRef}
+            className="md:hidden bg-white shadow-lg border-t-4 border-[#F37021] rounded-b-3xl overflow-hidden transition-all duration-300"
+          >
+            <Link
+              to="/"
+              onClick={handleLinkClick}
+              className="block px-6 py-3 text-gray-800 hover:bg-orange-50 hover:text-orange-600 font-medium"
+            >
+              HOME
+            </Link>
+            <Link
+              to="/Aboutus"
+              onClick={handleLinkClick}
+              className="block px-6 py-3 text-gray-800 hover:bg-orange-50 hover:text-orange-600 font-medium"
+            >
+              ABOUT US
+            </Link>
 
-              {/* Mobile Services */}
+            {/* Mobile Services */}
+            <div className="border-t border-gray-100">
               <button
-                className="w-full flex justify-between items-center text-gray-800 hover:text-orange-500 font-medium"
-                onClick={() => setServicesOpen((prev) => !prev)}
+                onClick={() => toggleDropdown("services")}
+                className="flex justify-between items-center w-full px-6 py-3 text-gray-800 font-medium hover:bg-orange-50 hover:text-orange-600"
               >
                 SERVICES
-                <svg
-                  className={`w-4 h-4 transform transition-transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <span>{servicesOpen ? "−" : "+"}</span>
               </button>
               {servicesOpen && (
-                <div className="ml-4 space-y-2">
+                <div className="bg-gray-50">
                   {[
                     ["ACP/Fundermax", "/services/ACP"],
                     ["Structural Glazing", "/services/Structural_Glazing"],
@@ -1084,67 +1072,86 @@ const Navbar = () => {
                     <Link
                       key={path}
                       to={path}
-                      className="block text-gray-700 hover:text-orange-500"
                       onClick={handleLinkClick}
+                      className="block px-8 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600"
                     >
                       {label}
                     </Link>
                   ))}
                 </div>
               )}
+            </div>
 
-              {/* Mobile Projects */}
+            {/* Mobile Projects */}
+            <div className="border-t border-gray-100">
               <button
-                className="w-full flex justify-between items-center text-gray-800 hover:text-orange-500 font-medium"
-                onClick={() => setProjectsOpen((prev) => !prev)}
+                onClick={() => toggleDropdown("projects")}
+                className="flex justify-between items-center w-full px-6 py-3 text-gray-800 font-medium hover:bg-orange-50 hover:text-orange-600"
               >
                 PROJECTS
-                <svg
-                  className={`w-4 h-4 transform transition-transform ${
-                    projectsOpen ? "rotate-180" : ""
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <span>{projectsOpen ? "−" : "+"}</span>
               </button>
               {projectsOpen && (
-                <div className="ml-4 space-y-2">
+                <div className="bg-gray-50">
                   <Link
                     to="/projects/Detail_project"
-                    className="block text-gray-700 hover:text-orange-500"
                     onClick={handleLinkClick}
+                    className="block px-8 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600"
                   >
                     Project Detail
                   </Link>
                   <Link
                     to="/projects/Project_list"
-                    className="block text-gray-700 hover:text-orange-500"
                     onClick={handleLinkClick}
+                    className="block px-8 py-2 text-gray-700 hover:bg-orange-100 hover:text-orange-600"
                   >
                     Project List
                   </Link>
                 </div>
               )}
+            </div>
 
-              <Link
-                to="/ContactUs"
-                className="block text-gray-800 hover:text-orange-500 font-medium"
-                onClick={handleLinkClick}
+            {/* Contact */}
+            <Link
+              to="/ContactUs"
+              onClick={handleLinkClick}
+              className="block px-6 py-3 text-gray-800 hover:bg-orange-50 hover:text-orange-600 font-medium border-t border-gray-100"
+            >
+              CONTACT US
+            </Link>
+
+            {/* Mobile Social Icons */}
+            <div className="flex justify-center items-center space-x-6 py-4 border-t-2 border-orange-200 rounded-b-3xl bg-orange-50">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#4267B2] hover:opacity-80"
               >
-                CONTACT US
-              </Link>
+                <FaFacebookF size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#E4405F] hover:opacity-80"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#25D366] hover:opacity-80"
+              >
+                <FaWhatsapp size={20} />
+              </a>
             </div>
           </div>
         )}
       </header>
 
-      {/* Spacer below navbar */}
+      {/* Spacer */}
       <div className="h-24 md:h-28"></div>
     </>
   );

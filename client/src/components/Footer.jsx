@@ -54,17 +54,17 @@
 //           <h4 className="text-lg font-semibold text-white mb-4">Contact Info</h4>
 //           <ul className="space-y-3">
 //             <li className="flex items-center gap-2">
-//               <FaMapMarkerAlt className="text-yellow-500" /> 
+//               <FaMapMarkerAlt className="text-yellow-500" />
 //               Disha C.H.S., Opp. Joggers Park, Chikoowadi, Borivali
 //                       West, Mumbai - 400 092.
-              
+
 //             </li>
 //             <li className="flex items-center gap-2">
-//               <FaPhoneAlt className="text-yellow-500" /> 
+//               <FaPhoneAlt className="text-yellow-500" />
 //               (+91) 9892118052
 //             </li>
 //             <li className="flex items-center gap-2">
-//               <FaEnvelope className="text-yellow-500" /> 
+//               <FaEnvelope className="text-yellow-500" />
 //               goodwill@domain.com
 //             </li>
 //             <li>Mon - Fri : 9:00 am - 5:00 pm</li>
@@ -100,7 +100,7 @@
 //           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaFacebookF /></a>
 //           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaWhatsapp /></a>
 //           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaInstagram /></a>
-         
+
 //         </div>
 //       </div>
 
@@ -112,10 +112,15 @@
 //   );
 // }
 
-
-
 import React from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -123,7 +128,6 @@ const Footer = () => {
     <footer className="bg-gray-500 text-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-          
           {/* Left Section - Brand & Social */}
           <div>
             <div className="flex items-center mb-6">
@@ -133,11 +137,12 @@ const Footer = () => {
                 alt="The Goodwill Logo"
               />
               <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
-                The Goodwill
+                The Goodwill Facade
               </span>
             </div>
             <p className="text-white mb-6 leading-relaxed max-w-md">
-              Leading providers of premium ACP cladding solutions. We transform spaces with innovative designs and exceptional craftsmanship.
+              Leading providers of premium ACP cladding solutions. We transform
+              spaces with innovative designs and exceptional craftsmanship.
             </p>
             <div className="flex space-x-4">
               <a
@@ -173,21 +178,56 @@ const Footer = () => {
               Get In Touch
             </h3>
             <div className="space-y-4">
+              {/* Mumbai address */}
               <div className="flex items-start space-x-3">
-                <FaMapMarkerAlt className="text-blue-400 mt-1 flex-shrink-0" size={16} />
-                <span className="text-white text-sm">
-                  Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 , PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI - 400 067
-                </span>
+                <FaMapMarkerAlt
+                  className="text-blue-400 mt-1 flex-shrink-0"
+                  size={16}
+                />
+                <div>
+                  <span className="text-white text-sm font-semibold block mb-1">
+                    Mumbai Address
+                  </span>
+                  <span className="text-white text-sm">
+                    Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 ,
+                    PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI
+                    - 400 067
+                  </span>
+                </div>
               </div>
+
+              {/* Surat address (added) */}
+              <div className="flex items-start space-x-3">
+                <FaMapMarkerAlt
+                  className="text-blue-400 mt-1 flex-shrink-0"
+                  size={16}
+                /><div>
+                  <span className="text-white text-sm font-semibold block mb-1">
+                    Surat Address
+                  </span>
+                  <span className="text-white text-sm">
+                     Shop No - 12, Ground Floor, ABC Complex, Athwa Gate, Surat -
+                  395001
+                  </span>
+                </div>
+                
+              </div>
+
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-blue-400 flex-shrink-0" size={16} />
-                <a href="tel:+919892118052" className="text-white hover:text-white transition-colors">
+                <a
+                  href="tel:+919892118052"
+                  className="text-white hover:text-white transition-colors"
+                >
                   +91 9892118052
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 flex-shrink-0" size={16} />
-                <a href="mailto:info@thegoodwill.com" className="text-white hover:text-white transition-colors">
+                <a
+                  href="mailto:info@thegoodwill.com"
+                  className="text-white hover:text-white transition-colors"
+                >
                   thegoodwillfacade@gmail.com
                 </a>
               </div>
@@ -214,7 +254,7 @@ const Footer = () => {
       </div>
 
       {/* WhatsApp Floating Button */}
-     <motion.a
+      {/* <motion.a
       href="https://wa.me/919892118052"
       target="_blank"
       rel="noopener noreferrer"
@@ -223,7 +263,7 @@ const Footer = () => {
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
     >
       <FaWhatsapp size={24} className="text-white" />
-    </motion.a>
+    </motion.a> */}
     </footer>
   );
 };
