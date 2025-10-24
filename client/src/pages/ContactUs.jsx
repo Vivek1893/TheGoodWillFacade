@@ -528,14 +528,14 @@ const ContactSection = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Clock className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-2">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
                   Opening Hours
                 </h3>
                 <p className="text-gray-600">We're here when you need us</p>
               </div>
               
               <div className="space-y-4">
-                <div className="bg-white/80 p-4 rounded-xl shadow-sm border border-orange-100">
+                <div className="bg-white/50 pt-4 pb-4 rounded-xl shadow-sm border border-orange-100">
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-gray-800">Monday – Saturday</span>
                     <span className="text-orange-600 font-bold">9:30 AM – 6:30 PM</span>
@@ -549,11 +549,11 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="mt-8 p-4 bg-white/50 rounded-xl border border-orange-200">
+              {/* <div className="mt-8 p-4 bg-white/50 rounded-xl border border-orange-200">
                 <p className="text-sm text-gray-600 text-center">
                   <span className="font-semibold text-orange-600">Note:</span> Feel free to reach out outside business hours. We'll get back to you as soon as possible.
                 </p>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
@@ -593,9 +593,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-sm mb-1">Mumbai Office</h4>
-                  <p className="text-xs text-gray-600 leading-tight">
-                    Society No -374, Gala no - D45, AKASH CHSL, SECTOR 3, CHARKOP, KANDIVALI WEST
-                  </p>
+                  
                   <a 
                     href={offices[0].mapUrl}
                     target="_blank"
@@ -622,9 +620,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-sm mb-1">Surat Office</h4>
-                  <p className="text-xs text-gray-600 leading-tight">
-                    55, The Galleria Shopping Hub, Near Sanjivkumar Auditorium, Pal, Surat
-                  </p>
+                  
                   <a 
                     href={offices[1].mapUrl}
                     target="_blank"
