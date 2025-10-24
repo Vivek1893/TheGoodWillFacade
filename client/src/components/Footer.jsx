@@ -120,7 +120,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-500 text-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           
@@ -129,14 +129,14 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <img
                 src="/logo.png"
-                className="h-20 w-auto bg-white"
+                className="h-20 w-auto "
                 alt="The Goodwill Logo"
               />
               <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
                 The Goodwill
               </span>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
+            <p className="text-white mb-6 leading-relaxed max-w-md">
               Leading providers of premium ACP cladding solutions. We transform spaces with innovative designs and exceptional craftsmanship.
             </p>
             <div className="flex space-x-4">
@@ -175,19 +175,19 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-blue-400 mt-1 flex-shrink-0" size={16} />
-                <span className="text-gray-300 text-sm">
+                <span className="text-white text-sm">
                   Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 , PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI - 400 067
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-blue-400 flex-shrink-0" size={16} />
-                <a href="tel:+919892118052" className="text-gray-300 hover:text-white transition-colors">
+                <a href="tel:+919892118052" className="text-white hover:text-white transition-colors">
                   +91 9892118052
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 flex-shrink-0" size={16} />
-                <a href="mailto:info@thegoodwill.com" className="text-gray-300 hover:text-white transition-colors">
+                <a href="mailto:info@thegoodwill.com" className="text-white hover:text-white transition-colors">
                   thegoodwillfacade@gmail.com
                 </a>
               </div>
@@ -198,10 +198,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
+            <div className="text-white text-sm">
               © 2025 The Goodwill. All Rights Reserved.
             </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
+            <div className="flex space-x-6 text-sm text-white">
               <a href="#" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
