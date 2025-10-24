@@ -783,10 +783,6 @@
 
 
 
-
-
-
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
@@ -796,8 +792,10 @@ const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const menuRef = useRef();
+  const servicesTimeout = useRef();
+  const projectsTimeout = useRef();
 
-  // Close mobile menu if clicked outside
+  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -816,11 +814,35 @@ const Navbar = () => {
     setProjectsOpen(false);
   };
 
+  // Keep dropdown open while hovering on desktop
+  const handleMouseEnter = (menu) => {
+    if (window.innerWidth < 768) return; // disable hover on mobile
+    if (menu === "services") {
+      clearTimeout(servicesTimeout.current);
+      setServicesOpen(true);
+    } else if (menu === "projects") {
+      clearTimeout(projectsTimeout.current);
+      setProjectsOpen(true);
+    }
+  };
+
+  // Close dropdown only after short delay (desktop)
+  const handleMouseLeave = (menu) => {
+    if (window.innerWidth < 768) return; // disable hover on mobile
+    if (menu === "services") {
+      servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200);
+    } else if (menu === "projects") {
+      projectsTimeout.current = setTimeout(() => setProjectsOpen(false), 200);
+    }
+  };
+
   return (
     <>
-      {/* Fixed Navbar */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-lg border-b-4 border-b-[#F37021] rounded-b-3xl transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+        <div
+          ref={menuRef}
+          className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between"
+        >
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
@@ -832,29 +854,28 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
-            <Link
-              to="/"
-              className="text-gray-800 hover:text-orange-500 font-medium transition-colors"
-            >
+            <Link to="/" className="text-gray-800 hover:text-orange-500 font-medium">
               HOME
             </Link>
-            <Link
-              to="/Aboutus"
-              className="text-gray-800 hover:text-orange-500 font-medium transition-colors"
-            >
+            <Link to="/Aboutus" className="text-gray-800 hover:text-orange-500 font-medium">
               ABOUT US
             </Link>
 
-            {/* Services Dropdown */}
+            {/* SERVICES Dropdown */}
             <div
-              className="relative group"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("services")}
+              onMouseLeave={() => handleMouseLeave("services")}
             >
-              <button className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors">
+              <button
+                className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors"
+                onClick={() => setServicesOpen((prev) => !prev)} // toggle for mobile
+              >
                 SERVICES
                 <svg
-                  className="w-4 h-4"
+                  className={`w-4 h-4 transform transition-transform ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -868,10 +889,12 @@ const Navbar = () => {
 
               {servicesOpen && (
                 <div
-                  className="absolute top-full left-0 w-64 mt-2 rounded-lg p-[3px] z-50"
+                  className="absolute md:absolute top-full left-0 w-64 mt-2 rounded-lg p-[3px] z-50 md:block"
                   style={{
                     background: "linear-gradient(135deg, #0B3558, #F37021)",
                   }}
+                  onMouseEnter={() => handleMouseEnter("services")}
+                  onMouseLeave={() => handleMouseLeave("services")}
                 >
                   <div className="bg-white rounded-lg shadow-xl py-2">
                     {[
@@ -888,6 +911,7 @@ const Navbar = () => {
                         key={path}
                         to={path}
                         className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        onClick={handleLinkClick}
                       >
                         {label}
                       </Link>
@@ -897,16 +921,21 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Projects Dropdown */}
+            {/* PROJECTS Dropdown */}
             <div
-              className="relative group"
-              onMouseEnter={() => setProjectsOpen(true)}
-              onMouseLeave={() => setProjectsOpen(false)}
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("projects")}
+              onMouseLeave={() => handleMouseLeave("projects")}
             >
-              <button className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors">
+              <button
+                className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors"
+                onClick={() => setProjectsOpen((prev) => !prev)} // toggle for mobile
+              >
                 PROJECTS
                 <svg
-                  className="w-4 h-4"
+                  className={`w-4 h-4 transform transition-transform ${
+                    projectsOpen ? "rotate-180" : ""
+                  }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -920,21 +949,25 @@ const Navbar = () => {
 
               {projectsOpen && (
                 <div
-                  className="absolute top-full left-0 w-48 mt-2 rounded-lg p-[3px] z-50"
+                  className="absolute md:absolute top-full left-0 w-48 mt-2 rounded-lg p-[3px] z-50 md:block"
                   style={{
                     background: "linear-gradient(135deg, #0B3558, #F37021)",
                   }}
+                  onMouseEnter={() => handleMouseEnter("projects")}
+                  onMouseLeave={() => handleMouseLeave("projects")}
                 >
                   <div className="bg-white rounded-lg shadow-xl py-2">
                     <Link
                       to="/projects/Detail_project"
                       className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      onClick={handleLinkClick}
                     >
                       Project Detail
                     </Link>
                     <Link
                       to="/projects/Project_list"
                       className="block px-4 py-3 text-black hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                      onClick={handleLinkClick}
                     >
                       Project List
                     </Link>
@@ -943,10 +976,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link
-              to="/ContactUs"
-              className="text-gray-800 hover:text-orange-500 font-medium transition-colors"
-            >
+            <Link to="/ContactUs" className="text-gray-800 hover:text-orange-500 font-medium">
               CONTACT US
             </Link>
 
@@ -955,24 +985,24 @@ const Navbar = () => {
               <a
                 href="https://www.facebook.com/"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#4267B2] hover:opacity-80 transition-opacity"
+                rel="noreferrer"
+                className="text-[#4267B2] hover:opacity-80"
               >
                 <FaFacebookF size={18} />
               </a>
               <a
                 href="https://www.instagram.com/"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#E4405F] hover:opacity-80 transition-opacity"
+                rel="noreferrer"
+                className="text-[#E4405F] hover:opacity-80"
               >
                 <FaInstagram size={18} />
               </a>
               <a
-                href="https://wa.me/919876543210?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20services."
+                href="https://wa.me/919876543210"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#25D366] hover:opacity-80 transition-opacity"
+                rel="noreferrer"
+                className="text-[#25D366] hover:opacity-80"
               >
                 <FaWhatsapp size={18} />
               </a>
@@ -994,48 +1024,53 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={
-                  isOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
               />
             </svg>
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         {isOpen && (
-          <div
-            ref={menuRef}
-            className="md:hidden bg-white shadow-lg rounded-b-2xl mx-2 mt-1"
-          >
-            <div className="px-6 py-4 space-y-3 flex flex-col text-left">
+          <div className="md:hidden bg-white border-t shadow-lg">
+            <div className="px-6 py-4 space-y-3">
               <Link
                 to="/"
+                className="block text-gray-800 hover:text-orange-500 font-medium"
                 onClick={handleLinkClick}
-                className="text-black hover:text-orange-500 font-medium"
               >
                 HOME
               </Link>
-
               <Link
                 to="/Aboutus"
+                className="block text-gray-800 hover:text-orange-500 font-medium"
                 onClick={handleLinkClick}
-                className="text-black hover:text-orange-500 font-medium"
               >
                 ABOUT US
               </Link>
 
               {/* Mobile Services */}
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                className="flex justify-between w-full text-black hover:text-orange-500 font-medium"
+                className="w-full flex justify-between items-center text-gray-800 hover:text-orange-500 font-medium"
+                onClick={() => setServicesOpen((prev) => !prev)}
               >
-                SERVICES <span>{servicesOpen ? "−" : "+"}</span>
+                SERVICES
+                <svg
+                  className={`w-4 h-4 transform transition-transform ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </button>
               {servicesOpen && (
-                <div className="pl-4 space-y-2">
+                <div className="ml-4 space-y-2">
                   {[
                     ["ACP/Fundermax", "/services/ACP"],
                     ["Structural Glazing", "/services/Structural_Glazing"],
@@ -1049,8 +1084,8 @@ const Navbar = () => {
                     <Link
                       key={path}
                       to={path}
+                      className="block text-gray-700 hover:text-orange-500"
                       onClick={handleLinkClick}
-                      className="block text-gray-600 hover:text-orange-600"
                     >
                       {label}
                     </Link>
@@ -1060,24 +1095,37 @@ const Navbar = () => {
 
               {/* Mobile Projects */}
               <button
-                onClick={() => setProjectsOpen(!projectsOpen)}
-                className="flex justify-between w-full text-black hover:text-orange-500 font-medium"
+                className="w-full flex justify-between items-center text-gray-800 hover:text-orange-500 font-medium"
+                onClick={() => setProjectsOpen((prev) => !prev)}
               >
-                PROJECTS <span>{projectsOpen ? "−" : "+"}</span>
+                PROJECTS
+                <svg
+                  className={`w-4 h-4 transform transition-transform ${
+                    projectsOpen ? "rotate-180" : ""
+                  }`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </button>
               {projectsOpen && (
-                <div className="pl-4 space-y-2">
+                <div className="ml-4 space-y-2">
                   <Link
                     to="/projects/Detail_project"
+                    className="block text-gray-700 hover:text-orange-500"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-600"
                   >
                     Project Detail
                   </Link>
                   <Link
                     to="/projects/Project_list"
+                    className="block text-gray-700 hover:text-orange-500"
                     onClick={handleLinkClick}
-                    className="block text-gray-600 hover:text-orange-600"
                   >
                     Project List
                   </Link>
@@ -1086,39 +1134,11 @@ const Navbar = () => {
 
               <Link
                 to="/ContactUs"
+                className="block text-gray-800 hover:text-orange-500 font-medium"
                 onClick={handleLinkClick}
-                className="text-black hover:text-orange-500 font-medium"
               >
                 CONTACT US
               </Link>
-
-              {/* Social Icons for Mobile */}
-              <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#4267B2]"
-                >
-                  <FaFacebookF size={20} />
-                </a>
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#E4405F]"
-                >
-                  <FaInstagram size={20} />
-                </a>
-                <a
-                  href="https://wa.me/919876543210?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#25D366]"
-                >
-                  <FaWhatsapp size={20} />
-                </a>
-              </div>
             </div>
           </div>
         )}
