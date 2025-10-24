@@ -188,7 +188,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 flex-shrink-0" size={16} />
                 <a href="mailto:info@thegoodwill.com" className="text-gray-300 hover:text-white transition-colors">
-                  thegoodwill@gmail.com
+                  thegoodwillfacade@gmail.com
                 </a>
               </div>
             </div>

@@ -298,8 +298,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email us",
-      description: "thegoodwill@gmail.com",
-      action: "mailto:thegoodwill@gmail.com",
+      description: "thegoodwillfacade@gmail.com",
+      action: "mailto:thegoodwillfacade@gmail.com",
       color: "bg-purple-50",
       iconColor: "text-purple-600",
       borderColor: "border-purple-200",
