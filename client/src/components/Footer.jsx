@@ -154,7 +154,7 @@ const Footer = () => {
                 <FaFacebookF size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/thegoodwillfacade?utm_source=qr&igsh=MWdvNnAwMmJwNGluNA%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300"
