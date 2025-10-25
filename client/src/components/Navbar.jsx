@@ -322,7 +322,7 @@
 //                   >
 //                     MS Structure
 //                   </Link>
-                  
+
 //                   <Link
 //                     to="/services/Tensile_Fabrics"
 //                     onClick={handleLinkClick}
@@ -380,11 +380,6 @@
 // };
 
 // export default Navbar;
-
-
-
-
-
 
 // import React, { useState, useEffect, useRef } from "react";
 // import { Link } from "react-router-dom";
@@ -779,10 +774,6 @@
 
 // export default Navbar;
 
-
-
-
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
@@ -857,15 +848,23 @@ const Navbar = () => {
               src="/logo.png"
               alt="Goodwill Facade"
               className="h-10 md:h-12 w-auto transition-all duration-300"
+              initial={{ scale: 3 }}
+              animate={{ scale: 2.15 }}
             />
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
-            <Link to="/" className="text-gray-800 hover:text-orange-500 font-medium">
+            <Link
+              to="/"
+              className="text-gray-800 hover:text-orange-500 font-medium"
+            >
               HOME
             </Link>
-            <Link to="/Aboutus" className="text-gray-800 hover:text-orange-500 font-medium">
+            <Link
+              to="/Aboutus"
+              className="text-gray-800 hover:text-orange-500 font-medium"
+            >
               ABOUT US
             </Link>
 
@@ -880,7 +879,11 @@ const Navbar = () => {
                 className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors"
               >
                 SERVICES
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -893,12 +896,17 @@ const Navbar = () => {
                 className="absolute top-full left-0 w-64 mt-2 rounded-lg p-[3px] z-50"
                 onMouseEnter={() => clearTimeout(servicesTimeout.current)}
                 onMouseLeave={() =>
-                  (servicesTimeout.current = setTimeout(() => setServicesOpen(false), 300))
+                  (servicesTimeout.current = setTimeout(
+                    () => setServicesOpen(false),
+                    300
+                  ))
                 }
                 style={{ display: servicesOpen ? "block" : "none" }}
               >
                 <div
-                  style={{ background: "linear-gradient(135deg, #0B3558, #F37021)" }}
+                  style={{
+                    background: "linear-gradient(135deg, #0B3558, #F37021)",
+                  }}
                   className="rounded-lg p-[2px]"
                 >
                   <div className="bg-white rounded-lg shadow-xl py-2">
@@ -937,7 +945,11 @@ const Navbar = () => {
                 className="flex items-center gap-1 text-gray-800 hover:text-orange-500 font-medium transition-colors"
               >
                 PROJECTS
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -950,12 +962,17 @@ const Navbar = () => {
                 className="absolute top-full left-0 w-48 mt-2 rounded-lg p-[3px] z-50"
                 onMouseEnter={() => clearTimeout(projectsTimeout.current)}
                 onMouseLeave={() =>
-                  (projectsTimeout.current = setTimeout(() => setProjectsOpen(false), 300))
+                  (projectsTimeout.current = setTimeout(
+                    () => setProjectsOpen(false),
+                    300
+                  ))
                 }
                 style={{ display: projectsOpen ? "block" : "none" }}
               >
                 <div
-                  style={{ background: "linear-gradient(135deg, #0B3558, #F37021)" }}
+                  style={{
+                    background: "linear-gradient(135deg, #0B3558, #F37021)",
+                  }}
                   className="rounded-lg p-[2px]"
                 >
                   <div className="bg-white rounded-lg shadow-xl py-2">
@@ -978,7 +995,10 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link to="/ContactUs" className="text-gray-800 hover:text-orange-500 font-medium">
+            <Link
+              to="/ContactUs"
+              className="text-gray-800 hover:text-orange-500 font-medium"
+            >
               CONTACT US
             </Link>
 
@@ -1016,7 +1036,12 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg text-black hover:bg-gray-100 transition"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
