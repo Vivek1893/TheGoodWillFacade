@@ -125,7 +125,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-500 text-white">
+    <footer className="bg-gray-800 text-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Section - Brand & Social */}
@@ -133,7 +133,7 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <img
                 src="/logo.png"
-                className="h-20 w-auto "
+                className="h-20 w-auto bg-white "
                 alt="The Goodwill Logo"
               />
               <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
@@ -149,7 +149,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <FaFacebookF size={18} />
               </a>
@@ -157,7 +157,7 @@ const Footer = () => {
                 href="https://www.instagram.com/thegoodwillfacade?utm_source=qr&igsh=MWdvNnAwMmJwNGluNA%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <FaInstagram size={18} />
               </a>
@@ -165,7 +165,7 @@ const Footer = () => {
                 href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 hover:bg-green-500 rounded-full flex items-center justify-center transition-all duration-300"
+                className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center transition-all duration-300"
               >
                 <FaWhatsapp size={18} />
               </a>
@@ -214,7 +214,7 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center space-x-3">
-                <FaPhone className="text-orange-400 flex-shrink-0" size={18} />
+                <FaPhone className="text-blue-600 flex-shrink-0" size={18} />
                 <a
                   href="tel:+919892118052"
                   className="text-white hover:text-white transition-colors"
@@ -223,7 +223,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-orange-400 flex-shrink-0" size={18} />
+                <FaEnvelope className="text-purple-600 flex-shrink-0" size={18} />
                 <a
                   href="mailto:info@thegoodwill.com"
                   className="text-white hover:text-white transition-colors"

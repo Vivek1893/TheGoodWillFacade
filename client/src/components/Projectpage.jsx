@@ -71,7 +71,7 @@ const Projects = () => {
         >
           Our Projects
         </h2>
-        <p className="text-lg   text-gray-600 max-w-2xl mx-auto mt-4 px-4">
+        <p className="text-lg   text-gray-600 max-w-2xl  text-left mx-auto mt-4 px-4">
           From high-end homes to modern office spaces, each Brikly project is a
           reflection of quality, detail, and dedication.
         </p>

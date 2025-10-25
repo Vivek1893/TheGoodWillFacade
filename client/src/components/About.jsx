@@ -45,11 +45,11 @@ const AboutUs = () => {
           <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3">
             ABOUT US
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl  font-bold text-gray-900 mb-6">
             Trusted Local <br /> Construction Partner in{" "}
             <span className="text-orange-500">India.</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8">
+          <p className="text-base sm:text-lg text-left text-gray-600 mb-8">
             THE GOODWILL FACADE is a specialist Facade Design & Engineering
             group providing extensive services to developers, architects, facade
             contractors, and main contractors in the field of architectural

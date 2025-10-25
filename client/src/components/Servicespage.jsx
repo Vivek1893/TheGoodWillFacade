@@ -366,7 +366,7 @@ const ServicesAllInOne = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg text-gray-600 max-w-2xl mx-auto text-left leading-relaxed"
             >
               Delivering precision-engineered architectural solutions that
               combine innovative design with uncompromising quality and

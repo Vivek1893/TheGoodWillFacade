@@ -18,7 +18,7 @@ const About = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-          src="/hero2.jpg"
+          src="/images/project7.webp"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />
@@ -182,7 +182,7 @@ const About = () => {
                 Our Vision
               </h3>
               <div className="w-12 h-[2px] bg-blue-600 mx-auto"></div>
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-base md:text-lg text-left leading-relaxed">
                 See Farther To Seek Out Competitive Business Advantages For Our
                 Clients Through The Innovative Use Of Technology And To Help
                 Them Achieve Long-term Success And Prosperity
@@ -200,7 +200,7 @@ const About = () => {
                 Our Mission
               </h3>
               <div className="w-12 h-[2px] bg-blue-600 mx-auto"></div>
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-base md:text-lg text-left leading-relaxed">
                 To Deliver Best To The Our Clients Through Innovative Use Of New
                 Technologies, Support, Services And Customer Referrals; And Also
                 To Be The Best Facade Company In Our Markets
@@ -217,8 +217,8 @@ const About = () => {
               <h3 className="text-xl md:text-2xl font-bold text-blue-800 uppercase tracking-wide">
                 Core Values
               </h3>
-              <div className="w-12 h-[2px] bg-blue-600 mx-auto"></div>
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <div className="w-12 h-[2px] bg-blue-600  mx-auto"></div>
+              <p className="text-gray-700 text-base md:text-lg text-left leading-relaxed">
                 Our growth and success are based upon ethical practices,
                 integrity, respect, responsibility, safety, and trust.
               </p>
