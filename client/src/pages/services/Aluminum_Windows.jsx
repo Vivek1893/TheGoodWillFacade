@@ -72,7 +72,7 @@ const Aluminum_Windows = () => {
           <img
             src="/logo.png" 
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25 bg-amber-50 w-auto"
+            className="h-18 md:h-25 bg-white w-auto"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
