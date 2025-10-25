@@ -70,14 +70,14 @@ const Tensile_Fabrics = () => {
       {/* Logo Branding - Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo.png" 
+            src="/logo1.png" 
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25 bg-white w-auto"
+            className="h-18 md:h-25  w-auto"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-           src="/servicesimg/ser1.png"
+           src="/servicesimg/tensile_img/tensile.png"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />
@@ -88,8 +88,8 @@ const Tensile_Fabrics = () => {
             transition={{ duration: 0.7 }}
             className="text-3xl md:text-3xl font-bold text-white mb-4 tracking-wide"
           >
-            <span className="text-white"> Tensile </span>{" "}
-             <span className="text-orange-400">Fabrics</span>
+            <span className="text-white"> Spider</span>{" "}
+             <span className="text-orange-400">facade</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -118,7 +118,7 @@ const Tensile_Fabrics = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900"
           >
-            Why Choose <span className="text-orange-600">Tensile Fabrics?</span>
+            Why Choose <span className="text-orange-600">Spider facade?</span>
           </motion.h2>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -159,12 +159,12 @@ const Tensile_Fabrics = () => {
               <div className="absolute -inset-2  opacity-70 rounded-2xl blur-md group-hover:opacity-100 transition duration-300"></div>
               <div className="relative rounded-tl-4xl rounded-br-4xl  overflow-hidden">
                 <img
-                           src="/"
+                            src="/servicesimg/tensile_img/tensile1.jpg"
                   alt="ACP Example"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                  <p className="text-white font-medium text-lg">Modern Tensile Fabrics Installation</p>
+                  <p className="text-white font-medium text-lg">Modern Spider facade Installation</p>
                 </div>
               </div>
             </motion.div>
@@ -182,7 +182,7 @@ const Tensile_Fabrics = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900"
           >
-            Simple Design for <span className="text-blue-800">Tensile Fabrics</span>
+            Simple Design for <span className="text-blue-800">Spider facade</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}

@@ -70,9 +70,9 @@ const Aluminum_Windows = () => {
       {/* Logo Branding - Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo.png" 
+            src="/logo1.png" 
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25 bg-white w-auto"
+            className="h-18 md:h-25  w-auto"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
@@ -159,7 +159,7 @@ const Aluminum_Windows = () => {
               <div className="absolute -inset-2  opacity-70 rounded-2xl blur-md group-hover:opacity-100 transition duration-300"></div>
               <div className="relative rounded-tl-4xl rounded-br-4xl  overflow-hidden">
                 <img
-                           src="/hero5.jpg"
+                           src="/servicesimg/aluminum_img/PARLE POINT A  - BHARUCH 1.jpg"
                   alt="ACP Example"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />

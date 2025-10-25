@@ -77,9 +77,9 @@ const ACPCladding = () => {
       {/* Logo Branding - Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo.png" 
+            src="/logo1.png" 
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25 bg-white w-auto"
+            className="h-18 md:h-25  w-auto"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>

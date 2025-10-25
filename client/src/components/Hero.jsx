@@ -706,6 +706,12 @@ const Hero = () => {
 
   const slides = [
     {
+      leftImage: "/hero2.jpg",
+      rightImage: "/hero1.jpg",
+      mobileImage: "/hero2.jpg",
+      title: "ALUMINUM SYSTEMS",
+    },
+    {
       leftImage: "/hero4.jpg",
       rightImage: "/hero5.jpg",
       mobileImage: "/hero5.jpg",
@@ -717,12 +723,7 @@ const Hero = () => {
       mobileImage: "/hero3.webp",
       title: "STRUCTURAL GLAZING",
     },
-    {
-      leftImage: "/hero2.jpg",
-      rightImage: "/hero1.jpg",
-      mobileImage: "/hero2.jpg",
-      title: "ALUMINUM SYSTEMS",
-    },
+   
     {
       leftImage: "/hero6.jpg",
       rightImage: "/hero8.jpg",
@@ -764,9 +765,9 @@ const Hero = () => {
         {/* Logo Branding - Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo.png" 
+            src="/logo1.png" 
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25 bg-white w-auto"
+            className="h-18 md:h-25  w-auto"
           />
         </div>
         <motion.div

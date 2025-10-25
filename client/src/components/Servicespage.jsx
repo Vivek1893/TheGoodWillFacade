@@ -304,9 +304,9 @@ const ServicesAllInOne = () => {
           className="h-14 w-14 object-contain"
         />
       ),
-      title: "Tensile Fabrics",
+      title: "Spider facade",
       description:
-        "Tensile fabrics are materials designed to be stretched across frameworks, forming durable and dramatic architectural structures.",
+        "Spider facade are materials designed to be stretched across frameworks, forming durable and dramatic architectural structures.",
       path: "/services/Tensile_Fabrics",
     },
   ];

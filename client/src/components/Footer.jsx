@@ -173,12 +173,12 @@ const Footer = () => {
           </div>
 
           {/* Right Section - Contact Info */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-6 text-white">
               Get In Touch
             </h3>
             <div className="space-y-4">
-              {/* Mumbai address */}
+             
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt
                   className="text-orange-400 mt-1 flex-shrink-0"
@@ -196,21 +196,21 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Surat address (added) */}
+              
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt
                   className="text-orange-400 mt-1 flex-shrink-0"
                   size={18}
-                /><div>
+                />
+                <div>
                   <span className="text-white text-sm font-semibold block mb-1">
                     Surat Address
                   </span>
                   <span className="text-white text-sm">
-                     Shop No - 12, Ground Floor, ABC Complex, Athwa Gate, Surat -
-                  395001
+                    Shop No - 12, Ground Floor, ABC Complex, Athwa Gate, Surat -
+                    395001
                   </span>
                 </div>
-                
               </div>
 
               <div className="flex items-center space-x-3">
@@ -223,7 +223,10 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-purple-600 flex-shrink-0" size={18} />
+                <FaEnvelope
+                  className="text-purple-600 flex-shrink-0"
+                  size={18}
+                />
                 <a
                   href="mailto:info@thegoodwill.com"
                   className="text-white hover:text-white transition-colors"
@@ -232,11 +235,11 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        {/* <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white text-sm">
               © 2025 The Goodwill. All Rights Reserved.
@@ -250,20 +253,41 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
-      {/* WhatsApp Floating Button */}
-      {/* <motion.a
-      href="https://wa.me/919892118052"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg z-50"
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-    >
-      <FaWhatsapp size={24} className="text-white" />
-    </motion.a> */}
+
+
+      <div className="w-full flex flex-col bg-[#0E2C4C] items-center space-y-2">
+        {/* Phone with social icons */}
+        <div className="flex items-center -ml-28 mt-2 space-x-2">
+          <FaPhone className="text-blue-600 flex-shrink-0" size={18} />
+          <a
+            href="tel:+919876543210"
+            className="text-white font-semibold text-base hover:underline"
+          >
+            +91 98765 43210
+          </a>
+        </div>
+        <div className="w-full h-[1px] bg-black mt-1" />
+
+        {/* Email with social icons */}
+        <div className="flex items-center space-x-2">
+          <FaEnvelope className="text-purple-600 flex-shrink-0" size={18} />
+          <a
+            href="mailto:info@thegoodwillfacade.com"
+            className="text-white font-semibold text-base hover:underline"
+          >
+            info@thegoodwillfacade.com
+          </a>
+        </div>
+        <div className="w-full h-[1px] bg-black mt-1" />
+
+        {/* Copyright */}
+        <span className="text-white mb-5 text-sm">
+          © 2025 The Goodwill. All Rights Reserved.
+        </span>
+      </div>
     </footer>
   );
 };

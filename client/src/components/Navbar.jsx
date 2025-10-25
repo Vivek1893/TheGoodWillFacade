@@ -918,7 +918,7 @@ const Navbar = () => {
                       ["Railings", "/services/Railings"],
                       ["Skylight", "/services/Skylight"],
                       ["MS Structure", "/services/MS_Structure"],
-                      ["Tensile Fabric", "/services/Tensile_Fabrics"],
+                      ["Spider facade", "/services/Tensile_Fabrics"],
                     ].map(([label, path]) => (
                       <Link
                         key={path}
@@ -1092,7 +1092,7 @@ const Navbar = () => {
                     ["Railings", "/services/Railings"],
                     ["Skylight", "/services/Skylight"],
                     ["MS Structure", "/services/MS_Structure"],
-                    ["Tensile Fabric", "/services/Tensile_Fabrics"],
+                    ["Spider facade", "/services/Tensile_Fabrics"],
                   ].map(([label, path]) => (
                     <Link
                       key={path}
