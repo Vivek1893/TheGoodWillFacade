@@ -706,35 +706,30 @@ const Hero = () => {
 
   const slides = [
     {
-      leftImage: "/hero1.jpg",
-      rightImage: "/hero4.jpg",
-      mobileImage: "/hero1.jpg",
+      leftImage: "/hero4.jpg",
+      rightImage: "/hero5.jpg",
+      mobileImage: "/hero5.jpg",
       title: "ACP CLADDING",
     },
     {
       leftImage: "/hero3.webp",
-      rightImage: "/hero4.jpg",
-      mobileImage: "/hero4.webp",
+      rightImage: "/hero7.jpg",
+      mobileImage: "/hero3.webp",
       title: "STRUCTURAL GLAZING",
     },
     {
-      leftImage: "/hero5.jpg",
-      rightImage: "/hero4.jpg",
-      mobileImage: "/hero5.jpg",
+      leftImage: "/hero2.jpg",
+      rightImage: "/hero1.jpg",
+      mobileImage: "/hero2.jpg",
       title: "ALUMINUM SYSTEMS",
     },
     {
-      leftImage: "/hero4.jpg",
-      rightImage: "/hero5.jpg",
-      mobileImage: "/hero4.jpg",
+      leftImage: "/hero6.jpg",
+      rightImage: "/hero8.jpg",
+      mobileImage: "/hero8.jpg",
       title: "FACADE DESIGN",
     },
-    {
-      leftImage: "/hero5.jpg",
-      rightImage: "/hero5.jpg",
-      mobileImage: "/hero5.jpg",
-      title: "GLASS ELEVATIONS",
-    },
+    
   ];
 
   // Auto-advance slides
