@@ -766,6 +766,14 @@ const Hero = () => {
         ></motion.div>
 
         {/* Right Half */}
+        {/* Logo Branding - Top Right */}
+        <div className="absolute top-6 right-6 z-30">
+          <img
+            src="/logo.png" 
+            alt="The Goodwill Facades Logo"
+            className="h-18 md:h-25 bg-amber-50 w-auto"
+          />
+        </div>
         <motion.div
           key={`right-${currentSlide}`}
           className="w-1/2 h-full bg-cover bg-center"

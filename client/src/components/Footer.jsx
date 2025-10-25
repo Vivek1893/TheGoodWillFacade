@@ -181,8 +181,8 @@ const Footer = () => {
               {/* Mumbai address */}
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt
-                  className="text-blue-400 mt-1 flex-shrink-0"
-                  size={16}
+                  className="text-orange-400 mt-1 flex-shrink-0"
+                  size={18}
                 />
                 <div>
                   <span className="text-white text-sm font-semibold block mb-1">
@@ -199,8 +199,8 @@ const Footer = () => {
               {/* Surat address (added) */}
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt
-                  className="text-blue-400 mt-1 flex-shrink-0"
-                  size={16}
+                  className="text-orange-400 mt-1 flex-shrink-0"
+                  size={18}
                 /><div>
                   <span className="text-white text-sm font-semibold block mb-1">
                     Surat Address
@@ -214,7 +214,7 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center space-x-3">
-                <FaPhone className="text-blue-400 flex-shrink-0" size={16} />
+                <FaPhone className="text-orange-400 flex-shrink-0" size={18} />
                 <a
                   href="tel:+919892118052"
                   className="text-white hover:text-white transition-colors"
@@ -223,7 +223,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-blue-400 flex-shrink-0" size={16} />
+                <FaEnvelope className="text-orange-400 flex-shrink-0" size={18} />
                 <a
                   href="mailto:info@thegoodwill.com"
                   className="text-white hover:text-white transition-colors"

@@ -172,9 +172,9 @@ const Residential = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-50">
+    <div className="w-full min-h-screen -mt-5 bg-gray-50">
       {/* Top banner */}
-      <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[90vh]">
+      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh]">
         <motion.img
           src="/project.jpg"
           alt="Projects"

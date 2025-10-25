@@ -120,6 +120,7 @@
 
 // export default Projects;
 
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { getProjects } from "../../utils/contentful";
@@ -149,7 +150,15 @@ const Projects = () => {
   return (
     <div className="w-full">
       {/* 🔹 Hero Section */}
-      <section className="relative w-full h-screen max-h-[75vh] overflow-hidden">
+      <section className="relative w-full h-screen max-h-[75vh] -mt-8 overflow-hidden">
+      {/* Logo Branding - Top Right */}
+        <div className="absolute top-6 right-6 z-30">
+          <img
+            src="/logo.png" 
+            alt="The Goodwill Facades Logo"
+            className="h-18 md:h-25 bg-amber-50 w-auto"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
           src="/hero2.jpg"
@@ -208,30 +217,27 @@ const Projects = () => {
             {projectData.map((project) => (
               <div
                 key={project.id}
-                className="relative overflow-hidden rounded-tl-4xl rounded-br-4xl group shadow-md hover:shadow-lg transition-all duration-300 bg-white"
+                className="relative overflow-hidden rounded-tl-4xl rounded-br-4xl shadow-md hover:shadow-xl transition-all duration-300 bg-white flex flex-col group"
               >
-                {/* Image Container */}
-                <div className="overflow-hidden h-72 relative">
+                {/* Image with Hover Animation */}
+                <div className="h-72 w-full overflow-hidden">
                   <img
                     src={project.img}
                     alt={project.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => (e.target.src = "/fallback.jpg")}
                   />
+                </div>
 
-                  {/* Transparent Overlay */}
-                  {/* <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
-
-                  {/* Title Slide Up from Bottom */}
-                  <div className="absolute bottom-0 left-0 w-full flex justify-center">
-                    <div className="translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out bg-white/90 w-full text-center p-4 shadow-md">
-                      <h3 className="text-lg text-[#0B3558] font-semibold drop-shadow-sm text-center">
-                        {project.name}
-                      </h3>
-                      <div className="mt-2 flex justify-center">
-                        <div className="w-10 h-1 bg-[#F37021] rounded-full"></div>
-                      </div>
+                {/* 🔹 Fixed Title (Always Below Image) */}
+                <div className="bg-white w-full text-center p-5 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-lg md:text-xl text-[#0B3558] font-semibold mb-2">
+                      {project.name}
+                    </h3>
+                    <div className="flex justify-center">
+                      <div className="w-10 h-1 bg-[#F37021] rounded-full"></div>
                     </div>
                   </div>
                 </div>

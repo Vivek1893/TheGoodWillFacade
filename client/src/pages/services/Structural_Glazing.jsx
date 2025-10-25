@@ -71,12 +71,20 @@ const Structural_Glazing = () => {
   };
 
   return (
-    <div className="w-full font-sans bg-white">
+    <div className="w-full font-sans -mt-8 bg-white">
       {/* 🔹 Hero Section */}
-      <section className="relative w-full h-screen max-h-[75vh] overflow-hidden">
+      <section className="relative w-full h-screen max-h-[75vh] -mt-8 overflow-hidden">
+      {/* Logo Branding - Top Right */}
+        <div className="absolute top-6 right-6 z-30">
+          <img
+            src="/logo.png" 
+            alt="The Goodwill Facades Logo"
+            className="h-18 md:h-25 bg-amber-50 w-auto"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-          src="/servicesimg/ser1.png"
+          src="/servicesimg/structural_img/Structural-Glazing-side-bg.jpg"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />

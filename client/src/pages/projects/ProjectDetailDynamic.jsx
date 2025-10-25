@@ -302,8 +302,6 @@
 // export default ProjectDetailDynamic;
 
 
-
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -343,7 +341,10 @@ const ProjectDetailDynamic = () => {
 
   const prevImage = () => {
     if (project?.gallery && project.gallery.length > 0) {
-      const prevIndex = currentImageIndex === 0 ? project.gallery.length - 1 : currentImageIndex - 1;
+      const prevIndex =
+        currentImageIndex === 0
+          ? project.gallery.length - 1
+          : currentImageIndex - 1;
       setCurrentImageIndex(prevIndex);
       setSelectedImage(project.gallery[prevIndex]);
     }
@@ -354,8 +355,8 @@ const ProjectDetailDynamic = () => {
       try {
         setLoading(true);
         const projects = await getProjects();
-        const foundProject = projects.find(p => p.id === projectId);
-        
+        const foundProject = projects.find((p) => p.id === projectId);
+
         if (foundProject) {
           setProject(foundProject);
         } else {
@@ -388,7 +389,9 @@ const ProjectDetailDynamic = () => {
       <div className="w-full min-h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-red-600 mb-4">{error || "Project not found"}</p>
-          <p className="text-gray-600">Please check the project ID and try again.</p>
+          <p className="text-gray-600">
+            Please check the project ID and try again.
+          </p>
         </div>
       </div>
     );
@@ -402,7 +405,7 @@ const ProjectDetailDynamic = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl sm:text-4xl md:text-5xl mt-20 font-bold tracking-tight text-gray-900 mb-2"
+          className="text-4xl sm:text-4xl md:text-5xl mt-2 font-bold tracking-tight text-gray-900 mb-2"
         >
           {project.name}
         </motion.h1>
@@ -422,10 +425,11 @@ const ProjectDetailDynamic = () => {
         />
       </div>
 
-      {/* Image */}
-      <div className="flex flex-col items-center justify-center px-2 md:px-8 lg:px-16 max-w-6xl mx-auto mb-8">
+      {/* Image + Info Side by Side */}
+      <div className="flex flex-col md:flex-row items-start justify-center px-2 md:px-8 lg:px-16 max-w-6xl mx-auto mb-8 relative">
+        {/* Image Section */}
         <motion.div
-          className="w-full rounded-xl"
+          className="w-full md:w-3/5 rounded-xl relative"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -435,8 +439,10 @@ const ProjectDetailDynamic = () => {
           <img
             src={project.gallery?.[0] || project.img}
             alt={project.name}
-            className="w-full h-auto max-h-[700px] object-contain rounded-xl mb-4 transition-transform duration-300 hover:scale-105 cursor-pointer"
-            onClick={() => handleImageInteraction(project.gallery?.[0] || project.img, 0)}
+            className="w-full h-auto max-h-[700px] object-contain rounded-xl mb-4 transition-transform duration-500 hover:scale-105 cursor-pointer"
+            onClick={() =>
+              handleImageInteraction(project.gallery?.[0] || project.img, 0)
+            }
           />
 
           {/* Gallery Thumbnails */}
@@ -456,39 +462,42 @@ const ProjectDetailDynamic = () => {
             </div>
           )}
         </motion.div>
-      </div>
 
-      {/* Info Panel Below Image */}
-      <AnimatePresence>
-        {showInfo && (
-          <motion.div
-            className="w-full max-w-6xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200 p-4 flex flex-col justify-start gap-4 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.4 }}
-          >
-            <div className="grid grid-cols-1 gap-4 text-center md:text-left">
-              <InfoItem title="Project Name" value={project.name} />
-              <InfoItem title="Architect" value={project.architect || "N/A"} />
-              <InfoItem title="Builder" value={project.builder || "N/A"} />
-              <InfoItem title="Quantity" value={project.quantity || "N/A"} />
-              <InfoItem title="Type of Work" value={project.typeOfWork || "N/A"} />
-              <InfoItem title="Sub Type" value={project.subType || "N/A"} />
-              {project.projectLocation && (
+        {/* Info Panel - Right Side */}
+        <AnimatePresence>
+          {showInfo && (
+            <motion.div
+              className="w-full md:w-2/5 md:ml-8 mt-6 md:mt-0 bg-white rounded-xl shadow-lg border border-gray-200 p-4 flex flex-col justify-start gap-4"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="grid grid-cols-1 gap-4 text-center md:text-left">
+                <InfoItem title="Project Name" value={project.name} />
+                <InfoItem title="Architect" value={project.architect || "N/A"} />
+                <InfoItem title="Builder" value={project.builder || "N/A"} />
+                <InfoItem title="Quantity" value={project.quantity || "N/A"} />
                 <InfoItem
-                  title="Project Location"
-                  value={
-                    typeof project.projectLocation === "string"
-                      ? project.projectLocation
-                      : `Lat: ${project.projectLocation.lat}, Lon: ${project.projectLocation.lon}`
-                  }
+                  title="Type of Work"
+                  value={project.typeOfWork || "N/A"}
                 />
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <InfoItem title="Sub Type" value={project.subType || "N/A"} />
+                {project.projectLocation && (
+                  <InfoItem
+                    title="Project Location"
+                    value={
+                      typeof project.projectLocation === "string"
+                        ? project.projectLocation
+                        : `Lat: ${project.projectLocation.lat}, Lon: ${project.projectLocation.lon}`
+                    }
+                  />
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* Image Modal */}
       <AnimatePresence>
@@ -520,8 +529,19 @@ const ProjectDetailDynamic = () => {
                 onClick={closeImageModal}
                 className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-sm transition-colors"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </motion.div>
