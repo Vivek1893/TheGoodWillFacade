@@ -281,7 +281,7 @@ const Footer = () => {
 
   {/* Copyright - Right */}
   <span className="text-white text-sm text-center sm:text-right">
-    © 2025 The Goodwill. All Rights Reserved.
+    © 2025 The Goodwill Facade. All Rights Reserved.
   </span>
 </div>
 
