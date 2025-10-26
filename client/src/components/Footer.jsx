@@ -256,12 +256,10 @@ const Footer = () => {
         </div> */}
       </div>
 
-
-
-      <div className="w-full flex flex-col bg-[#0E2C4C] items-center space-y-2">
-        {/* Phone with social icons */}
-        <div className="flex items-center -ml-28 mt-2 space-x-2">
-          <FaPhone className="text-blue-600 flex-shrink-0" size={18} />
+      <div className="w-full flex items-center bg-[#0E2C4C]  justify-between px-5">
+        {/* Phone - Left */}
+        <div className="flex items-center mt-5 mb-5 space-x-2">
+          <FaPhone className="text-blue-600" size={18} />
           <a
             href="tel:+919876543210"
             className="text-white font-semibold text-base hover:underline"
@@ -269,11 +267,10 @@ const Footer = () => {
             +91 98765 43210
           </a>
         </div>
-        <div className="w-full h-[1px] bg-black mt-1" />
 
-        {/* Email with social icons */}
+        {/* Email - Center */}
         <div className="flex items-center space-x-2">
-          <FaEnvelope className="text-purple-600 flex-shrink-0" size={18} />
+          <FaEnvelope className="text-purple-600" size={18} />
           <a
             href="mailto:info@thegoodwillfacade.com"
             className="text-white font-semibold text-base hover:underline"
@@ -281,10 +278,9 @@ const Footer = () => {
             info@thegoodwillfacade.com
           </a>
         </div>
-        <div className="w-full h-[1px] bg-black mt-1" />
 
-        {/* Copyright */}
-        <span className="text-white mb-5 text-sm">
+        {/* Copyright - Right */}
+        <span className="text-white text-sm">
           © 2025 The Goodwill. All Rights Reserved.
         </span>
       </div>

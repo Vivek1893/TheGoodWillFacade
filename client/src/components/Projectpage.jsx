@@ -7,29 +7,29 @@ const Projects = () => {
   const projectData = [
     {
       id: 1,
-      title: "GodrejPlatinum",
+      title: "SHIVEN ARISE",
       img: "./project_detail_img/SHIVEN ARISE.webp",
       path: "/projects/Detail_project/GodrejPlatinum",
     },
     {
       id: 2,
-      title: "Luxury Apartments",
-      img: "./images/s4.jpg",
+      title: "ATHARV HEIGHTS ",
+      img: "./project1.jpg",
     },
     {
       id: 3,
-      title: "Cultural Center",
-      img: "./Project_List_img/POLO ELEVATE.webp",
+      title: "MILESTONE INDIGO ",
+      img: "./project3.jpg",
     },
     {
       id: 4,
-      title: "Residential Villas",
-      img: "./Project_List_img/VELOCITY 1.webp",
+      title: "EVOQ",
+      img: "./project4.jpg",
     },
     {
       id: 5,
-      title: "Corporate Towers",
-      img: "./images/project5.webp",
+      title: "VIVIANA VESU",
+      img: "./project2.jpg",
     },
   ];
 
