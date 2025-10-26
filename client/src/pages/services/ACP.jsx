@@ -84,7 +84,7 @@ const ACPCladding = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-          src="/servicesimg/acp_img/project2.png"
+          src="/hero6.webp"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />

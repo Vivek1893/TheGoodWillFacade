@@ -125,7 +125,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-gray-500 text-white">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Section - Brand & Social */}
@@ -133,7 +133,7 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <img
                 src="/logo.png"
-                className="h-20 w-auto bg-white "
+                className="h-20 w-auto  "
                 alt="The Goodwill Logo"
               />
               <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
@@ -256,34 +256,35 @@ const Footer = () => {
         </div> */}
       </div>
 
-      <div className="w-full flex items-center bg-[#0E2C4C]  justify-between px-5">
-        {/* Phone - Left */}
-        <div className="flex items-center mt-5 mb-5 space-x-2">
-          <FaPhone className="text-blue-600" size={18} />
-          <a
-            href="tel:+919876543210"
-            className="text-white font-semibold text-base hover:underline"
-          >
-            +91 98765 43210
-          </a>
-        </div>
+      <div className="w-full flex flex-col sm:flex-row items-center justify-between bg-[#0E2C4C] px-4 py-3 sm:px-6 sm:py-4 space-y-2 sm:space-y-0">
+  {/* Phone - Left */}
+  <div className="flex items-center space-x-2">
+    <FaPhone className="text-blue-600" size={18} />
+    <a
+      href="tel:+919892118052"
+      className="text-white text-base hover:underline"
+    >
+      +91 9892118052
+    </a>
+  </div>
 
-        {/* Email - Center */}
-        <div className="flex items-center space-x-2">
-          <FaEnvelope className="text-purple-600" size={18} />
-          <a
-            href="mailto:info@thegoodwillfacade.com"
-            className="text-white font-semibold text-base hover:underline"
-          >
-            info@thegoodwillfacade.com
-          </a>
-        </div>
+  {/* Email - Center */}
+  <div className="flex items-center space-x-2">
+    <FaEnvelope className="text-purple-600" size={18} />
+    <a
+      href="mailto:thegoodwillfacade@gmail.com"
+      className="text-white text-base hover:underline text-center"
+    >
+      thegoodwillfacade@gmail.com
+    </a>
+  </div>
 
-        {/* Copyright - Right */}
-        <span className="text-white text-sm">
-          © 2025 The Goodwill. All Rights Reserved.
-        </span>
-      </div>
+  {/* Copyright - Right */}
+  <span className="text-white text-sm text-center sm:text-right">
+    © 2025 The Goodwill. All Rights Reserved.
+  </span>
+</div>
+
     </footer>
   );
 };
