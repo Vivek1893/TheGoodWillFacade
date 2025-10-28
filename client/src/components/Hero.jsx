@@ -371,23 +371,7 @@
 
 // export default Hero;
 
-// uper vala old code hai esko hi used karna hai  niche dono bas dikhne ke liye hai 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// uper vala old code hai esko hi used karna hai  niche dono bas dikhne ke liye hai
 
 // import React, { useState, useEffect } from "react";
 // import { motion, AnimatePresence } from "framer-motion";
@@ -670,33 +654,179 @@
 
 // export default Hero;
 
+// import React, { useState, useEffect } from "react";
+// import { motion } from "framer-motion";
 
+// const Hero = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
 
+//   const slides = [
+//     {
+//       leftImage: "/hero2.jpg",
+//       rightImage: "/hero1.jpg",
+//       mobileImage: "/hero2.jpg",
+//       title: "ALUMINUM SYSTEMS",
+//     },
+//     {
+//       leftImage: "/hero4.jpg",
+//       rightImage: "/hero5.jpg",
+//       mobileImage: "/hero5.jpg",
+//       title: "ACP CLADDING",
+//     },
+//     {
+//       leftImage: "/hero3.webp",
+//       rightImage: "/hero7.jpg",
+//       mobileImage: "/hero3.webp",
+//       title: "STRUCTURAL GLAZING",
+//     },
 
+//     {
+//       leftImage: "/hero6.jpg",
+//       rightImage: "/hero8.jpg",
+//       mobileImage: "/hero8.jpg",
+//       title: "FACADE DESIGN",
+//     },
 
+//   ];
 
+//   // Auto-advance slides
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+//     return () => clearInterval(timer);
+//   }, [slides.length]);
 
+//   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   const prevSlide = () =>
+//     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
+//   return (
+//     <div className="relative w-full h-screen overflow-hidden -mt-7 max-w-full">
+//       {/* 🔹 Desktop / Tablet Split Background */}
+//       <div className="hidden sm:flex absolute inset-0">
+//         {/* Left Half */}
+//         <motion.div
+//           key={`left-${currentSlide}`}
+//           className="w-1/2 h-full bg-cover bg-center"
+//           style={{
+//             backgroundImage: `url(${slides[currentSlide].leftImage})`,
+//           }}
+//           initial={{ opacity: 0, scale: 1.2 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1.2 }}
+//         ></motion.div>
 
+//         {/* Right Half */}
+//         {/* Logo Branding - Top Right */}
+//         <div className="absolute top-6 right-6 z-30">
+//           <img
+//             src="/logo1.png"
+//             alt="The Goodwill Facades Logo"
+//             className="h-18 md:h-25  w-auto"
+//           />
+//         </div>
+//         <motion.div
+//           key={`right-${currentSlide}`}
+//           className="w-1/2 h-full bg-cover bg-center"
+//           style={{
+//             backgroundImage: `url(${slides[currentSlide].rightImage})`,
+//           }}
+//           initial={{ opacity: 0, scale: 1.2 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1.2, delay: 0.2 }}
+//         ></motion.div>
 
+//         {/* Divider line */}
+//         <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent z-10"></div>
+//       </div>
 
+//       {/* 🔹 Mobile Single Image */}
+//       <div className="flex sm:hidden absolute inset-0">
+//         <motion.div
+//           key={`mobile-${currentSlide}`}
+//           className="w-full h-full bg-cover bg-center"
+//           style={{
+//             backgroundImage: `url(${slides[currentSlide].mobileImage})`,
+//           }}
+//           initial={{ opacity: 0, scale: 1.1 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1 }}
+//         ></motion.div>
+//       </div>
 
+//       {/* 🔹 Navigation Arrows */}
+//       <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-8">
+//         <button
+//           onClick={prevSlide}
+//           className="text-white hover:text-orange-400 transition-colors group"
+//         >
+//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+//             <svg
+//               className="w-5 h-5"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M15 19l-7-7 7-7"
+//               />
+//             </svg>
+//             <span className="text-sm font-medium tracking-wider hidden sm:block">
+//               PREV
+//             </span>
+//           </div>
+//         </button>
 
+//         <button
+//           onClick={nextSlide}
+//           className="text-white hover:text-orange-400 transition-colors group"
+//         >
+//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+//             <span className="text-sm font-medium tracking-wider hidden sm:block">
+//               NEXT
+//             </span>
+//             <svg
+//               className="w-5 h-5"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M9 5l7 7-7 7"
+//               />
+//             </svg>
+//           </div>
+//         </button>
+//       </div>
 
+//       {/* 🔹 Slide Indicators */}
+//       <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+//         <div className="flex space-x-3">
+//           {slides.map((_, index) => (
+//             <button
+//               key={index}
+//               onClick={() => setCurrentSlide(index)}
+//               className={`w-3 h-3 rounded-full transition-all duration-300 ${
+//                 index === currentSlide
+//                   ? "bg-[#F37021] scale-110"
+//                   : "bg-white/50 hover:bg-white/80"
+//               }`}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// export default Hero;
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -709,31 +839,33 @@ const Hero = () => {
       leftImage: "/hero2.jpg",
       rightImage: "/hero1.jpg",
       mobileImage: "/hero2.jpg",
-      title: "ALUMINUM SYSTEMS",
+      leftTitle: "ALUMINUM SYSTEMS",
+      rightTitle: "WINDOW STRUCTURE",
     },
     {
       leftImage: "/hero4.jpg",
       rightImage: "/hero5.jpg",
       mobileImage: "/hero5.jpg",
-      title: "ACP CLADDING",
+      leftTitle: "ACP CLADDING",
+      rightTitle: "ARCHITECTURAL DESIGNS",
     },
     {
       leftImage: "/hero3.webp",
       rightImage: "/hero7.jpg",
       mobileImage: "/hero3.webp",
-      title: "STRUCTURAL GLAZING",
+      leftTitle: "STRUCTURAL GLAZING",
+      rightTitle: "ELEVATION WORKS",
     },
-   
     {
       leftImage: "/hero6.jpg",
       rightImage: "/hero8.jpg",
       mobileImage: "/hero8.jpg",
-      title: "FACADE DESIGN",
+      leftTitle: "FACADE DESIGN",
+      rightTitle: "CUSTOM ALUMINIUM FRAMES",
     },
-    
   ];
 
-  // Auto-advance slides
+  // Auto-slide
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -752,36 +884,55 @@ const Hero = () => {
         {/* Left Half */}
         <motion.div
           key={`left-${currentSlide}`}
-          className="w-1/2 h-full bg-cover bg-center"
+          className="w-1/2 h-full bg-cover bg-center relative"
           style={{
             backgroundImage: `url(${slides[currentSlide].leftImage})`,
           }}
           initial={{ opacity: 0, scale: 1.2 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2 }}
-        ></motion.div>
+        >
+          {/* Left Title */}
+          <div className="absolute bottom-10 left-10 bg-black/50 px-4 py-2 rounded-md backdrop-blur-sm">
+            <h2
+              className="text-lg md:text-xl font-semibold tracking-wide"
+              style={{ color: "#ffffff" }} // 👈 force white color
+            >
+              {slides[currentSlide].leftTitle}
+            </h2>
+          </div>
+        </motion.div>
 
-        {/* Right Half */}
-        {/* Logo Branding - Top Right */}
+        {/* Logo Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo1.png" 
+            src="/logo1.png"
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25  w-auto"
+            className="h-18 md:h-25 w-auto"
           />
         </div>
+
+        {/* Right Half */}
         <motion.div
           key={`right-${currentSlide}`}
-          className="w-1/2 h-full bg-cover bg-center"
+          className="w-1/2 h-full bg-cover bg-center relative"
           style={{
             backgroundImage: `url(${slides[currentSlide].rightImage})`,
           }}
           initial={{ opacity: 0, scale: 1.2 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
-        ></motion.div>
+        >
+          {/* Right Title */}
+          <div className="absolute bottom-10 right-10 bg-black/50 text-white px-4 py-2 rounded-md backdrop-blur-sm">
+            <h2 className="text-lg md:text-xl font-semibold tracking-wide text-right"
+            style={{ color: "#ffffff" }}>
+              {slides[currentSlide].rightTitle}
+            </h2>
+          </div>
+        </motion.div>
 
-        {/* Divider line */}
+        {/* Divider Line */}
         <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent z-10"></div>
       </div>
 
@@ -789,21 +940,29 @@ const Hero = () => {
       <div className="flex sm:hidden absolute inset-0">
         <motion.div
           key={`mobile-${currentSlide}`}
-          className="w-full h-full bg-cover bg-center"
+          className="w-full h-full bg-cover bg-center relative"
           style={{
             backgroundImage: `url(${slides[currentSlide].mobileImage})`,
           }}
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-        ></motion.div>
+        >
+          {/* Mobile Title - Top Left */}
+          <div className="absolute top-6 left-5">
+            <h2 className="text-white text-lg font-semibold tracking-wide drop-shadow-lg"
+            style={{ color: "#ffffff" }}>
+              {slides[currentSlide].leftTitle}
+            </h2>
+          </div>
+        </motion.div>
       </div>
 
       {/* 🔹 Navigation Arrows */}
       <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-8">
         <button
           onClick={prevSlide}
-          className="text-white hover:text-orange-400 transition-colors group"
+          className="text-white hover:text-[#F37021] transition-colors group"
         >
           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
             <svg
@@ -827,7 +986,7 @@ const Hero = () => {
 
         <button
           onClick={nextSlide}
-          className="text-white hover:text-orange-400 transition-colors group"
+          className="text-white hover:text-[#F37021] transition-colors group"
         >
           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
             <span className="text-sm font-medium tracking-wider hidden sm:block">

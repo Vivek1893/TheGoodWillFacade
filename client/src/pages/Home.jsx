@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
    
     import Servicespage from '../components/Servicespage';
     import Projectpage from '../components/Projectpage';
-     import Contact from "../components/Contact";
+    
      import ClientLogoSlider from "../components/ClientLogoSlider";
 
 
