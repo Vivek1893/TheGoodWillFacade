@@ -156,12 +156,12 @@ const Projects = () => {
           <img
             src="/logo.png" 
             alt="The Goodwill Facades Logo"
-            className="h-18 md:h-25 bg-white w-auto"
+            className="h-18 md:h-25  w-auto"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60 z-10"></div>
         <img
-          src="/hero2.jpg"
+          src="/images/project.webp"
           alt="ACP Cladding"
           className="w-full h-full object-cover"
         />
@@ -220,7 +220,7 @@ const Projects = () => {
                 className="relative overflow-hidden rounded-tl-4xl rounded-br-4xl shadow-md hover:shadow-xl transition-all duration-300 bg-white flex flex-col group"
               >
                 {/* Image with Hover Animation */}
-                <div className="h-72 w-full overflow-hidden">
+                <div className="h-82 w-full overflow-hidden">
                   <img
                     src={project.img}
                     alt={project.name}

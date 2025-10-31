@@ -10,7 +10,7 @@ const About = () => {
         {/* Logo Branding - Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo1.png" 
+            src="/logo.png" 
             alt="The Goodwill Facades Logo"
             className="h-18 md:h-25 w-auto"
           />

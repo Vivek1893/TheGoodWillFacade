@@ -1,131 +1,19 @@
-// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
-// export default function Footer() {
-//   return (
-//     <footer className="bg-[#121212] text-gray-300">
-//       {/* Subscribe Section */}
-//       {/* <div className="max-w-6xl mx-auto px-6 py-10">
-//         <div className="bg-[#1e1e1e] rounded-md p-10 flex flex-col md:flex-row items-center justify-between shadow-lg">
-//           <div>
-//             <p className="text-yellow-500 font-semibold">Subscribe & Follow us</p>
-//             <h3 className="text-2xl md:text-3xl font-bold text-white">
-//               Subscribe & Get More Information
-//             </h3>
-//           </div>
-//           <div className="flex mt-6 md:mt-0">
-//             <input
-//               type="email"
-//               placeholder="Your Email"
-//               className="px-4 py-2 rounded-l-md w-64 focus:outline-none text-black"
-//             />
-//             <button className="bg-yellow-500 text-black px-6 py-2 rounded-r-md font-semibold hover:bg-yellow-600">
-//               Subscribe
-//             </button>
-//           </div>
-//         </div>
-//       </div> */}
 
-//       {/* Footer Content */}
-//       <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-//         {/* Quick Links */}
-//         <div>
-//           <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-//           <ul className="space-y-2">
-//             <li><a href="#" className="hover:text-yellow-500">Home</a></li>
-//             <li><a href="#" className="hover:text-yellow-500">About</a></li>
-//             <li><a href="#" className="hover:text-yellow-500">Services</a></li>
-//             <li><a href="#" className="hover:text-yellow-500">Contact</a></li>
-//           </ul>
-//         </div>
-
-//         {/* Other Pages */}
-//         <div>
-//           <h4 className="text-lg font-semibold text-white mb-4">Other Pages</h4>
-//           <ul className="space-y-2">
-//             <li><a href="#" className="hover:text-yellow-500">FAQ</a></li>
-//             <li><a href="#" className="hover:text-yellow-500">Blog</a></li>
-//             <li><a href="#" className="hover:text-yellow-500">Privacy Policy</a></li>
-//             <li><a href="#" className="hover:text-yellow-500">Terms & Condition</a></li>
-//           </ul>
-//         </div>
-
-//         {/* Contact Info */}
-//         <div>
-//           <h4 className="text-lg font-semibold text-white mb-4">Contact Info</h4>
-//           <ul className="space-y-3">
-//             <li className="flex items-center gap-2">
-//               <FaMapMarkerAlt className="text-yellow-500" />
-//               Disha C.H.S., Opp. Joggers Park, Chikoowadi, Borivali
-//                       West, Mumbai - 400 092.
-
-//             </li>
-//             <li className="flex items-center gap-2">
-//               <FaPhoneAlt className="text-yellow-500" />
-//               (+91) 9892118052
-//             </li>
-//             <li className="flex items-center gap-2">
-//               <FaEnvelope className="text-yellow-500" />
-//               goodwill@domain.com
-//             </li>
-//             <li>Mon - Fri : 9:00 am - 5:00 pm</li>
-//           </ul>
-//         </div>
-
-//         {/* Appointment */}
-//         <div>
-//           <h4 className="text-lg font-semibold text-white mb-4">Make an Appointment</h4>
-//           <p className="text-sm mb-4">
-//             Getting an accurate diagnosis can be one of the most impactful experiences that you can have.
-//           </p>
-//           <div className="flex items-center bg-yellow-500 text-black p-3 rounded-md gap-3 font-semibold">
-//             <FaPhoneAlt /> Call Us Today <br /> 91 9892118052
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Bottom Bar */}
-//       <div className="border-t border-gray-700 py-6 px-6 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
-//         {/* Logo */}
-//         <div className="flex items-center gap-2">
-//           <img
-//             src="/logo.png"
-//             alt="Logo"
-//             className="w-10 h-10"
-//           />
-//           {/* <h2 className="text-xl font-bold text-white">GoodWill</h2> */}
-//         </div>
-
-//         {/* Social Links */}
-//         <div className="flex gap-4 mt-4 md:mt-0">
-//           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaFacebookF /></a>
-//           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaWhatsapp /></a>
-//           <a href="#" className="p-2 bg-[#1e1e1e] rounded-md hover:bg-yellow-500"><FaInstagram /></a>
-
-//         </div>
-//       </div>
-
-//       {/* Copyright */}
-//       <div className="text-center py-4 text-sm border-t border-gray-700">
-//         © 2025 GoodWill By Skillbridge Developer.
-//       </div>
-//     </footer>
-//   );
-// }
 
 // import React from "react";
 // import {
 //   FaFacebookF,
 //   FaInstagram,
 //   FaWhatsapp,
-//   FaMapMarkerAlt,
 //   FaPhone,
 //   FaEnvelope,
 // } from "react-icons/fa";
-// import { motion } from "framer-motion";
 
 // const Footer = () => {
 //   return (
-//     <footer className="bg-gray-500 text-white">
+//     <footer className="bg-[#0E2C4C]  text-white">
+//       {/* 🔹 Main Upper Section */}
 //       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 //         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
 //           {/* Left Section - Brand & Social */}
@@ -133,7 +21,7 @@
 //             <div className="flex items-center mb-6">
 //               <img
 //                 src="/logo.png"
-//                 className="h-20 w-auto  "
+//                 className="h-20 w-auto"
 //                 alt="The Goodwill Logo"
 //               />
 //               <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
@@ -149,7 +37,7 @@
 //                 href="https://facebook.com"
 //                 target="_blank"
 //                 rel="noopener noreferrer"
-//                 className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300"
+//                 className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
 //               >
 //                 <FaFacebookF size={18} />
 //               </a>
@@ -157,7 +45,7 @@
 //                 href="https://www.instagram.com/thegoodwillfacade?utm_source=qr&igsh=MWdvNnAwMmJwNGluNA%3D%3D"
 //                 target="_blank"
 //                 rel="noopener noreferrer"
-//                 className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300"
+//                 className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
 //               >
 //                 <FaInstagram size={18} />
 //               </a>
@@ -165,98 +53,22 @@
 //                 href="https://wa.me/919876543210"
 //                 target="_blank"
 //                 rel="noopener noreferrer"
-//                 className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center transition-all duration-300"
+//                 className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
 //               >
 //                 <FaWhatsapp size={18} />
 //               </a>
 //             </div>
 //           </div>
-
-//           {/* Right Section - Contact Info */}
-//           {/* <div>
-//             <h3 className="text-lg font-semibold mb-6 text-white">
-//               Get In Touch
-//             </h3>
-//             <div className="space-y-4">
-             
-//               <div className="flex items-start space-x-3">
-//                 <FaMapMarkerAlt
-//                   className="text-orange-400 mt-1 flex-shrink-0"
-//                   size={18}
-//                 />
-//                 <div>
-//                   <span className="text-white text-sm font-semibold block mb-1">
-//                     Mumbai Address
-//                   </span>
-//                   <span className="text-white text-sm">
-//                     Society No -374 , Gala no - D45, AKASH CHSL , SECTOR 3 ,
-//                     PUNJAB NATIONAL BANK LANE , CHARKOP, KANDIVALI WEST , MUMBAI
-//                     - 400 067
-//                   </span>
-//                 </div>
-//               </div>
-
-              
-//               <div className="flex items-start space-x-3">
-//                 <FaMapMarkerAlt
-//                   className="text-orange-400 mt-1 flex-shrink-0"
-//                   size={18}
-//                 />
-//                 <div>
-//                   <span className="text-white text-sm font-semibold block mb-1">
-//                     Surat Address
-//                   </span>
-//                   <span className="text-white text-sm">
-//                     Shop No - 12, Ground Floor, ABC Complex, Athwa Gate, Surat -
-//                     395001
-//                   </span>
-//                 </div>
-//               </div>
-
-//               <div className="flex items-center space-x-3">
-//                 <FaPhone className="text-blue-600 flex-shrink-0" size={18} />
-//                 <a
-//                   href="tel:+919892118052"
-//                   className="text-white hover:text-white transition-colors"
-//                 >
-//                   +91 9892118052
-//                 </a>
-//               </div>
-//               <div className="flex items-center space-x-3">
-//                 <FaEnvelope
-//                   className="text-purple-600 flex-shrink-0"
-//                   size={18}
-//                 />
-//                 <a
-//                   href="mailto:info@thegoodwill.com"
-//                   className="text-white hover:text-white transition-colors"
-//                 >
-//                   thegoodwillfacade@gmail.com
-//                 </a>
-//               </div>
-//             </div>
-//           </div> */}
 //         </div>
-
-//         {/* Bottom Bar */}
-//         {/* <div className="border-t border-gray-800 mt-8 pt-8">
-//           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-//             <div className="text-white text-sm">
-//               © 2025 The Goodwill. All Rights Reserved.
-//             </div>
-//             <div className="flex space-x-6 text-sm text-white">
-//               <a href="#" className="hover:text-white transition-colors">
-//                 Privacy Policy
-//               </a>
-//               <a href="#" className="hover:text-white transition-colors">
-//                 Terms of Service
-//               </a>
-//             </div>
-//           </div>
-//         </div> */}
 //       </div>
 
-//       <div className="w-full flex flex-col sm:flex-row items-center justify-between bg-[#0E2C4C] px-4 py-4 sm:px-8 sm:py-5 space-y-3 sm:space-y-0 text-center sm:text-left">
+//       {/* 🔹 Bottom Bar with Border & Rounded Corners */}
+//       <div
+//         className="w-full flex flex-col sm:flex-row items-center justify-between 
+//         bg-[#0E2C4C] px-4 py-4 sm:px-8 sm:py-5 
+//         space-y-3 sm:space-y-0 text-center sm:text-left
+//         border-t-4 border-[#F37021] rounded-tl-[40px] rounded-tr-[40px]"
+//       >
 //         {/* Left - Copyright */}
 //         <div className="flex items-center justify-center sm:justify-start">
 //           <span className="text-white text-sm sm:text-base">
@@ -294,104 +106,69 @@
 
 
 
-
-
-
-
-
 import React from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaPhone,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { MdEmail, MdCall } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-500 text-white">
-      {/* 🔹 Main Upper Section */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-          {/* Left Section - Brand & Social */}
+    <footer className="w-full">
+
+      {/* ✅ TOP FOOTER (Black section like screenshot) */}
+      <div
+        className="w-full  text-white py-8 px-6 
+        border-t-4 border-[#F37021] rounded-tl-[40px] rounded-tr-[40px]"
+      >
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+
+          {/* LOGO */}
           <div>
-            <div className="flex items-center mb-6">
-              <img
-                src="/logo.png"
-                className="h-20 w-auto"
-                alt="The Goodwill Logo"
-              />
-              <span className="ml-3 text-3xl font-bold bg-white bg-clip-text text-transparent">
-                The Goodwill Facade
-              </span>
-            </div>
-            <p className="text-white mb-6 leading-relaxed max-w-md">
-              Leading providers of premium ACP cladding solutions. We transform
-              spaces with innovative designs and exceptional craftsmanship.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <FaFacebookF size={18} />
-              </a>
-              <a
-                href="https://www.instagram.com/thegoodwillfacade?utm_source=qr&igsh=MWdvNnAwMmJwNGluNA%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <FaInstagram size={18} />
-              </a>
-              <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <FaWhatsapp size={18} />
-              </a>
-            </div>
+            <img src="/logo.png" alt="Goodwill Logo" className="w-70" />
           </div>
+
+          {/* MENU LINKS */}
+          <nav className="flex gap-8 text-lg font-medium text-black">
+            Leading providers of premium ACP cladding solutions, we transform spaces with innovative designs and exceptional craftsmanship, delivering durable, weather-resistant, and aesthetically striking finishes that redefine modern architectural possibilities for both exterior facades and interior applications.
+          </nav>
+
+          {/* SOCIAL ICONS */}
+          {/* <div className="flex gap-6 text-3xl">
+            <a href="https://wa.me/919892118052" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp className="text-green-400 hover:scale-110 duration-300" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-pink-500 hover:scale-110 duration-300" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF className="text-blue-500 hover:scale-110 duration-300" />
+            </a>
+          </div> */}
+
         </div>
       </div>
 
-      {/* 🔹 Bottom Bar with Border & Rounded Corners */}
-      <div
-        className="w-full flex flex-col sm:flex-row items-center justify-between 
-        bg-[#0E2C4C] px-4 py-4 sm:px-8 sm:py-5 
-        space-y-3 sm:space-y-0 text-center sm:text-left
-        border-t-4 border-[#F37021] rounded-tl-[40px] rounded-tr-[40px]"
-      >
-        {/* Left - Copyright */}
-        <div className="flex items-center justify-center sm:justify-start">
-          <span className="text-white text-sm sm:text-base">
-            © 2025 The Goodwill Facade. All Rights Reserved.
-          </span>
-        </div>
+      {/* ✅ BOTTOM BLUE COPYRIGHT STRIP (exact like image) */}
+      <div className="bg-[#0E2C4C] py-6 ">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 text-white text-lg gap-3">
 
-        {/* Center - Email */}
-        <div className="flex items-center justify-center space-x-2">
-          <FaEnvelope className="text-[#F37021] flex-shrink-0" size={18} />
+          {/* COPYRIGHT */}
+          <span>© 2025 The Goodwill Facade. All Rights Reserved.</span>
+
+          {/* EMAIL */}
           <a
             href="mailto:thegoodwillfacade@gmail.com"
-            className="text-white text-sm sm:text-base hover:underline"
+            className="flex items-center gap-2 hover:text-white duration-300"
           >
+            <MdEmail className="text-lg text-[#dd671d]" />
             thegoodwillfacade@gmail.com
           </a>
-        </div>
 
-        {/* Right - Phone */}
-        <div className="flex items-center justify-center sm:justify-end space-x-2">
-          <FaPhone className="text-[#F37021] flex-shrink-0" size={18} />
+          {/* PHONE */}
           <a
             href="tel:+919892118052"
-            className="text-white text-sm sm:text-base hover:underline"
+            className="flex items-center gap-2 hover:text-white duration-300"
           >
+            <MdCall className="text-lg text-[#dd671d]" />
             +91 9892118052
           </a>
         </div>

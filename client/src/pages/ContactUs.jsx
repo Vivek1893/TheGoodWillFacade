@@ -76,13 +76,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-gray-50 -mt-8 to-blue-50/30">
+    <section id="contact" className="bg-gradient-to-br from-gray-50 -mt-8 to-blue-50/30 ">
       {/* Hero Banner */}
-      <div className="relative w-full h-[60vh] min-h-[600px] overflow-hidden">
+      <div className="relative w-full h-[60vh] min-h-[75vh] overflow-hidden">
         {/* Logo Branding - Top Right */}
         <div className="absolute top-6 right-6 z-30">
           <img
-            src="/logo1.png"
+            src="/logo.png"
             alt="The Goodwill Facades Logo"
             className="h-18 md:h-25  w-auto"
           />
