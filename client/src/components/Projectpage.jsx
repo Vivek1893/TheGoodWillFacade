@@ -165,12 +165,12 @@ const Projects = () => {
     {
       id: 4,
       title: "EVOQ",
-      img: "./project4.jpg",
+      img: "./project4.png",
     },
     {
       id: 5,
       title: "VIVIANA VESU",
-      img: "./project2.jpg",
+      img: "./project2.png",
     },
   ];
 

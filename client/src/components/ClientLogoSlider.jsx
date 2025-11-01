@@ -56,17 +56,23 @@ const logosSet1 = [
   { src: "/clientlogo/logo5.jpg", alt: "Argoid", width: "w-40" },
   { src: "/clientlogo/logo6.jpg", alt: "Bagri", width: "w-48" },
   { src: "/clientlogo/logo7.jpg", alt: "Blue", width: "w-56" },
+   { src: "/clientlogo/logo8.jpg", alt: "Bridge", width: "w-40" },
+  
 ];
 
 const logosSet2 = [
   
-  { src: "/clientlogo/logo8.jpg", alt: "Bridge", width: "w-40" },
+ 
   { src: "/clientlogo/logo9.jpg", alt: "Capgemini", width: "w-56" },
   { src: "/clientlogo/logo10.jpg", alt: "Coin", width: "w-40" },
   { src: "/clientlogo/logo11.jpg", alt: "Cognizant", width: "w-48" },
    { src: "/clientlogo/logo12.jpg", alt: "Genpact", width: "w-48" },
   { src: "/clientlogo/logo13.jpg", alt: "HDFC", width: "w-56" },
   { src: "/clientlogo/logo14.jpg", alt: "HSBC", width: "w-40" },
+   { src: "/clientlogo/logo15.jpg", alt: "HSBC", width: "w-40" },
+    { src: "/clientlogo/logo16.jpg", alt: "Bridge", width: "w-40" },
+  
+
 ];
 
 // const logosSet3 = [
