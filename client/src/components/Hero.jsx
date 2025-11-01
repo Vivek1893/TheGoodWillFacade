@@ -1088,7 +1088,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 1000); // ✅ Slowed down auto slide speed (6 seconds)
+    }, 8000); // ✅ Slowed down auto slide speed (6 seconds)
 
     return () => clearInterval(timer);
   }, [slides.length]);
@@ -1109,7 +1109,7 @@ const Hero = () => {
           className="w-1/2 h-full flex flex-col items-center"
           initial={{ opacity: 0, scale: 1.15 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }}  // ✅ Slowed down transition
+          transition={{ duration: 1 }}  // ✅ Slowed down transition
         >
           <div
             className="w-full h-full bg-cover bg-center"
