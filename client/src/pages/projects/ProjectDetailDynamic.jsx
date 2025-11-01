@@ -434,7 +434,7 @@ const ProjectDetailDynamic = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           onMouseEnter={() => !isMobile && setShowInfo(true)}
-          onMouseLeave={() => !isMobile && setShowInfo(false)}
+          // onMouseLeave={() => !isMobile && setShowInfo(false)}
         >
           <img
             src={project.gallery?.[0] || project.img}
@@ -467,13 +467,13 @@ const ProjectDetailDynamic = () => {
         <AnimatePresence>
           {showInfo && (
             <motion.div
-              className="w-full md:w-2/5 md:ml-8 mt-6 md:mt-0 bg-white rounded-xl shadow-lg border border-gray-200 p-4 flex flex-col justify-start gap-4"
+              className="w-full md:w-3/5 md:ml-8 mt-6 md:mt-0 bg-white rounded-xl shadow-lg border border-gray-200  flex flex-col justify-start gap-4"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.4 }}
             >
-              <div className="grid grid-cols-1 gap-4 text-center md:text-left">
+              <div className="grid grid-cols-2 gap-4 text-center md:text-left">
                 <InfoItem title="Project Name" value={project.name} />
                 <InfoItem title="Architect" value={project.architect || "N/A"} />
                 <InfoItem title="Builder" value={project.builder || "N/A"} />
@@ -554,8 +554,8 @@ const ProjectDetailDynamic = () => {
 
 const InfoItem = ({ title, value }) => (
   <div className="bg-gray-50 p-3 rounded-lg shadow-sm">
-    <p className="text-sm text-blue-900 font-bold">{title}</p>
-    <p className="text-base md:text-lg font-semibold text-gray-800">{value}</p>
+    <p className="text-base text-blue-900 font-bold">{title}</p>
+    <p className="text-base md:text-base font-medium text-gray-800">{value}</p>
   </div>
 );
 

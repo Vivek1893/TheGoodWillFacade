@@ -1047,13 +1047,191 @@
 
 
 
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+// import React, { useState, useEffect } from "react";
+// import { motion } from "framer-motion";
+
+// const Hero = () => {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   const slides = [
+//     {
+//       leftImage: "/hero2.jpg",
+//       rightImage: "/hero1.jpg",
+//       mobileImage: "/hero2.jpg",
+//       leftTitle: "Hum",
+//       rightTitle: "WINDOW STRUCTURE",
+//     },
+//     {
+//       leftImage: "/hero4.jpg",
+//       rightImage: "/hero5.jpg",
+//       mobileImage: "/hero5.jpg",
+//       leftTitle: "GOYAL ASPIRE ",
+//       rightTitle: "AMBIT ",
+//     },
+//     {
+//       leftImage: "/hero3.webp",
+//       rightImage: "/hero7.jpg",
+//       mobileImage: "/hero3.webp",
+//       leftTitle: "ZIRCON ARENEA",
+//       rightTitle: "CANAL POINT",
+//     },
+//     {
+//       leftImage: "/hero6.jpg",
+//       rightImage: "/hero8.jpg",
+//       mobileImage: "/hero8.jpg",
+//       leftTitle: "SKY RISE  ",
+//       rightTitle: "VELOCITY",
+//     },
+//   ];
+
+//   // Auto Slide
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 8000); // ✅ Slowed down auto slide speed (6 seconds)
+
+//     return () => clearInterval(timer);
+//   }, [slides.length]);
+
+//   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   const prevSlide = () =>
+//     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+//   return (
+//     <div className="relative w-full h-screen overflow-hidden -mt-7 max-w-full">
+
+//       {/* ✅ Desktop / Tablet View */}
+//       <div className="hidden sm:flex absolute inset-0">
+
+//         {/* Left Half */}
+//         <motion.div
+//           key={`left-${currentSlide}`}
+//           className="w-1/2 h-full flex flex-col items-center"
+//           initial={{ opacity: 0, scale: 1.15 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1 }}  // ✅ Slowed down transition
+//         >
+//           <div
+//             className="w-full h-full bg-cover bg-center"
+//             style={{ backgroundImage: `url(${slides[currentSlide].leftImage})` }}
+//           ></div>
+
+//           {/* Text Below Image */}
+//           <h2 className="mt-4 text-white text-center text-xl font-semibold tracking-wide">
+//             {slides[currentSlide].leftTitle}
+//           </h2>
+//         </motion.div>
+
+//         {/* ✅ Logo Top Right */}
+//         <div className="absolute top-6 right-6 z-30">
+//           <img src="/logo.png" alt="The Goodwill Facades" className="h-18 md:h-25 w-auto" />
+//         </div>
+
+//         {/* Right Half */}
+//         <motion.div
+//           key={`right-${currentSlide}`}
+//           className="w-1/2 h-full flex flex-col items-center"
+//           initial={{ opacity: 0, scale: 1.15 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 2, delay: 0.2 }} // ✅ Smooth fade-in
+//         >
+//           <div
+//             className="w-full h-full bg-cover bg-center"
+//             style={{ backgroundImage: `url(${slides[currentSlide].rightImage})` }}
+//           ></div>
+
+//           {/* Text Below Image */}
+//           <h2 className="mt-4 text-white text-center text-xl font-semibold tracking-wide">
+//             {slides[currentSlide].rightTitle}
+//           </h2>
+//         </motion.div>
+
+//         {/* Divider Line */}
+//         <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
+//       </div>
+
+//       {/* ✅ Mobile Single Image */}
+//       <div className="flex sm:hidden absolute inset-0">
+//         <motion.div
+//           key={`mobile-${currentSlide}`}
+//           className="w-full h-full bg-cover bg-center"
+//           style={{
+//             backgroundImage: `url(${slides[currentSlide].mobileImage})`,
+//           }}
+//           initial={{ opacity: 0, scale: 1.1 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 2 }} // ✅ Slower mobile fade too
+//         ></motion.div>
+
+//         {/* Text below for mobile */}
+//         <div className="absolute bottom-8 w-full flex justify-center">
+//           <h2 className="text-white text-lg font-semibold drop-shadow-lg text-center">
+//             {slides[currentSlide].leftTitle}
+//           </h2>
+//         </div>
+//       </div>
+
+//       {/* Navigation Arrows */}
+//       <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-8">
+//         <button onClick={prevSlide} className="text-white hover:text-[#F37021] transition-colors">
+//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+//             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+//             </svg>
+//             <span className="text-sm hidden sm:block font-medium tracking-wider">PREV</span>
+//           </div>
+//         </button>
+
+//         <button onClick={nextSlide} className="text-white hover:text-[#F37021] transition-colors">
+//           <div className="flex items-center space-x-2 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-full border border-white/30">
+//             <span className="text-sm hidden sm:block font-medium tracking-wider">NEXT</span>
+//             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+//             </svg>
+//           </div>
+//         </button>
+//       </div>
+
+//       {/* Slide Indicators */}
+//       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+//         <div className="flex space-x-3">
+//           {slides.map((_, index) => (
+//             <button
+//               key={index}
+//               onClick={() => setCurrentSlide(index)}
+//               className={`w-3 h-3 rounded-full transition-all duration-300 ${
+//                 index === currentSlide ? "bg-[#F37021] scale-110" : "bg-white/50 hover:bg-white/80"
+//               }`}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [preloadedImages, setPreloadedImages] = useState({});
 
-  const slides = [
+  const slides = useMemo(() => [
     {
       leftImage: "/hero2.jpg",
       rightImage: "/hero1.jpg",
@@ -1065,30 +1243,57 @@ const Hero = () => {
       leftImage: "/hero4.jpg",
       rightImage: "/hero5.jpg",
       mobileImage: "/hero5.jpg",
-      leftTitle: "GOYAL ASPIRE ",
-      rightTitle: "AMBIT ",
+      leftTitle: "GOYAL ASPIRE",
+      rightTitle: "AMBIT",
     },
     {
       leftImage: "/hero3.webp",
       rightImage: "/hero7.jpg",
       mobileImage: "/hero3.webp",
-      leftTitle: "ZIRCON ARENEA",
+      leftTitle: "ZIRCON ARENA",
       rightTitle: "CANAL POINT",
     },
     {
       leftImage: "/hero6.jpg",
       rightImage: "/hero8.jpg",
       mobileImage: "/hero8.jpg",
-      leftTitle: "SKY RISE  ",
+      leftTitle: "SKY RISE",
       rightTitle: "VELOCITY",
     },
-  ];
+  ], []);
+
+  // Preload images
+  useEffect(() => {
+    const imageUrls = [];
+    slides.forEach(slide => {
+      imageUrls.push(slide.leftImage, slide.rightImage, slide.mobileImage);
+    });
+    
+    const uniqueUrls = [...new Set(imageUrls)];
+    
+    const preloadPromises = uniqueUrls.map(url => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => resolve({ [url]: true });
+        img.onerror = () => resolve({ [url]: false });
+      });
+    });
+    
+    Promise.all(preloadPromises).then(results => {
+      const preloaded = {};
+      results.forEach(result => {
+        Object.assign(preloaded, result);
+      });
+      setPreloadedImages(preloaded);
+    });
+  }, [slides]);
 
   // Auto Slide
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000); // ✅ Slowed down auto slide speed (6 seconds)
+    }, 8000);
 
     return () => clearInterval(timer);
   }, [slides.length]);
@@ -1098,29 +1303,32 @@ const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden -mt-7 max-w-full">
+    <div className="relative w-full h-screen overflow-hidden -mt-7 max-w-full bg-black">
 
       {/* ✅ Desktop / Tablet View */}
       <div className="hidden sm:flex absolute inset-0">
 
         {/* Left Half */}
-        <motion.div
-          key={`left-${currentSlide}`}
-          className="w-1/2 h-full flex flex-col items-center"
-          initial={{ opacity: 0, scale: 1.15 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}  // ✅ Slowed down transition
-        >
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[currentSlide].leftImage})` }}
-          ></div>
+        <div className="w-1/2 h-full flex flex-col items-center relative overflow-hidden">
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={slides[currentSlide].leftImage}
+              className="absolute inset-0 w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${slides[currentSlide].leftImage})` }}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+          </AnimatePresence>
 
-          {/* Text Below Image */}
-          <h2 className="mt-4 text-white text-center text-xl font-semibold tracking-wide">
-            {slides[currentSlide].leftTitle}
-          </h2>
-        </motion.div>
+          {/* Text at Bottom Center */}
+          <div className="absolute bottom-0 w-full flex justify-center z-20">
+            <h3 className="text-white text-lg font-semibold drop-shadow-lg text-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-lg">
+              {slides[currentSlide].leftTitle}
+            </h3>
+          </div>
+        </div>
 
         {/* ✅ Logo Top Right */}
         <div className="absolute top-6 right-6 z-30">
@@ -1128,47 +1336,51 @@ const Hero = () => {
         </div>
 
         {/* Right Half */}
-        <motion.div
-          key={`right-${currentSlide}`}
-          className="w-1/2 h-full flex flex-col items-center"
-          initial={{ opacity: 0, scale: 1.15 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, delay: 0.2 }} // ✅ Smooth fade-in
-        >
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[currentSlide].rightImage})` }}
-          ></div>
+        <div className="w-1/2 h-full flex flex-col items-center relative overflow-hidden">
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={slides[currentSlide].rightImage}
+              className="absolute inset-0 w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${slides[currentSlide].rightImage})` }}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+          </AnimatePresence>
 
-          {/* Text Below Image */}
-          <h2 className="mt-4 text-white text-center text-xl font-semibold tracking-wide">
-            {slides[currentSlide].rightTitle}
-          </h2>
-        </motion.div>
+          {/* Text at Bottom Center */}
+          <div className="absolute bottom-0 w-full flex justify-center z-20">
+            <h3 className="text-white text-lg font-semibold drop-shadow-lg text-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-lg">
+              {slides[currentSlide].rightTitle}
+            </h3>
+          </div>
+        </div>
 
         {/* Divider Line */}
         <div className="absolute inset-y-0 left-1/2 w-[2px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
       </div>
 
-      {/* ✅ Mobile Single Image */}
-      <div className="flex sm:hidden absolute inset-0">
-        <motion.div
-          key={`mobile-${currentSlide}`}
-          className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${slides[currentSlide].mobileImage})`,
-          }}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2 }} // ✅ Slower mobile fade too
-        ></motion.div>
+      {/* ✅ Mobile View */}
+      <div className="flex sm:hidden absolute inset-0  overflow-hidden">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={slides[currentSlide].mobileImage}
+            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${slides[currentSlide].mobileImage})` }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
 
-        {/* Text below for mobile */}
-        <div className="absolute bottom-8 w-full flex justify-center">
-          <h2 className="text-white text-lg font-semibold drop-shadow-lg text-center">
+        {/* Text at Bottom Center */}
+        {/* <div className="absolute bottom-8 w-full flex justify-center z-20">
+          <h2 className="text-white text-lg font-semibold drop-shadow-lg text-center bg-black/40 backdrop-blur-sm px-4 py-20 rounded-lg">
             {slides[currentSlide].leftTitle}
           </h2>
-        </div>
+        </div> */}
       </div>
 
       {/* Navigation Arrows */}
